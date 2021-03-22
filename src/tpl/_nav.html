@@ -1,0 +1,49 @@
+<nav>
+	<h2>{{tpl:lang cyCategoriesTitle}}</h2>
+	<ul>
+		<tpl:SysIf has_tpl="_ouaie.html">
+			<tpl:Categories level="1">
+				<li>
+					{{tpl:CategoryTitle}}
+				</li>
+				<tpl:CategoryFirstChildren>
+				<li>
+					<a href="{{tpl:CategoryURL}}" title ="{{tpl:CategoryTitle}}">{{tpl:CategoryTitle}}</a>
+				</li>
+				</tpl:CategoryFirstChildren>
+			</tpl:Categories>
+		</tpl:SysIf>
+		<tpl:SysIf has_tpl="_anthisnes.html">
+			<tpl:Categories>
+				<li>
+					<a href="{{tpl:CategoryURL}}" title ="{{tpl:lang cyCategoriesMenuTooltip}}{{tpl:CategoryTitle}}">{{tpl:CategoryTitle}}</a>
+				</li>
+			</tpl:Categories>
+		</tpl:SysIf>
+		<li> 
+			<a href="{{tpl:BlogURL}}categories" title="{{tpl:lang cyAllCategoriesMenuTooltip}}">{{tpl:lang cyAllCategoriesMenuText}}</a>
+		</li>
+	</ul>					
+	<h2>{{tpl:lang cyTagsTitleTop}}</h2>
+	<ul>
+		<tpl:Tags>
+			<li>
+				<a href="{{tpl:TagURL}}" title ="{{tpl:TagID}}">{{tpl:TagID}}</a>
+			</li>
+		</tpl:Tags>
+		<li> 
+			<a href="{{tpl:BlogURL}}tags" title="{{tpl:lang cyAllTagsMenuTopTooltip}}">{{tpl:lang cyAllTagsMenuTopText}}</a>
+		</li>
+	</ul>
+	<h2>{{tpl:lang cyArchivesTitleTop}}</h2>
+	<ul>
+		<tpl:Archives no_context="1">
+			<li>
+				<a href="{{tpl:ArchiveURL}}" title ="{{tpl:lang cyArchivesMenuTopTooltip}}{{tpl:ArchiveDate}}">{{tpl:ArchiveDate}}</a>
+			</li>
+		</tpl:Archives>
+		<li> 
+			<a href="{{tpl:BlogURL}}archive" title="{{tpl:lang cyAllArchivesMenuTopTooltip}}">{{tpl:lang cyAllArchivesMenuTopText}}</a>
+		</li>
+	</ul>	
+</nav>

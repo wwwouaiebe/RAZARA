@@ -1,0 +1,38 @@
+<section>
+	<tpl:Entries>
+		<tpl:DateHeader><h2>{{tpl:EntryDate}}</h2></tpl:DateHeader>
+		<article>
+			{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+			<h3>Title</h3>
+			<div>
+				{{tpl:include src="_post.html"}}
+			</div>
+			{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+		</article>
+		<tpl:EntriesFooter>
+			<tpl:Pagination>
+				<div>
+					<ul>
+						<li>
+							<tpl:PaginationIf end="0">
+								<a href="{{tpl:PaginationURL offset="+1"}}" title="{{tpl:lang cyPaginationPreviousTooltip}}">{{tpl:lang cyPaginationPreviousText}}</a>
+							</tpl:PaginationIf>
+						</li>
+						<li>
+							<a href="{{tpl:BlogURL}}" title="{{tpl:lang cyPaginationHomeTooltip}}">{{tpl:lang cyPaginationHomeText}}</a>
+						</li>
+						<li>
+							<tpl:PaginationIf start="0">
+								<a href="{{tpl:PaginationURL offset="-1"}}" title="{{tpl:lang cyPaginationNextTooltip}}">{{tpl:lang cyPaginationNextText}}</a>
+							</tpl:PaginationIf>
+						</li>
+					</ul>
+				</div>
+				<div>
+					{{tpl:lang page}} {{tpl:PaginationCurrent}} {{tpl:lang of}} {{tpl:PaginationCounter}}
+				</div>
+			</tpl:Pagination>
+		</tpl:EntriesFooter>
+	</tpl:Entries>
+</section>
+		
