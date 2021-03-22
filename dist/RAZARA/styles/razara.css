@@ -1,4 +1,59 @@
+@font-face {
+	font-family: "Ubuntu Sans";
+	src: url("Ubuntu-L.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Ubuntu SansNarrow";
+	src: url("Ubuntu-C.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Ubuntu SansBold";
+	src: url("Ubuntu-B.ttf") format("truetype");
+}
+
+/* reset */
+a,
+article,
+body,
+div,
+figure, 
+figcaption,
+header,
+h1, h2, h3, h4, h5, h6,
+img,
+li,
+nav,
+object,
+p,
+section,
+span,
+sub, 
+sup,
+ul{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+	box-sizing: border-box;	
+	text-decoration: none;
+	color: black;
+}
+body
+{
+	line-height: 1;
+}
+ul
+{
+	list-style: none;
+}
+/* end reset */
+
 body {
+	font-family: Ubuntu Sans;
 	display : grid;
 }
 @media screen and (min-width: 1281px){
