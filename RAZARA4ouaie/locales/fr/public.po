@@ -6,3 +6,99 @@ msgstr "Ènocint catwaze moussî a sot, fåte http"
 
 msgid "cy404Text"
 msgstr "Oufti bièsse, fåte http"
+
+msgid "cyAllArchivesMenuText"
+msgstr "Le temps passé"
+
+msgid "cyAllArchivesMenuTooltip"
+msgstr "Le temps passé"
+
+msgid "cyAllArchivesPageTitle"
+msgstr "Le temps passé"
+
+msgid "cyAllCategoriesMenuText"
+msgstr "Voyagez dans tous les pays"
+
+msgid "cyAllCategoriesMenuTooltip"
+msgstr "Voyagez dans tous les pays"
+
+msgid "cyAllCategoriesPageTitle"
+msgstr "Les pays"
+
+msgid "cyAllTagsMenuText"
+msgstr "Voir toutes les séries"
+
+msgid "cyAllTagsMenuTooltip"
+msgstr "Voir toutes les séries"
+
+msgid "cyAllTagsPageTitle"
+msgstr "Les séries"
+
+msgid "cyArchivesMenuTitle"
+msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
+
+msgid "cyArchivesMenuTooltip"
+msgstr "Voyagez dans le temps jusqu'en "
+
+msgid "cyCategoriesMenuTitle"
+msgstr "Les pays"
+
+msgid "cyCategoriesMenuTooltip"
+msgstr "Les pays"
+
+msgid "cyPage"
+msgstr "page"
+
+msgid "cyPaginationHomeText"
+msgstr "Début du blog"
+
+msgid "cyPaginationHomeTooltip"
+msgstr "Début du blog"
+
+msgid "cyPaginationNextText"
+msgstr "Photos plus récentes ⮞"
+
+msgid "cyPaginationNextTooltip"
+msgstr "Photos plus récentes"
+
+msgid "cyPaginationOf"
+msgstr "de"
+
+msgid "cyPaginationPage"
+msgstr "Page"
+
+msgid "cyPaginationPreviousText"
+msgstr "⮜ Photos plus anciennes"
+
+msgid "cyPaginationPreviousTooltip"
+msgstr "Photos plus anciennes"
+
+msgid "cyPostDateText1"
+msgstr "Photo réalisée le "
+
+msgid "cyPostDateText2"
+msgstr ", "
+
+msgid "cyPostDateText3"
+msgstr "&nbsp;heures&nbsp;"
+
+msgid "cyPostDateText4"
+msgstr "Publié le "
+
+msgid "cyPostTagsText"
+msgstr "Série&nbsp;:"
+
+msgid "cySiteTitlePart1"
+msgstr "www"
+
+msgid "cySiteTitlePart2"
+msgstr "ouaie"
+
+msgid "cySiteTitlePart3"
+msgstr "be"
+
+msgid "cySiteTitleTooltip"
+msgstr "aller à l'accueil"
+
+msgid "cyTagsMenuTitle"
+msgstr "Parcourez les séries&nbsp;:"
