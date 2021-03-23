@@ -98,6 +98,10 @@ h2 {
 	padding-bottom: 1rem;
 }
 
+body > nav > div > h2 {
+	font-size: 100%;
+}
+
 h3 {
 	font-size: 125%;
 	padding-bottom: 1rem;
@@ -123,6 +127,7 @@ p {
 @media screen and (min-width: 1281px){
 	body {
 		grid-template-columns: auto 972px;
+		grid-column-gap: 3rem;
 		max-width: 1600px;
 	}
 	header {
@@ -142,6 +147,18 @@ p {
 		grid-row-start:2;
 		grid-row-end:3;
 	}
+
+	body > nav > div > p {
+		transform:scaleY(0);
+		transform-origin:0 0;
+		height: 0;
+	}
+
+	body > nav > div:hover > p {
+		transform:scaleY(1);
+		height: auto;
+	}
+	
 	.cyPictureInfo > span + span
 	{
 		display: inline-block;
@@ -157,6 +174,7 @@ p {
 @media screen and (max-width: 1280px){
 	body {
 		grid-template-columns: 1fr;
+		max-width: 972px;
 	}
 	header {
 		grid-column-start: 1;
@@ -174,5 +192,11 @@ p {
 		grid-column-end: 2;
 		grid-row-start:2;
 		grid-row-end:3;
+	}
+	.cyPictureLandscape {
+		width: 100%;
+	}
+	.cyPicturePortrait {
+		width: 66%;
 	}
 }
