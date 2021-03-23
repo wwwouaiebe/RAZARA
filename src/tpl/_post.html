@@ -1,10 +1,9 @@
 ﻿<tpl:EntryIf extended="1">
-<div>{{tpl:EntryExcerpt}}</div>
+{{tpl:EntryExcerpt}}
 </tpl:EntryIf>
 
 <tpl:MediaExifInfos>
 	<tpl:MediaExifInfosHeader>
-		<div>
 	</tpl:MediaExifInfosHeader>
 	<p>
 		<img 
@@ -36,7 +35,7 @@
 		</p>
 	</tpl:MediaExifInfoIf>
 	<tpl:MediaExifInfoIf has_exif="1">
-		<p><span>&#x1f4f7;</span><span>{{tpl:MediaExifInfoAllExif format="%Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}</span></p>
+		<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaExifInfoAllExif format="%Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}</span></p>
 		<p>
 			{{tpl:MediaExifInfoDateTimeOriginal format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}
 			{{tpl:lang cyPostDateText2}}
@@ -59,11 +58,10 @@
 				</tpl:EntryTags>
 			</tpl:SysIf>						  
 		</p>
-		</div>
 	</tpl:MediaExifInfosFooter>
 </tpl:MediaExifInfos>
 <tpl:EntryIf selected="1">
-	<div>{{tpl:EntryContent}}</div>
+	{{tpl:EntryContent}}
 </tpl:EntryIf>
 <tpl:EntryIf has_attachment="0">
 	<p>

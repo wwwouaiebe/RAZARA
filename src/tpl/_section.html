@@ -4,33 +4,29 @@
 		<article>
 			{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
 			<h3>Title</h3>
-			<div>
-				{{tpl:include src="_post.html"}}
-			</div>
+			{{tpl:include src="_post.html"}}
 			{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
 		</article>
 		<tpl:EntriesFooter>
 			<tpl:Pagination>
-				<div>
-					<ul>
-						<li>
-							<tpl:PaginationIf end="0">
-								<a href='{{tpl:PaginationURL offset="+1"}}' title='{{tpl:lang cyPaginationPreviousTooltip}}'>{{tpl:lang cyPaginationPreviousText}}</a>
-							</tpl:PaginationIf>
-						</li>
-						<li>
-							<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyPaginationHomeTooltip}}'>{{tpl:lang cyPaginationHomeText}}</a>
-						</li>
-						<li>
-							<tpl:PaginationIf start="0">
-								<a href='{{tpl:PaginationURL offset="-1"}}' title='{{tpl:lang cyPaginationNextTooltip}}'>{{tpl:lang cyPaginationNextText}}</a>
-							</tpl:PaginationIf>
-						</li>
-					</ul>
-				</div>
-				<div>
+				<ul>
+					<li>
+						<tpl:PaginationIf end="0">
+							<a href='{{tpl:PaginationURL offset="+1"}}' title='{{tpl:lang cyPaginationPreviousTooltip}}'>{{tpl:lang cyPaginationPreviousText}}</a>
+						</tpl:PaginationIf>
+					</li>
+					<li>
+						<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyPaginationHomeTooltip}}'>{{tpl:lang cyPaginationHomeText}}</a>
+					</li>
+					<li>
+						<tpl:PaginationIf start="0">
+							<a href='{{tpl:PaginationURL offset="-1"}}' title='{{tpl:lang cyPaginationNextTooltip}}'>{{tpl:lang cyPaginationNextText}}</a>
+						</tpl:PaginationIf>
+					</li>
+				</ul>
+				<p>
 					{{tpl:lang cyPaginationPage}} {{tpl:PaginationCurrent}} {{tpl:lang cyPaginationOf}} {{tpl:PaginationCounter}}
-				</div>
+				</p>
 			</tpl:Pagination>
 		</tpl:EntriesFooter>
 	</tpl:Entries>
