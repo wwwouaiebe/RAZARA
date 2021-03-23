@@ -86,7 +86,7 @@ msgid "cyPostDateText4"
 msgstr "Publié le "
 
 msgid "cyPostTagsText"
-msgstr "Série&nbsp;:"
+msgstr "Série&nbsp;:&nbsp;"
 
 msgid "cySiteTitlePart1"
 msgstr "www"

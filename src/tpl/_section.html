@@ -9,22 +9,22 @@
 		</article>
 		<tpl:EntriesFooter>
 			<tpl:Pagination>
-				<ul>
-					<li>
+				<p class="cyPagination">
+					<span>
 						<tpl:PaginationIf end="0">
 							<a href='{{tpl:PaginationURL offset="+1"}}' title='{{tpl:lang cyPaginationPreviousTooltip}}'>{{tpl:lang cyPaginationPreviousText}}</a>
 						</tpl:PaginationIf>
-					</li>
-					<li>
+					</span>
+					<span>
 						<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyPaginationHomeTooltip}}'>{{tpl:lang cyPaginationHomeText}}</a>
-					</li>
-					<li>
+					</span>
+					<span>
 						<tpl:PaginationIf start="0">
 							<a href='{{tpl:PaginationURL offset="-1"}}' title='{{tpl:lang cyPaginationNextTooltip}}'>{{tpl:lang cyPaginationNextText}}</a>
 						</tpl:PaginationIf>
-					</li>
-				</ul>
-				<p>
+					</span>
+				</p>
+				<p class="cyPagination">
 					{{tpl:lang cyPaginationPage}} {{tpl:PaginationCurrent}} {{tpl:lang cyPaginationOf}} {{tpl:PaginationCounter}}
 				</p>
 			</tpl:Pagination>

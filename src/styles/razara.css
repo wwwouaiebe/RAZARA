@@ -1,7 +1,7 @@
 :root {
-  --main-color: black;
-  --link-color: #8B0000;
-  --link-hover-color : #008B00;
+  --main-color : black;
+  --link-color : gray;
+  --link-hover-color : darkred;
 }
 
 @font-face {
@@ -54,6 +54,7 @@ body
 	grid-row-gap: 0;
 	grid-column-gap: 0;
 }
+
 ul
 {
 	list-style: none;
@@ -71,6 +72,19 @@ h1{
 	font-size: 200%;
 	padding-bottom: 1rem;
 }
+
+a {
+	color: var(--link-color);
+}
+
+a:hover {
+	color: var(--link-hover-color);
+}
+
+h1 > a {
+	color: var(--main-color);
+}
+
 h1 > a > span {
 	color: var(--link-color);
 }
@@ -95,6 +109,15 @@ article {
 
 p {
 	padding-bottom: 1rem;
+}
+
+.cyPagination {
+	text-align: center;
+}
+
+.cyPagination > span {
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 @media screen and (min-width: 1281px){

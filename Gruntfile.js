@@ -30,6 +30,7 @@ module.exports = function(grunt) {
 				options: {
 					removeComments: true,
 					collapseWhitespace: true,
+					conservativeCollapse: true,
 					caseSensitive: true
 				},
 				files: [
