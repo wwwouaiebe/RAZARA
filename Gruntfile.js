@@ -29,23 +29,9 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					removeComments: true,
-					collapseWhitespace: true
+					collapseWhitespace: true,
+					caseSensitive: true
 				},
-				files: { 
-					'dist/RAZARA/tpl/401.html': 'src/tpl/401.html',
-					'dist/RAZARA/tpl/403.html': 'src/tpl/403.html',
-					'dist/RAZARA/tpl/404.html': 'src/tpl/404.html',
-					'dist/RAZARA/tpl/archive.html': 'src/tpl/archive.html',
-					'dist/RAZARA/tpl/archive_month.html': 'src/tpl/archive_month.html',
-					'dist/RAZARA/tpl/categories.html': 'src/tpl/categories.html',
-					'dist/RAZARA/tpl/category.html': 'src/tpl/category.html',
-					'dist/RAZARA/tpl/home.html': 'src/tpl/home.html',
-					'dist/RAZARA/tpl/page.html': 'src/tpl/page.html',
-					'dist/RAZARA/tpl/post.html': 'src/tpl/post.html',
-					'dist/RAZARA/tpl/tag.html': 'src/tpl/tag.html',
-					'dist/RAZARA/tpl/tags.html': 'src/tpl/tags.html'
-				}
-				/*
 				files: [
 					{
 					  expand: true,
@@ -60,7 +46,6 @@ module.exports = function(grunt) {
 					  dest: 'dist/RAZARA4ouaie'
 					}
 				]
-				*/
 			}
 		},
 		copy: {
