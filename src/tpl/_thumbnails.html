@@ -2,7 +2,7 @@
 	<a href="{{tpl:EntryURL}}" title="{{tpl:EntryCategory}} - {{tpl:EntryDate}}">
 	<tpl:EntryIf has_attachment="1">
 		<tpl:MediaExifInfos>
-			<img class='eee' src='{{tpl:BlogURL}}{{tpl:MediaExifInfoThumbnailRelUrl}}' title='<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} <tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader>, </tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter> </tpl:TagsFooter></tpl:EntryTags> - </tpl:SysIf><tpl:MediaExifInfoIf has_exif="1">{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaExifInfoIf><tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>' />
+			<img src='{{tpl:BlogURL}}{{tpl:MediaExifInfoThumbnailRelUrl}}' title='<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} <tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader>, </tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter> </tpl:TagsFooter></tpl:EntryTags> - </tpl:SysIf><tpl:MediaExifInfoIf has_exif="1">{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaExifInfoIf><tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>'></img>
 		</tpl:MediaExifInfos>
 	</tpl:EntryIf>
 	<tpl:EntryIf has_attachment="0">

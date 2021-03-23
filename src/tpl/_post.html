@@ -7,11 +7,28 @@
 		<div>
 	</tpl:MediaExifInfosHeader>
 	<p>
-		<img class="cyPicture{{tpl:MediaExifInfoClass}}" {{tpl:MediaExifInfoHtml}} src="{{tpl:BlogURL}}{{tpl:MediaExifInfoRelUrl}}" title=
-"<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} <tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader>, </tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter> </tpl:TagsFooter></tpl:EntryTags> - </tpl:SysIf>
-<tpl:MediaExifInfoIf has_exif="1">{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>
-<tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>
-" />
+		<img 
+			class='cyPicture{{tpl:MediaExifInfoClass}}' 
+			{{tpl:MediaExifInfoHtml}} 
+			src='{{tpl:BlogURL}}{{tpl:MediaExifInfoRelUrl}}'
+			title= '<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>
+				{{tpl:EntryCategory}} 
+				<tpl:SysIf has_tpl="_anthisnes.html">
+					<tpl:EntryTags>
+						<tpl:TagsHeader>, 
+						</tpl:TagsHeader>
+						{{tpl:TagID}}
+						<tpl:TagsFooter> 
+						</tpl:TagsFooter>
+					</tpl:EntryTags> - 
+				</tpl:SysIf>
+				<tpl:MediaExifInfoIf has_exif="1">
+					{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}
+				</tpl:MediaExifInfoIf>
+				<tpl:MediaExifInfoIf has_exif="0">
+					{{tpl:EntryDate format="%A %e %B %Y"}}
+				</tpl:MediaExifInfoIf>
+		' />
 	</p>
 	<tpl:MediaExifInfoIf has_exif="0">
 		<p>
@@ -21,7 +38,11 @@
 	<tpl:MediaExifInfoIf has_exif="1">
 		<p><span>&#x1f4f7;</span><span>{{tpl:MediaExifInfoAllExif format="%Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}</span></p>
 		<p>
-			{{tpl:MediaExifInfoDateTimeOriginal format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:MediaExifInfoDateTimeOriginal format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:MediaExifInfoDateTimeOriginal format="%M"}}
+			{{tpl:MediaExifInfoDateTimeOriginal format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}
+			{{tpl:lang cyPostDateText2}}
+			{{tpl:MediaExifInfoDateTimeOriginal format="%H"}}
+			{{tpl:lang cyPostDateText3}}
+			{{tpl:MediaExifInfoDateTimeOriginal format="%M"}}
 		</p>
 	</tpl:MediaExifInfoIf>
 	<tpl:MediaExifInfosFooter>

@@ -15,15 +15,15 @@
 					<ul>
 						<li>
 							<tpl:PaginationIf end="0">
-								<a href="{{tpl:PaginationURL offset="+1"}}" title="{{tpl:lang cyPaginationPreviousTooltip}}">{{tpl:lang cyPaginationPreviousText}}</a>
+								<a href='{{tpl:PaginationURL offset="+1"}}' title='{{tpl:lang cyPaginationPreviousTooltip}}'>{{tpl:lang cyPaginationPreviousText}}</a>
 							</tpl:PaginationIf>
 						</li>
 						<li>
-							<a href="{{tpl:BlogURL}}" title="{{tpl:lang cyPaginationHomeTooltip}}">{{tpl:lang cyPaginationHomeText}}</a>
+							<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyPaginationHomeTooltip}}'>{{tpl:lang cyPaginationHomeText}}</a>
 						</li>
 						<li>
 							<tpl:PaginationIf start="0">
-								<a href="{{tpl:PaginationURL offset="-1"}}" title="{{tpl:lang cyPaginationNextTooltip}}">{{tpl:lang cyPaginationNextText}}</a>
+								<a href='{{tpl:PaginationURL offset="-1"}}' title='{{tpl:lang cyPaginationNextTooltip}}'>{{tpl:lang cyPaginationNextText}}</a>
 							</tpl:PaginationIf>
 						</li>
 					</ul>
