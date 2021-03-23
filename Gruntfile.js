@@ -25,15 +25,47 @@ module.exports = function(grunt) {
 		'\n * \n */\n\n';
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		htmlmin: {
+			dist: {
+				options: {
+					removeComments: true,
+					collapseWhitespace: true
+				},
+				files: { 
+					'dist/RAZARA/tpl/401.html': 'src/tpl/401.html',
+					'dist/RAZARA/tpl/403.html': 'src/tpl/403.html',
+					'dist/RAZARA/tpl/404.html': 'src/tpl/404.html',
+					'dist/RAZARA/tpl/archive.html': 'src/tpl/archive.html',
+					'dist/RAZARA/tpl/archive_month.html': 'src/tpl/archive_month.html',
+					'dist/RAZARA/tpl/categories.html': 'src/tpl/categories.html',
+					'dist/RAZARA/tpl/category.html': 'src/tpl/category.html',
+					'dist/RAZARA/tpl/home.html': 'src/tpl/home.html',
+					'dist/RAZARA/tpl/page.html': 'src/tpl/page.html',
+					'dist/RAZARA/tpl/post.html': 'src/tpl/post.html',
+					'dist/RAZARA/tpl/tag.html': 'src/tpl/tag.html',
+					'dist/RAZARA/tpl/tags.html': 'src/tpl/tags.html'
+				}
+				/*
+				files: [
+					{
+					  expand: true,
+					  cwd: 'src',
+					  src: [ 'tpl/*.html'],
+					  dest: 'dist/RAZARA'
+					},
+					{
+					  expand: true,
+					  cwd: 'src',
+					  src: [ 'tpl/*.html'],
+					  dest: 'dist/RAZARA4ouaie'
+					}
+				]
+				*/
+			}
+		},
 		copy: {
 			main: {
 				files: [
-					{
-						expand: true,
-						cwd: 'src/',
-						src: ['**'],
-						dest: 'dist/RAZARA'
-					},
 					{
 						expand: true,
 						cwd: 'RAZARA4ouaie/',
@@ -42,9 +74,21 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'src/',
+						cwd: 'src/pictures',
 						src: ['**'],
-						dest: 'dist/RAZARA4ouaie'
+						dest: 'dist/RAZARA4ouaie/pictures'
+					},
+					{
+						expand: true,
+						cwd: 'src/scripts',
+						src: ['**'],
+						dest: 'dist/RAZARA4ouaie/scripts'
+					},
+					{
+						expand: true,
+						cwd: 'src/styles',
+						src: ['**'],
+						dest: 'dist/RAZARA4ouaie/styles'
 					}
 				],
 			}
@@ -53,8 +97,9 @@ module.exports = function(grunt) {
 	grunt.config.data.pkg.buildNumber = grunt.file.readJSON('buildNumber.json').buildNumber;
 	grunt.config.data.pkg.buildNumber = ("00000" + ( Number.parseInt ( grunt.config.data.pkg.buildNumber ) + 1 )).substr ( -5, 5 ) ;
 	grunt.file.write ( 'buildNumber.json', '{ "buildNumber" : "' + grunt.config.data.pkg.buildNumber + '"}'  );
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.registerTask('default', ['copy']);
+	grunt.registerTask('default', [ 'htmlmin:dist','copy']);
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
 	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version +' - build: '+ grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today("isoDateTime") +'\n' );
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
