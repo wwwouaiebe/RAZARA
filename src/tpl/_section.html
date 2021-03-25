@@ -1,11 +1,7 @@
 <section>
 	<tpl:Entries>
 		<tpl:DateHeader><h2>{{tpl:EntryDate}}</h2></tpl:DateHeader>
-		<article>
-			{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
-			{{tpl:include src="_post.html"}}
-			{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
-		</article>
+			{{tpl:include src="_article.html"}}
 		<tpl:EntriesFooter>
 			<tpl:Pagination>
 				<p class="cyPagination">
