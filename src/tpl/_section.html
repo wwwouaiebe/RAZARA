@@ -4,24 +4,30 @@
 			{{tpl:include src="_article.html"}}
 		<tpl:EntriesFooter>
 			<tpl:Pagination>
-				<p class="cyPagination">
-					<span>
+				<div id="cyPagination">
+					<div id="cyPaginationTopArrow">⮝</div>
+					<div id="cyPaginationTop">
+						<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyPaginationHomeTooltip}}'>{{tpl:lang cyPaginationHomeText}}</a>
+					</div>
+					<div id="cyPaginationPreviousArrow"><tpl:PaginationIf end="0">⮜</tpl:PaginationIf></div>
+					<div id="cyPaginationPrevious">
 						<tpl:PaginationIf end="0">
 							<a href='{{tpl:PaginationURL offset="+1"}}' title='{{tpl:lang cyPaginationPreviousTooltip}}'>{{tpl:lang cyPaginationPreviousText}}</a>
 						</tpl:PaginationIf>
-					</span>
-					<span>
-						<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyPaginationHomeTooltip}}'>{{tpl:lang cyPaginationHomeText}}</a>
-					</span>
-					<span>
+					</div>
+					<div id="cyPaginationSlideShow">
+						slide show
+					</div>
+					<div id="cyPaginationNextArrow"><tpl:PaginationIf start="0">⮞</tpl:PaginationIf></div>
+					<div id="cyPaginationNext">
 						<tpl:PaginationIf start="0">
 							<a href='{{tpl:PaginationURL offset="-1"}}' title='{{tpl:lang cyPaginationNextTooltip}}'>{{tpl:lang cyPaginationNextText}}</a>
 						</tpl:PaginationIf>
-					</span>
-				</p>
-				<p class="cyPagination">
-					{{tpl:lang cyPaginationPage}} {{tpl:PaginationCurrent}} {{tpl:lang cyPaginationOf}} {{tpl:PaginationCounter}}
-				</p>
+					</div>
+					<div id="cyPaginationCounter">
+						{{tpl:lang cyPaginationPage}} {{tpl:PaginationCurrent}} {{tpl:lang cyPaginationOf}} {{tpl:PaginationCounter}}
+					</div>
+				</div>
 			</tpl:Pagination>
 		</tpl:EntriesFooter>
 	</tpl:Entries>

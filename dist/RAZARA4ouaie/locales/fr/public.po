@@ -56,7 +56,7 @@ msgid "cyPaginationHomeTooltip"
 msgstr "Début du blog"
 
 msgid "cyPaginationNextText"
-msgstr "Photos plus récentes ⮞"
+msgstr "Photos plus récentes"
 
 msgid "cyPaginationNextTooltip"
 msgstr "Photos plus récentes"
@@ -68,7 +68,7 @@ msgid "cyPaginationPage"
 msgstr "Page"
 
 msgid "cyPaginationPreviousText"
-msgstr "⮜ Photos plus anciennes"
+msgstr "Photos plus anciennes"
 
 msgid "cyPaginationPreviousTooltip"
 msgstr "Photos plus anciennes"
