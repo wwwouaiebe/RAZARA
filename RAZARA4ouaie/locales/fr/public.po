@@ -7,6 +7,9 @@ msgstr "Ènocint catwaze moussî a sot, fåte http"
 msgid "cy404Text"
 msgstr "Oufti bièsse, fåte http"
 
+msgid "cyAbout"
+msgstr "À propos de www.ouaie.be"
+
 msgid "cyAllArchivesMenuText"
 msgstr "Le temps passé"
 
@@ -35,7 +38,7 @@ msgid "cyAllTagsPageTitle"
 msgstr "Les séries"
 
 msgid "cyArchivesMenuTitle"
-msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
+msgstr "Le temps passé"
 
 msgid "cyArchivesMenuTooltip"
 msgstr "Voyagez dans le temps jusqu'en "
@@ -46,8 +49,14 @@ msgstr "Les pays"
 msgid "cyCategoriesMenuTooltip"
 msgstr "Les pays"
 
+msgid "cyContact"
+msgstr "Me contacter"
+
 msgid "cyPage"
 msgstr "page"
+
+msgid "cyPagesMenuTitle"
+msgstr "Et aussi"
 
 msgid "cyPaginationHomeText"
 msgstr "Début du blog"
@@ -101,4 +110,4 @@ msgid "cySiteTitleTooltip"
 msgstr "aller à l'accueil"
 
 msgid "cyTagsMenuTitle"
-msgstr "Parcourez les séries&nbsp;:"
+msgstr "Les séries"
