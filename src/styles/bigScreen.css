@@ -1,0 +1,37 @@
+@media screen and (min-width: 1281px) {
+	body {
+		grid-template-columns: auto 972px;
+		grid-column-gap: 3rem;
+		max-width: 1600px;
+	}
+
+	header {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
+	nav {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+
+	section {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+
+	.cyPictureInfo > span + span {
+		display: inline-block;
+		transform: scaleX(0);
+		transform-origin: 0 0;
+		transition: all 0.5s ease;
+	}
+
+	.cyPictureInfo > span:hover + span {
+		transform: scaleX(1);
+	}
+}

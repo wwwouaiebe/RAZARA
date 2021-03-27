@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+    "rules": {
+		"indentation": "tab",
+		"no-descending-specificity": null,
+		"font-family-no-missing-generic-family-keyword": null,
+		"unit-allowed-list": ["rem", "%", "fr", "px", "s"]
+	}
+}

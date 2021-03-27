@@ -25,6 +25,23 @@ module.exports = function(grunt) {
 		'\n * \n */\n\n';
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		stylelint: {
+			 options: {
+				 fix: true
+			 },
+			src: ['src/**/*.css']
+		},	
+		cssmin: {
+			options: {
+				mergeIntoShorthands: false,
+				roundingPrecision: -1
+			},
+			RAZARA4ouaie: {
+				files: {
+					'dist/RAZARA4ouaie/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css',]
+				}
+			}
+		},
 		htmlmin: {
 			dist: {
 				options: {
@@ -34,12 +51,6 @@ module.exports = function(grunt) {
 					caseSensitive: true
 				},
 				files: [
-					{
-					  expand: true,
-					  cwd: 'src',
-					  src: [ 'tpl/*.html'],
-					  dest: 'dist/RAZARA'
-					},
 					{
 					  expand: true,
 					  cwd: 'src',
@@ -54,8 +65,8 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: 'RAZARA4ouaie/',
-						src: ['**'],
+						cwd: 'src/RAZARA4ouaie/',
+						src: ['**/*.*'],
 						dest: 'dist/RAZARA4ouaie'
 					},
 					{
@@ -73,7 +84,7 @@ module.exports = function(grunt) {
 					{
 						expand: true,
 						cwd: 'src/styles',
-						src: ['**'],
+						src: ['*.ttf'],
 						dest: 'dist/RAZARA4ouaie/styles'
 					}
 				],
@@ -83,9 +94,11 @@ module.exports = function(grunt) {
 	grunt.config.data.pkg.buildNumber = grunt.file.readJSON('buildNumber.json').buildNumber;
 	grunt.config.data.pkg.buildNumber = ("00000" + ( Number.parseInt ( grunt.config.data.pkg.buildNumber ) + 1 )).substr ( -5, 5 ) ;
 	grunt.file.write ( 'buildNumber.json', '{ "buildNumber" : "' + grunt.config.data.pkg.buildNumber + '"}'  );
+	grunt.loadNpmTasks('grunt-stylelint');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.registerTask('default', [ 'htmlmin:dist','copy']);
+	grunt.registerTask('default', [  'stylelint','cssmin:RAZARA4ouaie','htmlmin:dist','copy']);
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
 	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version +' - build: '+ grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today("isoDateTime") +'\n' );
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');

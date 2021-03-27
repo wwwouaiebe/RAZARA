@@ -1,0 +1,49 @@
+/* reset */
+a,
+article,
+body,
+div,
+figure,
+figcaption,
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+li,
+nav,
+object,
+p,
+section,
+span,
+sub,
+sup,
+ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+	box-sizing: border-box;
+	text-decoration: none;
+	color: var(--main-color);
+}
+
+body {
+	line-height: 1;
+	grid-row-gap: 0;
+	grid-column-gap: 0;
+}
+
+ul {
+	list-style: disc;
+	list-style-position: inside;
+}
+
+/* end reset */
