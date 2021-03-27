@@ -9,12 +9,12 @@
 	</head>
 	<body>
 		{{tpl:include src="_header.html"}}
-		{{tpl:include src="_nav.html"}}
 		<section>
 			<h2>{{tpl:EntryTitle encode_html="1"}}</h2>
 			{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
 				{{tpl:ImgExifInfoContent title="%Title% - %Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}
 			{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
 		</section>
+		{{tpl:include src="_nav.html"}}
 	</body>
 </html>
