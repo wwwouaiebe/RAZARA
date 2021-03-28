@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 			},
 			RAZARA4ouaie: {
 				files: {
-					'dist/RAZARA4ouaie/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css',]
+					'dist/RAZARA4ouaie/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css']
 				}
 			}
 		},
@@ -97,7 +97,14 @@ module.exports = function(grunt) {
 						cwd: 'src/styles',
 						src: ['*.ttf'],
 						dest: 'dist/RAZARA4ouaie/styles'
-					}
+					},
+					{
+						expand: true,
+						cwd: 'src',
+						src: ['*.php'],
+						dest: 'dist/RAZARA4ouaie'
+					},
+					
 				],
 			}
 		}

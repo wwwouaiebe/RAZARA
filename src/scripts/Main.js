@@ -1,7 +1,8 @@
-console.log ( 'razara.js' );
+console.log ( 'razara.js 1' );
 
 import { onMailContinueButtonFRClick, onMailContinueButtonENClick } from './Mail.js';
-import { menuModifier } from './Menu.js';
+import { navModifier } from './Nav.js';
+import { onStartSlideShow } from './SlideShow.js';
 
 let mailContinueButtonFR = document.getElementById ( 'cyMailContinueButtonFR' );
 if ( mailContinueButtonFR && onMailContinueButtonFRClick ) {
@@ -13,4 +14,5 @@ if ( mailContinueButtonEN && onMailContinueButtonENClick ) {
 	mailContinueButtonEN.addEventListener ( 'click', onMailContinueButtonENClick );
 }
 
-menuModifier ( );
+document.querySelector ( '#cyPaginationSlideShow' ).addEventListener ( 'click', onStartSlideShow );
+navModifier ( );
