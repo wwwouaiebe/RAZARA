@@ -30,7 +30,7 @@ const co205 = 2.05;
 const co1 = 1;
 const zer = 0;
 
-function mailContinueButtonFR ( ) {
+function onMailContinueButtonFRClick ( ) {
 	let iSum = Number.parseInt ( document.getElementById ( 'cyNumberFR' ).value );
 	if ( co66 + co13 === iSum ) {
 		let arr = [ co114, co117, co111, co106, co110, co111, co98 ];
@@ -52,7 +52,7 @@ function mailContinueButtonFR ( ) {
 						'L\'adresse mail a également été passée dans le presse-papier de votre ordinateur.';
 				}
 			)
-			.catch ( ( ) => console.log ( 'failed to copy to the clipboard' ) );
+			.catch ( ( ) => console.error ( 'failed to copy to the clipboard' ) );
 		document.getElementById ( 'cyMailFR' ).innerHTML =
 			'Bravo! Vous êtes doué. Patientez un instant, votre mail va s\'ouvrir.';
 	}
@@ -63,7 +63,7 @@ function mailContinueButtonFR ( ) {
 	document.getElementById ( 'cyButtonEN' ).style.visibility = 'hidden';
 }
 
-function mailContinueButtonEN ( ) {
+function onMailContinueButtonENClick ( ) {
 	let iSum = Number.parseInt ( document.getElementById ( 'cyNumberEN' ).value );
 	if ( co66 + co13 === iSum ) {
 		let arr = [ co114, co117, co111, co106, co110, co111, co98 ];
@@ -85,7 +85,7 @@ function mailContinueButtonEN ( ) {
 						'The email address has also been passed to your computer\'s clipboard.';
 				}
 			)
-			.catch ( ( ) => console.log ( 'failed to copy to the clipboard' ) );
+			.catch ( ( ) => console.error ( 'failed to copy to the clipboard' ) );
 		document.getElementById ( 'cyMailEN' ).innerHTML =
 			'Excellent! You are very good. Wait a moment, your email will open.';
 	}
@@ -96,4 +96,4 @@ function mailContinueButtonEN ( ) {
 	document.getElementById ( 'cyButtonEN' ).style.visibility = 'hidden';
 }
 
-export { mailContinueButtonFR, mailContinueButtonEN };
+export { onMailContinueButtonFRClick, onMailContinueButtonENClick };

@@ -25,6 +25,23 @@ module.exports = function(grunt) {
 		'\n * \n */\n\n';
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		eslint: {
+			options: {
+				fix: true,
+				configFile: '.eslintrc.json'
+			},				
+			target: ['src/scripts/*.js']
+		},	
+		rollup : {
+			Default : {
+				options : {
+					format : 'iife'
+				},
+				files: {
+				  'dist/RAZARA4ouaie/scripts/razara.js': ['src/scripts/Main.js'],  
+				}
+			}
+		},
 		stylelint: {
 			 options: {
 				 fix: true
@@ -77,12 +94,6 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'src/scripts',
-						src: ['**'],
-						dest: 'dist/RAZARA4ouaie/scripts'
-					},
-					{
-						expand: true,
 						cwd: 'src/styles',
 						src: ['*.ttf'],
 						dest: 'dist/RAZARA4ouaie/styles'
@@ -94,11 +105,13 @@ module.exports = function(grunt) {
 	grunt.config.data.pkg.buildNumber = grunt.file.readJSON('buildNumber.json').buildNumber;
 	grunt.config.data.pkg.buildNumber = ("00000" + ( Number.parseInt ( grunt.config.data.pkg.buildNumber ) + 1 )).substr ( -5, 5 ) ;
 	grunt.file.write ( 'buildNumber.json', '{ "buildNumber" : "' + grunt.config.data.pkg.buildNumber + '"}'  );
+	grunt.loadNpmTasks('grunt-eslint');
+	grunt.loadNpmTasks('grunt-rollup');
 	grunt.loadNpmTasks('grunt-stylelint');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.registerTask('default', [  'stylelint','cssmin:RAZARA4ouaie','htmlmin:dist','copy']);
+	grunt.registerTask('default', [ 'eslint', 'rollup', 'stylelint','cssmin:RAZARA4ouaie','htmlmin:dist','copy']);
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
 	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version +' - build: '+ grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today("isoDateTime") +'\n' );
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
