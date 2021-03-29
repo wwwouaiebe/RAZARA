@@ -1,5 +1,3 @@
-console.log ( 'razara.js 1' );
-
 import { onMailContinueButtonFRClick, onMailContinueButtonENClick } from './Mail.js';
 import { navModifier } from './Nav.js';
 import { onStartSlideShow } from './SlideShow.js';

@@ -1,0 +1,34 @@
+body.slideShow > header,
+body.slideShow > header > *,
+body.slideShow > header > * > *,
+body.slideShow > header > * > * > *,
+body.slideShow > nav,
+body.slideShow > nav > *,
+body.slideShow > nav > * > *,
+body.slideShow > nav > * > * > *,
+body.slideShow > section,
+body.slideShow > section > *,
+body.slideShow > section > * > *,
+body.slideShow > section > * > * > * {
+	transform: scaleY(0);
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+body.slideShow > div {
+	background-color: transparent;
+	grid-column: 1 / 3;
+	grid-row: 1 / 3;
+	z-index: 100;
+}
+
+body.slideShow > div > article {
+	max-width: 972px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body.slideShow > div > div {
+	text-align: right;
+}

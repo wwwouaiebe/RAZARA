@@ -3,7 +3,6 @@
     "rules": {
 		"indentation": "tab",
 		"no-descending-specificity": null,
-		"font-family-no-missing-generic-family-keyword": null,
-		"unit-allowed-list": ["rem", "%", "fr", "px", "s"]
+		"font-family-no-missing-generic-family-keyword": null
 	}
 }

@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 			},
 			RAZARA4ouaie: {
 				files: {
-					'dist/RAZARA4ouaie/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css']
+					'dist/RAZARA4ouaie/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css','src/styles/SlideShow.css']
 				}
 			}
 		},
