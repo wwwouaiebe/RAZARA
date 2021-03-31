@@ -12,5 +12,9 @@ if ( mailContinueButtonEN && onMailContinueButtonENClick ) {
 	mailContinueButtonEN.addEventListener ( 'click', onMailContinueButtonENClick );
 }
 
-document.querySelector ( '#cyPaginationSlideShow' ).addEventListener ( 'click', onStartSlideShow );
+let paginationSlideShow = document.querySelector ( '#cyPaginationSlideShow' );
+if ( paginationSlideShow ) {
+	paginationSlideShow.addEventListener ( 'click', onStartSlideShow );
+}
+
 navModifier ( );

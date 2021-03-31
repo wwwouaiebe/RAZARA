@@ -14,6 +14,12 @@
 			{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
 				{{tpl:ImgExifInfoContent title="%Title% - %Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}
 			{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+			<div id="cyPagination">
+				<div id="cyPaginationTopArrow">⮝</div>
+				<div id="cyPaginationTop">
+					<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyPaginationHomeTooltip}}'>{{tpl:lang cyPaginationHomeText}}</a>
+				</div>
+			</div>
 		</section>
 		{{tpl:include src="_nav.html"}}
 	</body>

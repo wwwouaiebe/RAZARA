@@ -1,3 +1,4 @@
+
 body.slideShow > header,
 body.slideShow > header > *,
 body.slideShow > header > * > *,
@@ -31,4 +32,5 @@ body.slideShow > div > article {
 
 body.slideShow > div > div {
 	text-align: right;
+	padding-bottom: 1rem;
 }

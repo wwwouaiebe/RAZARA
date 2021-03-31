@@ -3,53 +3,75 @@ const INVALID_INDEX = -1;
 const MIN_SLIDE_SHOW_DURATION = 2000;
 const MAX_SLIDE_SHOW_DURATION = 30000;
 const SLIDE_SHOW_INTERVAL = 1000;
+const DEFAULT_SLIDE_SHOW_DURATION = 10000;
+const FORWARD = 1;
+const BACKWARD = -1;
 
 let myBackgroundDiv = null;
 let myArticles = null;
 let myCurrentArticle = null;
 let myArticleIndex = INVALID_INDEX;
 let myTimerId = null;
-let mySlideShowDuration = 10000;
-let mySlideShowActive = false;
 let myCloseButton = null;
 let myClonedArticle = null;
 
+let mySlideShow = {
+	active : false,
+	paused : false,
+	duration : DEFAULT_SLIDE_SHOW_DURATION,
+	forward : true
+};
+
 function myCloseSlideShow ( ) {
+	if ( myTimerId ) {
+		window.clearTimeout ( myTimerId );
+		myTimerId = null;
+	}
 	document.removeEventListener ( 'keydown', myOnKeyDown, true );
 	document.body.removeChild ( myBackgroundDiv );
 	document.body.classList.remove ( 'slideShow' );
 	myBackgroundDiv = null;
+	myCloseButton = null;
+
 	myArticles = null;
 	myCurrentArticle = null;
-	myArticleIndex = INVALID_INDEX;
-	myTimerId = null;
-	mySlideShowActive = false;
-	myCloseButton = null;
 	myClonedArticle = null;
+	myArticleIndex = INVALID_INDEX;
+
+	myTimerId = null;
+
+	mySlideShow.active = false;
+	mySlideShow.paused = false;
+	mySlideShow.forward = true;
+	sessionStorage.setItem ( 'slideShow', JSON.stringify ( mySlideShow ) );
 }
 
 function myShowNextSlide ( ) {
 	if ( myCurrentArticle ) {
 		myBackgroundDiv.removeChild ( myClonedArticle );
 	}
-	myArticleIndex ++;
+
+	myArticleIndex += mySlideShow.forward ? FORWARD : BACKWARD;
 	myCurrentArticle = myArticles.item ( myArticleIndex );
 	if ( myCurrentArticle ) {
 		myClonedArticle = myCurrentArticle.cloneNode ( true );
 		myBackgroundDiv.appendChild ( myClonedArticle );
-		myTimerId = setTimeout ( myShowNextSlide, mySlideShowDuration );
+		if ( ! mySlideShow.paused ) {
+			myTimerId = setTimeout ( myShowNextSlide, mySlideShow.duration );
+		}
+		mySlideShow.forward = true;
 	}
 	else {
-		myCloseSlideShow ( );
+		let paginationLink = document.querySelector (
+			mySlideShow.forward ? '#cyPaginationPrevious > a' : '#cyPaginationNext > a' );
+		if ( paginationLink ) {
+			sessionStorage.setItem ( 'slideShow', JSON.stringify ( mySlideShow ) );
+			paginationLink.click ( );
+		}
+		else {
+			myCloseSlideShow ( );
+		}
 	}
-}
-
-function myPauseSlideShow ( ) {
-	if ( myTimerId ) {
-		window.clearTimeout ( myTimerId );
-		myTimerId = null;
-	}
-	mySlideShowActive = false;
 }
 
 function myOnKeyDown ( keyBoardEvent ) {
@@ -59,50 +81,47 @@ function myOnKeyDown ( keyBoardEvent ) {
 		myCloseSlideShow ( );
 		break;
 	case '+' :
-		mySlideShowDuration =
-			MAX_SLIDE_SHOW_DURATION === mySlideShowDuration
+		mySlideShow.duration =
+			MAX_SLIDE_SHOW_DURATION === mySlideShow.duration
 				?
 				MAX_SLIDE_SHOW_DURATION
-				: mySlideShowDuration + SLIDE_SHOW_INTERVAL;
+				: mySlideShow.duration + SLIDE_SHOW_INTERVAL;
 		break;
 	case '-' :
-		mySlideShowDuration =
-			MIN_SLIDE_SHOW_DURATION === mySlideShowDuration
+		mySlideShow.duration =
+			MIN_SLIDE_SHOW_DURATION === mySlideShow.duration
 				?
 				MIN_SLIDE_SHOW_DURATION
 				:
-				mySlideShowDuration - SLIDE_SHOW_INTERVAL;
+				mySlideShow.duration - SLIDE_SHOW_INTERVAL;
 		break;
 	case 'ArrowDown' :
-		console.log ( keyBoardEvent.key );
-		if ( mySlideShowActive ) {
-			myPauseSlideShow ( );
+		if ( myTimerId ) {
+			window.clearTimeout ( myTimerId );
+			myTimerId = null;
 		}
+		mySlideShow.paused = true;
 		break;
 	case 'ArrowUp' :
-		console.log ( keyBoardEvent.key );
-		if ( ! mySlideShowActive ) {
-			mySlideShowActive = true;
+		if ( mySlideShow.paused ) {
+			mySlideShow.paused = false;
 			myShowNextSlide ( );
 		}
 		break;
 	case 'ArrowRight' :
-		if ( mySlideShowActive ) {
-			if ( myTimerId ) {
-				window.clearTimeout ( myTimerId );
-				myTimerId = null;
-			}
-			myShowNextSlide ( );
+		if ( myTimerId ) {
+			window.clearTimeout ( myTimerId );
+			myTimerId = null;
 		}
+		myShowNextSlide ( );
 		break;
 	case 'ArrowLeft' :
-		if ( mySlideShowActive ) {
-			if ( myTimerId ) {
-				window.clearTimeout ( myTimerId );
-				myTimerId = null;
-			}
-			myShowNextSlide ( );
+		if ( myTimerId ) {
+			window.clearTimeout ( myTimerId );
+			myTimerId = null;
 		}
+		mySlideShow.forward = false;
+		myShowNextSlide ( );
 		break;
 	default :
 		break;
@@ -119,10 +138,17 @@ function onStartSlideShow ( ) {
 	myCloseButton.innerText = '❌';
 	myCloseButton.addEventListener ( 'click', myCloseSlideShow );
 	myBackgroundDiv.appendChild ( myCloseButton );
+
 	myArticles = document.querySelectorAll ( 'section > article' );
-	mySlideShowActive = true;
+	myArticleIndex = mySlideShow.forward ? INVALID_INDEX : myArticles.length;
+	mySlideShow.active = true;
 	myShowNextSlide ( );
 }
-console.log ( 'slideshow 19' );
+
+mySlideShow = JSON.parse ( sessionStorage.getItem ( 'slideShow' ) ) || mySlideShow;
+
+if ( mySlideShow.active ) {
+	onStartSlideShow ( );
+}
 
 export { onStartSlideShow };
