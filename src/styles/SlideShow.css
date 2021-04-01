@@ -34,3 +34,11 @@ body.slideShow > div > div {
 	text-align: right;
 	padding-bottom: 1rem;
 }
+
+.cyCursorLeft {
+	cursor: url(left.png) 16 16, w-resize;
+}
+
+.cyCursorRight {
+	cursor: url(right.png) 16 16, e-resize;
+}

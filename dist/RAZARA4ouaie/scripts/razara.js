@@ -123,13 +123,14 @@
 	}
 
 	const INVALID_INDEX = -1;
+	const FORWARD = 1;
+	const BACKWARD = -1;
+	const TWO = 2;
 
 	const MIN_SLIDE_SHOW_DURATION = 2000;
 	const MAX_SLIDE_SHOW_DURATION = 30000;
 	const SLIDE_SHOW_INTERVAL = 1000;
 	const DEFAULT_SLIDE_SHOW_DURATION = 10000;
-	const FORWARD = 1;
-	const BACKWARD = -1;
 
 	let myBackgroundDiv = null;
 	let myArticles = null;
@@ -138,6 +139,7 @@
 	let myTimerId = null;
 	let myCloseButton = null;
 	let myClonedArticle = null;
+	let	myArticleClientRect = null;
 
 	let mySlideShow = {
 		active : false,
@@ -162,6 +164,8 @@
 		myClonedArticle = null;
 		myArticleIndex = INVALID_INDEX;
 
+		myArticleClientRect = null;
+
 		myTimerId = null;
 
 		mySlideShow.active = false;
@@ -170,20 +174,62 @@
 		sessionStorage.setItem ( 'slideShow', JSON.stringify ( mySlideShow ) );
 	}
 
+	function myOnArticleMouseMoveOrEnter ( mouseEvent ) {
+
+		if ( myArticleClientRect.width / TWO < mouseEvent.clientX - myArticleClientRect.x	 ) {
+			myClonedArticle.classList.remove ( 'cyCursorLeft' );
+			myClonedArticle.classList.add ( 'cyCursorRight' );
+		}
+		else {
+			myClonedArticle.classList.remove ( 'cyCursorRight' );
+			myClonedArticle.classList.add ( 'cyCursorLeft' );
+		}
+	}
+
+	function myOnArticleMouseLeave ( ) {
+		myClonedArticle.classList.remove ( 'cyCursorRight' );
+		myClonedArticle.classList.remove ( 'cyCursorLeft' );
+	}
+
+	function myOnArticleClick ( mouseEvent ) {
+		if ( myArticleClientRect.width / TWO < mouseEvent.clientX - myArticleClientRect.x	 ) {
+			if ( myTimerId ) {
+				window.clearTimeout ( myTimerId );
+				myTimerId = null;
+			}
+			myShowNextSlide ( );
+		}
+		else {
+			if ( myTimerId ) {
+				window.clearTimeout ( myTimerId );
+				myTimerId = null;
+			}
+			mySlideShow.forward = false;
+			myShowNextSlide ( );
+		}
+	}
+
 	function myShowNextSlide ( ) {
 		if ( myCurrentArticle ) {
+			myClonedArticle.removeEventListener ( 'mousemove', myOnArticleMouseMoveOrEnter, false );
+			myClonedArticle.removeEventListener ( 'mouseenter', myOnArticleMouseMoveOrEnter, false );
+			myClonedArticle.removeEventListener ( 'mouseleave', myOnArticleMouseLeave, false );
+			myClonedArticle.removeEventListener ( 'click', myOnArticleClick, false );
 			myBackgroundDiv.removeChild ( myClonedArticle );
 		}
 
 		myArticleIndex += mySlideShow.forward ? FORWARD : BACKWARD;
 		myCurrentArticle = myArticles.item ( myArticleIndex );
 		if ( myCurrentArticle ) {
-			myClonedArticle = myCurrentArticle.cloneNode ( true );
-			myBackgroundDiv.appendChild ( myClonedArticle );
+			myClonedArticle = myBackgroundDiv.appendChild ( myCurrentArticle.cloneNode ( true ) );
 			if ( ! mySlideShow.paused ) {
 				myTimerId = setTimeout ( myShowNextSlide, mySlideShow.duration );
 			}
-			mySlideShow.forward = true;
+			myArticleClientRect = myClonedArticle.getBoundingClientRect ( );
+			myClonedArticle.addEventListener ( 'mousemove', myOnArticleMouseMoveOrEnter, false );
+			myClonedArticle.addEventListener ( 'mouseenter', myOnArticleMouseMoveOrEnter, false );
+			myClonedArticle.addEventListener ( 'mouseleave', myOnArticleMouseLeave, false );
+			myClonedArticle.addEventListener ( 'click', myOnArticleClick, false );
 		}
 		else {
 			let paginationLink = document.querySelector (
@@ -196,6 +242,7 @@
 				myCloseSlideShow ( );
 			}
 		}
+		mySlideShow.forward = true;
 	}
 
 	function myOnKeyDown ( keyBoardEvent ) {

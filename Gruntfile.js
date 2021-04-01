@@ -95,7 +95,7 @@ module.exports = function(grunt) {
 					{
 						expand: true,
 						cwd: 'src/styles',
-						src: ['*.ttf'],
+						src: ['*.ttf', '*.png'],
 						dest: 'dist/RAZARA4ouaie/styles'
 					},
 					{
