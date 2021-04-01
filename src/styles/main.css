@@ -127,6 +127,7 @@ figcaption {
 	height: 100%;
 }
 
+.cyPictureSquare,
 .cyPicturePortrait {
 	width: 50%;
 	height: 50%;

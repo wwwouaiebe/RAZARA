@@ -42,3 +42,9 @@ body.slideShow > div > div {
 .cyCursorRight {
 	cursor: url(right.png) 16 16, e-resize;
 }
+
+body.slideShow .cyPictureSquare,
+body.slideShow .cyPicturePortrait {
+	margin-left: 25%;
+	margin-right: 25%;
+}
