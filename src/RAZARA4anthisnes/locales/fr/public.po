@@ -76,9 +76,6 @@ msgstr "Photos plus anciennes"
 msgid "cyPaginationPreviousTooltip"
 msgstr "Photos plus anciennes"
 
-msgid "cyPostCategoryText"
-msgstr "Laissez-vous pousser par le vent vers "
-
 msgid "cyPostDateText1"
 msgstr "Photo réalisée le "
 

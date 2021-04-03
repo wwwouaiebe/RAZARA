@@ -80,6 +80,7 @@ h1 > a > span:hover {
 
 body > nav > h2 {
 	font-family: "Ubuntu SansNarrow";
+	font-size: 115%;
 }
 
 body > nav > p > span {

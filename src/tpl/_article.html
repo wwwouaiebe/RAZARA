@@ -103,16 +103,6 @@
 							</p>
 						</tpl:EntryTags>
 					</tpl:SysIf>	
-
-					<!-- lien vers la catégorie -->
-					<tpl:SysIf has_tpl="_anthisnes.html">
-						<tpl:EntryIf has_category="1">
-							<p>
-								{{tpl:lang cyPostCategoryText}}
-								<a href="{{tpl:EntryCategoryURL}}" title="{{tpl:lang cyPostCategoryTooltip}}{{tpl:EntryCategory}}">{{tpl:EntryCategory}}</a>							
-							</p>
-						</tpl:EntryIf>
-					</tpl:SysIf>
 				</figcaption>
 			</figure>
 			<tpl:MediaExifInfosFooter>
