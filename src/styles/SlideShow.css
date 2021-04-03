@@ -44,7 +44,9 @@ body.slideShow > div > div {
 }
 
 body.slideShow .cyPictureSquare,
-body.slideShow .cyPicturePortrait {
+body.slideShow .cyPicturePortrait,
+body.slideShow .cyPictureSquare ~ *,
+body.slideShow .cyPicturePortrait ~ * {
 	margin-left: 25%;
 	margin-right: 25%;
 }

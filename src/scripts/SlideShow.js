@@ -13,7 +13,6 @@ let myArticles = null;
 let myCurrentArticle = null;
 let myArticleIndex = INVALID_INDEX;
 let myTimerId = null;
-let myCloseButton = null;
 let myClonedArticle = null;
 let	myArticleClientRect = null;
 
@@ -33,7 +32,6 @@ function myCloseSlideShow ( ) {
 	document.body.removeChild ( myBackgroundDiv );
 	document.body.classList.remove ( 'slideShow' );
 	myBackgroundDiv = null;
-	myCloseButton = null;
 
 	myArticles = null;
 	myCurrentArticle = null;
@@ -106,6 +104,7 @@ function myShowNextSlide ( ) {
 		myClonedArticle.addEventListener ( 'mouseenter', myOnArticleMouseMoveOrEnter, false );
 		myClonedArticle.addEventListener ( 'mouseleave', myOnArticleMouseLeave, false );
 		myClonedArticle.addEventListener ( 'click', myOnArticleClick, false );
+		myBackgroundDiv.scrollIntoView ( true );
 	}
 	else {
 		let paginationLink = document.querySelector (
@@ -142,15 +141,14 @@ function myOnKeyDown ( keyBoardEvent ) {
 				:
 				mySlideShow.duration - SLIDE_SHOW_INTERVAL;
 		break;
-	case 'ArrowDown' :
+	case 's' :
+	case 'S' :
 		if ( myTimerId ) {
 			window.clearTimeout ( myTimerId );
 			myTimerId = null;
+			mySlideShow.paused = true;
 		}
-		mySlideShow.paused = true;
-		break;
-	case 'ArrowUp' :
-		if ( mySlideShow.paused ) {
+		else {
 			mySlideShow.paused = false;
 			myShowNextSlide ( );
 		}
@@ -181,15 +179,33 @@ function onStartSlideShow ( ) {
 	document.body.classList.add ( 'slideShow' );
 	myBackgroundDiv = document.createElement ( 'div' );
 	document.body.appendChild ( myBackgroundDiv );
-	myCloseButton = document.createElement ( 'div' );
-	myCloseButton.innerText = '❌';
-	myCloseButton.addEventListener ( 'click', myCloseSlideShow );
-	myBackgroundDiv.appendChild ( myCloseButton );
+
+	let toolbarDiv = document.createElement ( 'div' );
+	myBackgroundDiv.appendChild ( toolbarDiv );
+	let helpButton = document.createElement ( 'span' );
+	helpButton.innerText = '❔ ';
+	helpButton.title =
+		'Touche ⮞ : passer à la photo suivante' +
+		'\nTouche ⮜ : passer à la photo précédente' +
+		'\nTouche - : diminuer le temps de vision' +
+		'\nTouche + : augmenter le temps de vision' +
+		'\nTouches S ou s : arrêter ou relancer le diaporama' +
+		'\nTouche Esc : fermer le diaporama';
+	toolbarDiv.appendChild ( helpButton );
+	let closeButton = document.createElement ( 'span' );
+	closeButton.innerText = '❌';
+	closeButton.addEventListener ( 'click', myCloseSlideShow );
+	toolbarDiv.appendChild ( closeButton );
 
 	myArticles = document.querySelectorAll ( 'section > article' );
 	myArticleIndex = mySlideShow.forward ? INVALID_INDEX : myArticles.length;
 	mySlideShow.active = true;
 	myShowNextSlide ( );
+}
+
+let slideShowElement = document.querySelector ( '#cyPaginationSlideShow > a' );
+if ( slideShowElement ) {
+	slideShowElement.textContent = 'Diaporama slideshow';
 }
 
 mySlideShow = JSON.parse ( sessionStorage.getItem ( 'slideShow' ) ) || mySlideShow;

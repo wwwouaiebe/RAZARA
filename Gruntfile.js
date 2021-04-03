@@ -39,6 +39,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 				  'dist/RAZARA4ouaie/scripts/razara.js': ['src/scripts/Main.js'],  
+				  'dist/RAZARA4anthisnes/scripts/razara.js': ['src/scripts/Main.js'], 
 				}
 			}
 		},
@@ -57,6 +58,11 @@ module.exports = function(grunt) {
 				files: {
 					'dist/RAZARA4ouaie/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css','src/styles/SlideShow.css']
 				}
+			},
+			RAZARA4anthisnes: {
+				files: {
+					'dist/RAZARA4anthisnes/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css','src/styles/SlideShow.css']
+				}
 			}
 		},
 		htmlmin: {
@@ -73,6 +79,12 @@ module.exports = function(grunt) {
 					  cwd: 'src',
 					  src: [ 'tpl/*.html'],
 					  dest: 'dist/RAZARA4ouaie'
+					},
+					{
+					  expand: true,
+					  cwd: 'src',
+					  src: [ 'tpl/*.html'],
+					  dest: 'dist/RAZARA4anthisnes'
 					}
 				]
 			}
@@ -104,8 +116,31 @@ module.exports = function(grunt) {
 						src: ['*.php'],
 						dest: 'dist/RAZARA4ouaie'
 					},
-					
-				],
+					{
+						expand: true,
+						cwd: 'src/RAZARA4anthisnes/',
+						src: ['**/*.*'],
+						dest: 'dist/RAZARA4anthisnes'
+					},
+					{
+						expand: true,
+						cwd: 'src/pictures',
+						src: ['**'],
+						dest: 'dist/RAZARA4anthisnes/pictures'
+					},
+					{
+						expand: true,
+						cwd: 'src/styles',
+						src: ['*.ttf', '*.png'],
+						dest: 'dist/RAZARA4anthisnes/styles'
+					},
+					{
+						expand: true,
+						cwd: 'src',
+						src: ['*.php'],
+						dest: 'dist/RAZARA4anthisnes'
+					}				
+				]
 			}
 		}
 	});
@@ -118,7 +153,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.registerTask('default', [ 'eslint', 'rollup', 'stylelint','cssmin:RAZARA4ouaie','htmlmin:dist','copy']);
+	grunt.registerTask('default', [ 'eslint', 'rollup', 'stylelint','cssmin:RAZARA4ouaie','cssmin:RAZARA4anthisnes', 'htmlmin:dist','copy']);
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
 	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version +' - build: '+ grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today("isoDateTime") +'\n' );
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');

@@ -46,27 +46,10 @@
 			<a href="{{tpl:BlogURL}}archive" title="{{tpl:lang cyAllArchivesMenuTooltip}}">{{tpl:lang cyAllArchivesMenuText}}</a>
 		</span>
 	</p>	
-	<h2>{{tpl:lang cyPagesMenuTitle}}</h2>
-	<p>
-		<tpl:SysIf has_tpl="_ouaie.html">
-			<span>
-				<a href="{{tpl:BlogURL}}pages/707" title ="En vélo, vers le Nord">En vélo, vers le Nord</a>
-			</span>
-			<span>
-				<a href="https://www.anthisnes.org/" title ="Anthisnes.org">Anthisnes.org ↗</a>
-			</span>
-		</tpl:SysIf>
-		<span>
-			<a href="https://github.com/wwwouaiebe" title ="Coding on Github">Coding on Github ↗</a>
-		</span>
-		<span> 
-			<a href="{{tpl:BlogURL}}pages/Contact" title="{{tpl:lang cyContact}}">{{tpl:lang cyContact}}</a>
-		</span>
-		<span> 
-			<a href="{{tpl:BlogURL}}pages/Apropos" title="{{tpl:lang cyAbout}}">{{tpl:lang cyAbout}}</a>
-		</span>
-		<span>
-			<a href="{{tpl:BlogURL}}pages/LicenseCreativeCommons" title ='{{tpl:BlogCopyrightNotice}} 2007 - {{tpl:BlogUpdateDate format="%Y"}}'>{{tpl:BlogCopyrightNotice}} 2007 - {{tpl:BlogUpdateDate format="%Y"}}</a>
-		</span>
-	</p>
+	<tpl:SysIf has_tpl="_nav_menu.html">
+		<h2>{{tpl:lang cyPagesMenuTitle}}</h2>
+		<p>
+			{{tpl:include src="_nav_menu.html"}}
+		</p>
+	</tpl:SysIf>
 </nav>

@@ -9,19 +9,19 @@
 					<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyPaginationHomeTooltip}}'>{{tpl:lang cyPaginationHomeText}}</a>
 				</div>
 				<div id="cyPaginationSlideShow">
-					slide show
+					<a><!--Diaporama slideshow--></a>
 				</div>
 				<tpl:Pagination>
-					<tpl:PaginationIf end="0">
-						<div id="cyPaginationPreviousArrow"><tpl:PaginationIf end="0">⮜</tpl:PaginationIf></div>
-						<div id="cyPaginationPrevious">
-								<a href='{{tpl:PaginationURL offset="+1"}}' title='{{tpl:lang cyPaginationPreviousTooltip}}'>{{tpl:lang cyPaginationPreviousText}}</a>
-						</div>
-					</tpl:PaginationIf>
 					<tpl:PaginationIf start="0">
-						<div id="cyPaginationNextArrow">⮞</div>
+						<div id="cyPaginationNextArrow">⮜</div>
 						<div id="cyPaginationNext">
 							<a href='{{tpl:PaginationURL offset="-1"}}' title='{{tpl:lang cyPaginationNextTooltip}}'>{{tpl:lang cyPaginationNextText}}</a>
+						</div>
+					</tpl:PaginationIf>
+					<tpl:PaginationIf end="0">
+						<div id="cyPaginationPreviousArrow"><tpl:PaginationIf end="0">⮞</tpl:PaginationIf></div>
+						<div id="cyPaginationPrevious">
+								<a href='{{tpl:PaginationURL offset="+1"}}' title='{{tpl:lang cyPaginationPreviousTooltip}}'>{{tpl:lang cyPaginationPreviousText}}</a>
 						</div>
 					</tpl:PaginationIf>
 					<div id="cyPaginationCounter">
@@ -32,4 +32,3 @@
 		</tpl:EntriesFooter>
 	</tpl:Entries>
 </section>
-		

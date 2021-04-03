@@ -19,30 +19,20 @@
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	*/
 
-	const co66 = 66;
-	const co13 = 13;
-	const AHAH = 186;
-	const co114 = 114;
-	const co117 = 117;
-	const co111 = 111;
-	const co106 = 106;
-	const co110 = 110;
-	const co98 = 98;
-	const co3 = 3;
-	const co205 = 2.05;
-	const co1 = 1;
-	const zer = 0;
+	/* eslint-disable-next-line no-magic-numbers */
+	const N_3M5 = 3 * 5;
+	/* eslint-disable-next-line no-magic-numbers */
+	const N_8EXP2 = 8 ** 2;
+	const ONE = 1;
+	const ZERO = 0;
 
 	function onMailContinueButtonFRClick ( ) {
-		let iSum = Number.parseInt ( document.getElementById ( 'cyNumberFR' ).value );
-		if ( co66 + co13 === iSum ) {
-			let arr = [ co114, co117, co111, co106, co110, co111, co98 ];
-			arr.reverse ( );
-			let addr =
-				new TextDecoder ( ).decode ( new Uint8Array ( arr.concat ( [ Math.floor ( ( AHAH / co3 ) + co205 ) ] ) ) ) +
-				window.location.hostname.split ( '.' ).reverse ( ) [ co1 ] +
+		if ( N_8EXP2 + N_3M5 === Number.parseInt ( document.getElementById ( 'cyNumberFR' ).value ) ) {
+			let addr = document.querySelector ( '#cyMailContinueButtonFR' ).getAttribute ( 'name' ) +
+				String.fromCharCode ( N_8EXP2 ) +
+				window.location.hostname.split ( '.' ).reverse ( ) [ ONE ] +
 				'.' +
-				window.location.hostname.split ( '.' ).reverse ( ) [ zer ];
+				window.location.hostname.split ( '.' ).reverse ( ) [ ZERO ];
 			{
 				let mailLink = document.createElement ( 'a' );
 				mailLink.href = 'mailto:' + addr;
@@ -57,25 +47,23 @@
 				)
 				.catch ( ( ) => console.error ( 'failed to copy to the clipboard' ) );
 			document.getElementById ( 'cyMailFR' ).innerHTML =
-				'Bravo! Vous êtes doué. Patientez un instant, votre mail va s\'ouvrir.';
+				'Bravo! Vous êtes doué. Patientez un instant, votre mail va s\'ouvrir... ' +
+				'si tout est bien configuré sur votre appareil.';
 		}
 		else {
 			document.getElementById ( 'cyMailFR' ).innerHTML = 'Oufti biesse. Null en math.';
 		}
-		document.getElementById ( 'cyButtonFR' ).style.visibility = 'hidden';
-		document.getElementById ( 'cyButtonEN' ).style.visibility = 'hidden';
+		document.getElementById ( 'cyMailContinueButtonFR' ).style.visibility = 'hidden';
+		document.getElementById ( 'cyMailContinueButtonEN' ).style.visibility = 'hidden';
 	}
 
 	function onMailContinueButtonENClick ( ) {
-		let iSum = Number.parseInt ( document.getElementById ( 'cyNumberEN' ).value );
-		if ( co66 + co13 === iSum ) {
-			let arr = [ co114, co117, co111, co106, co110, co111, co98 ];
-			arr.reverse ( );
-			let addr =
-				new TextDecoder ( ).decode ( new Uint8Array ( arr.concat ( [ Math.floor ( ( AHAH / co3 ) + co205 ) ] ) ) ) +
-				window.location.hostname.split ( '.' ).reverse ( ) [ co1 ] +
+		if ( N_8EXP2 + N_3M5 === Number.parseInt ( document.getElementById ( 'cyNumberEN' ).value ) ) {
+			let addr = document.querySelector ( '#cyMailContinueButtonEN' ).getAttribute ( 'name' ) +
+				String.fromCharCode ( N_8EXP2 ) +
+				window.location.hostname.split ( '.' ).reverse ( ) [ ONE ] +
 				'.' +
-				window.location.hostname.split ( '.' ).reverse ( ) [ zer ];
+				window.location.hostname.split ( '.' ).reverse ( ) [ ZERO ];
 			{
 				let mailLink = document.createElement ( 'a' );
 				mailLink.href = 'mailto:' + addr;
@@ -90,13 +78,14 @@
 				)
 				.catch ( ( ) => console.error ( 'failed to copy to the clipboard' ) );
 			document.getElementById ( 'cyMailEN' ).innerHTML =
-				'Excellent! You are very good. Wait a moment, your email will open.';
+				'Excellent! You are very good. Wait a moment, your email will open...' +
+				' if everything is configured correctly on your device.';
 		}
 		else {
 			document.getElementById ( 'cyMailEN' ).innerHTML = 'You are stupid.';
 		}
-		document.getElementById ( 'cyButtonFR' ).style.visibility = 'hidden';
-		document.getElementById ( 'cyButtonEN' ).style.visibility = 'hidden';
+		document.getElementById ( 'cyMailContinueButtonFR' ).style.visibility = 'hidden';
+		document.getElementById ( 'cyMailContinueButtonEN' ).style.visibility = 'hidden';
 	}
 
 	function onClickHeadingNav ( clickEvent ) {
@@ -137,7 +126,6 @@
 	let myCurrentArticle = null;
 	let myArticleIndex = INVALID_INDEX;
 	let myTimerId = null;
-	let myCloseButton = null;
 	let myClonedArticle = null;
 	let	myArticleClientRect = null;
 
@@ -157,7 +145,6 @@
 		document.body.removeChild ( myBackgroundDiv );
 		document.body.classList.remove ( 'slideShow' );
 		myBackgroundDiv = null;
-		myCloseButton = null;
 
 		myArticles = null;
 		myCurrentArticle = null;
@@ -230,6 +217,7 @@
 			myClonedArticle.addEventListener ( 'mouseenter', myOnArticleMouseMoveOrEnter, false );
 			myClonedArticle.addEventListener ( 'mouseleave', myOnArticleMouseLeave, false );
 			myClonedArticle.addEventListener ( 'click', myOnArticleClick, false );
+			myBackgroundDiv.scrollIntoView ( true );
 		}
 		else {
 			let paginationLink = document.querySelector (
@@ -266,15 +254,14 @@
 					:
 					mySlideShow.duration - SLIDE_SHOW_INTERVAL;
 			break;
-		case 'ArrowDown' :
+		case 's' :
+		case 'S' :
 			if ( myTimerId ) {
 				window.clearTimeout ( myTimerId );
 				myTimerId = null;
+				mySlideShow.paused = true;
 			}
-			mySlideShow.paused = true;
-			break;
-		case 'ArrowUp' :
-			if ( mySlideShow.paused ) {
+			else {
 				mySlideShow.paused = false;
 				myShowNextSlide ( );
 			}
@@ -303,15 +290,33 @@
 		document.body.classList.add ( 'slideShow' );
 		myBackgroundDiv = document.createElement ( 'div' );
 		document.body.appendChild ( myBackgroundDiv );
-		myCloseButton = document.createElement ( 'div' );
-		myCloseButton.innerText = '❌';
-		myCloseButton.addEventListener ( 'click', myCloseSlideShow );
-		myBackgroundDiv.appendChild ( myCloseButton );
+
+		let toolbarDiv = document.createElement ( 'div' );
+		myBackgroundDiv.appendChild ( toolbarDiv );
+		let helpButton = document.createElement ( 'span' );
+		helpButton.innerText = '❔ ';
+		helpButton.title =
+			'Touche ⮞ : passer à la photo suivante' +
+			'\nTouche ⮜ : passer à la photo précédente' +
+			'\nTouche - : diminuer le temps de vision' +
+			'\nTouche + : augmenter le temps de vision' +
+			'\nTouches S ou s : arrêter ou relancer le diaporama' +
+			'\nTouche Esc : fermer le diaporama';
+		toolbarDiv.appendChild ( helpButton );
+		let closeButton = document.createElement ( 'span' );
+		closeButton.innerText = '❌';
+		closeButton.addEventListener ( 'click', myCloseSlideShow );
+		toolbarDiv.appendChild ( closeButton );
 
 		myArticles = document.querySelectorAll ( 'section > article' );
 		myArticleIndex = mySlideShow.forward ? INVALID_INDEX : myArticles.length;
 		mySlideShow.active = true;
 		myShowNextSlide ( );
+	}
+
+	let slideShowElement = document.querySelector ( '#cyPaginationSlideShow > a' );
+	if ( slideShowElement ) {
+		slideShowElement.textContent = 'Diaporama slideshow';
 	}
 
 	mySlideShow = JSON.parse ( sessionStorage.getItem ( 'slideShow' ) ) || mySlideShow;
@@ -320,12 +325,12 @@
 		onStartSlideShow ( );
 	}
 
-	let mailContinueButtonFR = document.getElementById ( 'cyMailContinueButtonFR' );
+	let mailContinueButtonFR = document.querySelector ( '#cyMailContinueButtonFR' );
 	if ( mailContinueButtonFR && onMailContinueButtonFRClick ) {
 		mailContinueButtonFR.addEventListener ( 'click', onMailContinueButtonFRClick );
 	}
 
-	let mailContinueButtonEN = document.getElementById ( 'cyMailContinueButtonEN' );
+	let mailContinueButtonEN = document.querySelector ( '#cyMailContinueButtonEN' );
 	if ( mailContinueButtonEN && onMailContinueButtonENClick ) {
 		mailContinueButtonEN.addEventListener ( 'click', onMailContinueButtonENClick );
 	}

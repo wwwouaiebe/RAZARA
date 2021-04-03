@@ -1,6 +1,8 @@
 ﻿<article>
 	{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
-		<!--h3>{{tpl:EntryTitle}}</h3-->
+
+		<h3><!--{{tpl:EntryTitle}}-->&nbsp;</h3>
+
 		<!-- En tête du post si presente -->
 		<tpl:EntryIf extended="1">
 		{{tpl:EntryExcerpt}}
@@ -11,19 +13,23 @@
 			<tpl:MediaExifInfosHeader>
 			</tpl:MediaExifInfosHeader>
 			<figure>
+
 					<!-- img avec class, width and height, src, title (boucle sur les categories et tag + date et heure) -->
 				<img 
 					class='cyPicture{{tpl:MediaExifInfoClass}}' 
 					{{tpl:MediaExifInfoHtml}}
 					src='{{tpl:BlogURL}}{{tpl:MediaExifInfoRelUrl}}'
-					title='<tpl:EntryIf has_category="1"><tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} - </tpl:EntryIf><tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader>, </tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter></tpl:TagsFooter></tpl:EntryTags> c- </tpl:SysIf><tpl:MediaExifInfoIf has_exif="1">{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaExifInfoIf><tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>'
+					title='<tpl:EntryIf has_category="1"><tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}, </tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}}, </tpl:EntryIf><tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader></tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter>, </tpl:TagsFooter></tpl:EntryTags></tpl:SysIf><tpl:MediaExifInfoIf has_exif="1">{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaExifInfoIf><tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>'
 				/>
 				<figcaption>
+				
 					<!-- pas d'info exif dans le media -->
 					<tpl:MediaExifInfoIf has_exif="0">
+
 						<!-- pas de categorie pour le post -->
 						<tpl:EntryIf has_category="0">
 							<p>
+
 								<!-- date et heure du post -->
 								{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
 							</p>
@@ -35,14 +41,16 @@
 								{{tpl:CategoryTitle encode_html="1"}},
 								</tpl:EntryCategoriesBreadcrumb>
 								<a href="{{tpl:EntryCategoryURL}}" title="{{tpl:EntryCategory}}" >{{tpl:EntryCategory}}</a>,
+
 								<!-- tag si anthisnes.org -->
 								<tpl:SysIf has_tpl="_anthisnes.html">
 									<tpl:EntryTags>
-										<tpl:TagsHeader> - </tpl:TagsHeader>
-											{{tpl:TagID}},
-										<tpl:TagsFooter></tpl:TagsFooter>
+										<tpl:TagsHeader></tpl:TagsHeader>
+											{{tpl:TagID}}
+										<tpl:TagsFooter>, </tpl:TagsFooter>
 									</tpl:EntryTags>
 								</tpl:SysIf>						  
+
 								<!-- date et heure du post -->
 								{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
 							</p>
@@ -52,21 +60,24 @@
 					<!-- exif info présentes -->
 					<tpl:MediaExifInfoIf has_exif="1">
 						<p>
+
 							<!-- categorie avec fil d'Ariane -->
 							<tpl:EntryIf has_category="1">
 								<tpl:EntryCategoriesBreadcrumb>
 								{{tpl:CategoryTitle encode_html="1"}},
 								</tpl:EntryCategoriesBreadcrumb>
 								<a href="{{tpl:EntryCategoryURL}}" title="{{tpl:EntryCategory}}" >{{tpl:EntryCategory}}</a>,
+
 								<!-- tag si anthisnes.org -->
 								<tpl:SysIf has_tpl="_anthisnes.html">
 									<tpl:EntryTags>
-										<tpl:TagsHeader> - </tpl:TagsHeader>
-											{{tpl:TagID}},
-										<tpl:TagsFooter></tpl:TagsFooter>
+										<tpl:TagsHeader></tpl:TagsHeader>
+											{{tpl:TagID}}
+										<tpl:TagsFooter>, </tpl:TagsFooter>
 									</tpl:EntryTags>
 								</tpl:SysIf>						  
 							</tpl:EntryIf>
+
 							<!-- date et heure du media -->
 							{{tpl:MediaExifInfoDateTimeOriginal format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}
 							{{tpl:lang cyPostDateText2}}
@@ -74,6 +85,7 @@
 							{{tpl:lang cyPostDateText3}}
 							{{tpl:MediaExifInfoDateTimeOriginal format="%M"}}
 						</p>
+
 						<!-- exif infos du media -->
 						<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaExifInfoAllExif format="%Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}</span></p>
 					</tpl:MediaExifInfoIf>

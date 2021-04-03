@@ -132,3 +132,10 @@ figcaption {
 	width: 50%;
 	height: 50%;
 }
+
+.cyErrorHttp {
+	text-align: center;
+	font-size: 200%;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}

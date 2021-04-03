@@ -5,10 +5,7 @@ msgid "cy403Text"
 msgstr "Ènocint catwaze moussî a sot, fåte http"
 
 msgid "cy404Text"
-msgstr "Oufti bièsse, fåte http"
-
-msgid "cyAbout"
-msgstr "À propos de www.ouaie.be"
+msgstr "Oufti bièsse, t'es pierdou!"
 
 msgid "cyAllArchivesMenuText"
 msgstr "Le temps passé"
@@ -49,9 +46,6 @@ msgstr "Les pays"
 msgid "cyCategoriesMenuTooltip"
 msgstr "Les pays"
 
-msgid "cyContact"
-msgstr "Me contacter"
-
 msgid "cyPage"
 msgstr "page"
 
@@ -59,7 +53,7 @@ msgid "cyPagesMenuTitle"
 msgstr "Et aussi"
 
 msgid "cyPaginationHomeText"
-msgstr "Début du blog"
+msgstr "Retourner à l'accueil"
 
 msgid "cyPaginationHomeTooltip"
 msgstr "Début du blog"

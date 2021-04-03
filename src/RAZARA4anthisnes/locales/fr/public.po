@@ -17,22 +17,22 @@ msgid "cyAllArchivesPageTitle"
 msgstr "Le temps passé"
 
 msgid "cyAllCategoriesMenuText"
-msgstr "Voyagez dans tous les pays"
+msgstr "Tous les villages"
 
 msgid "cyAllCategoriesMenuTooltip"
-msgstr "Voyagez dans tous les pays"
+msgstr "Tous les villages"
 
 msgid "cyAllCategoriesPageTitle"
-msgstr "Les pays"
+msgstr "Les villages"
 
 msgid "cyAllTagsMenuText"
-msgstr "Voir toutes les séries"
+msgstr "Tous les chemins et les champs"
 
 msgid "cyAllTagsMenuTooltip"
-msgstr "Voir toutes les séries"
+msgstr "Tous les chemins et les champs"
 
 msgid "cyAllTagsPageTitle"
-msgstr "Les séries"
+msgstr "Les chemins et les champs"
 
 msgid "cyArchivesMenuTitle"
 msgstr "Le temps passé"
@@ -41,10 +41,10 @@ msgid "cyArchivesMenuTooltip"
 msgstr "Voyagez dans le temps jusqu'en "
 
 msgid "cyCategoriesMenuTitle"
-msgstr "Les pays"
+msgstr "Les villages"
 
 msgid "cyCategoriesMenuTooltip"
-msgstr "Les pays"
+msgstr "Les villages"
 
 msgid "cyPage"
 msgstr "page"
@@ -76,6 +76,9 @@ msgstr "Photos plus anciennes"
 msgid "cyPaginationPreviousTooltip"
 msgstr "Photos plus anciennes"
 
+msgid "cyPostCategoryText"
+msgstr "Laissez-vous pousser par le vent vers "
+
 msgid "cyPostDateText1"
 msgstr "Photo réalisée le "
 
@@ -88,20 +91,17 @@ msgstr "&nbsp;heures&nbsp;"
 msgid "cyPostDateText4"
 msgstr "Publié le "
 
-msgid "cyPostTagsText"
-msgstr "Série&nbsp;:&nbsp;"
-
 msgid "cySiteTitlePart1"
-msgstr "www"
+msgstr "anthisnes"
 
 msgid "cySiteTitlePart2"
-msgstr "ouaie"
+msgstr "●"
 
 msgid "cySiteTitlePart3"
-msgstr "be"
+msgstr "org"
 
 msgid "cySiteTitleTooltip"
 msgstr "aller à l'accueil"
 
 msgid "cyTagsMenuTitle"
-msgstr "Les séries"
+msgstr "Les chemins et les champs"

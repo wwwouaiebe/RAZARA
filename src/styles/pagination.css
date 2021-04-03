@@ -21,7 +21,7 @@
 	text-align: center;
 }
 
-#cyPaginationPreviousArrow {
+#cyPaginationNextArrow {
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 3;
@@ -31,7 +31,7 @@
 	margin-bottom: auto;
 }
 
-#cyPaginationPrevious {
+#cyPaginationNext {
 	grid-column-start: 2;
 	grid-column-end: 3;
 	grid-row-start: 3;
@@ -47,7 +47,7 @@
 	text-align: center;
 }
 
-#cyPaginationNext {
+#cyPaginationPrevious {
 	grid-column-start: 4;
 	grid-column-end: 5;
 	grid-row-start: 3;
@@ -55,7 +55,7 @@
 	text-align: right;
 }
 
-#cyPaginationNextArrow {
+#cyPaginationPreviousArrow {
 	grid-column-start: 5;
 	grid-column-end: 6;
 	grid-row-start: 3;
