@@ -10,6 +10,7 @@
     "grunt-eslint": "^23.0.0",
     "grunt-rollup": "^11.2.0",
     "grunt-stylelint": "^0.15.0",
+    "grunt-terser": "^1.0.0",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0"
   },

@@ -43,6 +43,20 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		terser: {
+			RAZARA: {
+				options: {
+					mangle: true,
+					output: {
+						preamble: banner
+					}
+				},
+				files: {
+					'dist/RAZARA4ouaie/scripts/razara.min.js': ['dist/RAZARA4ouaie/scripts/razara.js'],
+					'dist/RAZARA4anthisnes/scripts/razara.min.js': ['dist/RAZARA4anthisnes/scripts/razara.js']
+				}
+			}
+		},
 		stylelint: {
 			 options: {
 				 fix: true
@@ -85,6 +99,18 @@ module.exports = function(grunt) {
 					  cwd: 'src',
 					  src: [ 'tpl/*.html'],
 					  dest: 'dist/RAZARA4anthisnes'
+					},
+					{
+					  expand: true,
+					  cwd: 'src/RAZARA4ouaie',
+					  src: [ 'tpl/*.html'],
+					  dest: 'dist/RAZARA4ouaie'
+					},
+					{
+					  expand: true,
+					  cwd: 'src/RAZARA4anthisnes',
+					  src: [ 'tpl/*.html'],
+					  dest: 'dist/RAZARA4anthisnes'
 					}
 				]
 			}
@@ -94,8 +120,14 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: 'src/RAZARA4ouaie/',
+						cwd: 'src/RAZARA4ouaie/locales/',
 						src: ['**/*.*'],
+						dest: 'dist/RAZARA4ouaie/locales'
+					},
+					{
+						expand: true,
+						cwd: 'src/RAZARA4ouaie/',
+						src: ['*.jpg', '*.php'],
 						dest: 'dist/RAZARA4ouaie'
 					},
 					{
@@ -118,8 +150,14 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'src/RAZARA4anthisnes/',
+						cwd: 'src/RAZARA4anthisnes/locales/',
 						src: ['**/*.*'],
+						dest: 'dist/RAZARA4anthisnes/locales'
+					},
+					{
+						expand: true,
+						cwd: 'src/RAZARA4anthisnes/',
+						src: ['*.jpg', '*.php'],
 						dest: 'dist/RAZARA4anthisnes'
 					},
 					{
@@ -149,11 +187,12 @@ module.exports = function(grunt) {
 	grunt.file.write ( 'buildNumber.json', '{ "buildNumber" : "' + grunt.config.data.pkg.buildNumber + '"}'  );
 	grunt.loadNpmTasks('grunt-eslint');
 	grunt.loadNpmTasks('grunt-rollup');
+	grunt.loadNpmTasks('grunt-terser');
 	grunt.loadNpmTasks('grunt-stylelint');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.registerTask('default', [ 'eslint', 'rollup', 'stylelint','cssmin:RAZARA4ouaie','cssmin:RAZARA4anthisnes', 'htmlmin:dist','copy']);
+	grunt.registerTask('default', [ 'eslint', 'rollup', 'terser', 'stylelint','cssmin:RAZARA4ouaie','cssmin:RAZARA4anthisnes', 'htmlmin:dist','copy']);
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
 	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version +' - build: '+ grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today("isoDateTime") +'\n' );
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');

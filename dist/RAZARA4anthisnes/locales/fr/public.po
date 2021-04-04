@@ -1,0 +1,104 @@
+msgid "cy401Text"
+msgstr "Vin nin chal, hin, vî drole!"
+
+msgid "cy403Text"
+msgstr "Ènocint catwaze moussî a sot, fåte http"
+
+msgid "cy404Text"
+msgstr "Oufti bièsse, t'es pierdou!"
+
+msgid "cyAllArchivesMenuText"
+msgstr "Le temps passé"
+
+msgid "cyAllArchivesMenuTooltip"
+msgstr "Le temps passé"
+
+msgid "cyAllArchivesPageTitle"
+msgstr "Le temps passé"
+
+msgid "cyAllCategoriesMenuText"
+msgstr "Tous les villages"
+
+msgid "cyAllCategoriesMenuTooltip"
+msgstr "Tous les villages"
+
+msgid "cyAllCategoriesPageTitle"
+msgstr "Les villages"
+
+msgid "cyAllTagsMenuText"
+msgstr "Tous les chemins et les champs"
+
+msgid "cyAllTagsMenuTooltip"
+msgstr "Tous les chemins et les champs"
+
+msgid "cyAllTagsPageTitle"
+msgstr "Les chemins et les champs"
+
+msgid "cyArchivesMenuTitle"
+msgstr "Le temps passé"
+
+msgid "cyArchivesMenuTooltip"
+msgstr "Voyagez dans le temps jusqu'en "
+
+msgid "cyCategoriesMenuTitle"
+msgstr "Les villages"
+
+msgid "cyCategoriesMenuTooltip"
+msgstr "Les villages"
+
+msgid "cyPage"
+msgstr "page"
+
+msgid "cyPagesMenuTitle"
+msgstr "Et aussi"
+
+msgid "cyPaginationHomeText"
+msgstr "Retourner à l'accueil"
+
+msgid "cyPaginationHomeTooltip"
+msgstr "Début du blog"
+
+msgid "cyPaginationNextText"
+msgstr "Photos plus récentes"
+
+msgid "cyPaginationNextTooltip"
+msgstr "Photos plus récentes"
+
+msgid "cyPaginationOf"
+msgstr "de"
+
+msgid "cyPaginationPage"
+msgstr "Page"
+
+msgid "cyPaginationPreviousText"
+msgstr "Photos plus anciennes"
+
+msgid "cyPaginationPreviousTooltip"
+msgstr "Photos plus anciennes"
+
+msgid "cyPostDateText1"
+msgstr "Photo réalisée le "
+
+msgid "cyPostDateText2"
+msgstr ", "
+
+msgid "cyPostDateText3"
+msgstr "&nbsp;heures&nbsp;"
+
+msgid "cyPostDateText4"
+msgstr "Publié le "
+
+msgid "cySiteTitlePart1"
+msgstr "anthisnes"
+
+msgid "cySiteTitlePart2"
+msgstr "●"
+
+msgid "cySiteTitlePart3"
+msgstr "org"
+
+msgid "cySiteTitleTooltip"
+msgstr "aller à l'accueil"
+
+msgid "cyTagsMenuTitle"
+msgstr "Les chemins et les champs"
