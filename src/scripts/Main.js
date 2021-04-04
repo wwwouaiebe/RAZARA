@@ -16,21 +16,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-/**
-@------------------------------------------------------------------------------------------------------------------------------
-
-@file Main.js
-@copyright Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
-@license GNU General Public License
-@private
-
-@------------------------------------------------------------------------------------------------------------------------------
-*/
-
 // imports
-import { onMailContinueButtonFRClick, onMailContinueButtonENClick } from './Mail.js';
 import { navModifier } from './Nav.js';
 import { onStartSlideShow } from './SlideShow.js';
+import { onMailContinueButtonFRClick, onMailContinueButtonENClick } from './Mail.js';
 
 // loding event handlers for mail if needed
 let mailContinueButtonFR = document.querySelector ( '#cyMailContinueButtonFR' );

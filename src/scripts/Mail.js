@@ -16,26 +16,6 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-/**
-@------------------------------------------------------------------------------------------------------------------------------
-
-@file Mail.js
-@copyright Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
-@license GNU General Public License
-@private
-
-@------------------------------------------------------------------------------------------------------------------------------
-*/
-
-/**
-@------------------------------------------------------------------------------------------------------------------------------
-
-@module Mail
-@private
-
-@------------------------------------------------------------------------------------------------------------------------------
-*/
-
 /* eslint-disable-next-line no-magic-numbers */
 const N_3M5 = 3 * 5;
 /* eslint-disable-next-line no-magic-numbers */
