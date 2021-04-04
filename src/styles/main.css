@@ -1,8 +1,53 @@
+/*
+Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
+
+This  program is free software;
+you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation;
+either version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+@file main.css
+@copyright Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
+@license GNU General Public License
+@private
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+variables for color
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
 :root {
 	--main-color: black;
 	--link-hover-color: #505050;
 	--link-color: darkred;
 }
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+fonts
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 @font-face {
 	font-family: "Ubuntu Sans";
@@ -18,6 +63,14 @@
 	font-family: "Ubuntu SansBold";
 	src: url("Ubuntu-B.ttf") format("truetype");
 }
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+styles for html elements
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 body {
 	font-family: "Ubuntu Sans";
@@ -62,40 +115,6 @@ a:hover {
 	color: var(--link-hover-color);
 }
 
-h1 > a {
-	color: var(--main-color);
-}
-
-h1 > a:hover {
-	color: var(--main-color);
-}
-
-h1 > a > span {
-	color: var(--link-color);
-}
-
-h1 > a > span:hover {
-	color: var(--link-color);
-}
-
-body > nav > h2 {
-	font-family: "Ubuntu SansNarrow";
-	font-size: 115%;
-}
-
-body > nav > p > span {
-	padding-right: 1rem;
-	white-space: nowrap;
-}
-
-body > nav > p > span > a {
-	color: var(--link-hover-color);
-}
-
-body > nav > p > span > a:hover {
-	color: var(--link-color);
-}
-
 article {
 	padding-bottom: 2rem;
 }
@@ -123,6 +142,73 @@ figcaption {
 	padding-bottom: 1rem;
 }
 
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+color overload for h1
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
+h1 > a {
+	color: var(--main-color);
+}
+
+h1 > a:hover {
+	color: var(--main-color);
+}
+
+h1 > a > span {
+	color: var(--link-color);
+}
+
+h1 > a > span:hover {
+	color: var(--link-color);
+}
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+font overload for heading in nav element
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
+body > nav > h2 {
+	font-family: "Ubuntu SansNarrow";
+	font-size: 115%;
+}
+
+body > nav > p > span {
+	padding-right: 1rem;
+	white-space: nowrap;
+}
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+color overload for links in nav element
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
+body > nav > p > span > a {
+	color: var(--link-hover-color);
+}
+
+body > nav > p > span > a:hover {
+	color: var(--link-color);
+}
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+width and height for img, depending of the orientation
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
 .cyPictureLandscape {
 	width: 100%;
 	height: 100%;
@@ -133,6 +219,14 @@ figcaption {
 	width: 50%;
 	height: 50%;
 }
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+http errors overload
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 .cyErrorHttp {
 	text-align: center;

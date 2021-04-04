@@ -1,3 +1,39 @@
+/*
+Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
+
+This  program is free software;
+you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation;
+either version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+@file SlideShow.css
+@copyright Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
+@license GNU General Public License
+@private
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+Hide all header, nav and section elements with childs
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 body.slideShow > header,
 body.slideShow > header > *,
@@ -17,6 +53,14 @@ body.slideShow > section > * > * > * {
 	visibility: hidden;
 }
 
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+Set the slide show div covering all the grid
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
 body.slideShow > div {
 	background-color: transparent;
 	grid-column: 1 / 3;
@@ -24,16 +68,56 @@ body.slideShow > div {
 	z-index: 100;
 }
 
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+Display the article centered on the screen
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
 body.slideShow > div > article {
 	max-width: 972px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+Margin for articles with a portrait or square img
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
+body.slideShow .cyPictureSquare,
+body.slideShow .cyPicturePortrait,
+body.slideShow .cyPictureSquare ~ *,
+body.slideShow .cyPicturePortrait ~ * {
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+Display the toolbar aligned on the right
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
 body.slideShow > div > div {
 	text-align: right;
 	padding-bottom: 1rem;
 }
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+Load right and left arrow cursors
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 .cyCursorLeft {
 	cursor: url(left.png) 16 16, w-resize;
@@ -43,13 +127,13 @@ body.slideShow > div > div {
 	cursor: url(right.png) 16 16, e-resize;
 }
 
-body.slideShow .cyPictureSquare,
-body.slideShow .cyPicturePortrait,
-body.slideShow .cyPictureSquare ~ *,
-body.slideShow .cyPicturePortrait ~ * {
-	margin-left: 25%;
-	margin-right: 25%;
-}
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+Display the help div
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 .cyHelpDiv {
 	position: absolute;
@@ -62,6 +146,14 @@ body.slideShow .cyPicturePortrait ~ * {
 	border-style: solid;
 	border-width: 0.1em;
 }
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+Hide the help div
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 .cyHelpDivHidden {
 	width: 0;

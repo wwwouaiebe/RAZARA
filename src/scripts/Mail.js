@@ -1,5 +1,5 @@
 /*
-Copyright - 2019 - wwwouaiebe - Contact: http//www.ouaie.be/
+Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
 
 This  program is free software;
 you can redistribute it and/or modify it under the terms of the
@@ -16,12 +16,41 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+@file Mail.js
+@copyright Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
+@license GNU General Public License
+@private
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+@module Mail
+@private
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
 /* eslint-disable-next-line no-magic-numbers */
 const N_3M5 = 3 * 5;
 /* eslint-disable-next-line no-magic-numbers */
 const N_8EXP2 = 8 ** 2;
 const ONE = 1;
 const ZERO = 0;
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+@function onMailContinueButtonFRClick
+@desc event listener for mouse click on the ContinueFR button.
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 function onMailContinueButtonFRClick ( ) {
 	if ( N_8EXP2 + N_3M5 === Number.parseInt ( document.getElementById ( 'cyNumberFR' ).value ) ) {
@@ -54,6 +83,15 @@ function onMailContinueButtonFRClick ( ) {
 	document.getElementById ( 'cyMailContinueButtonEN' ).style.visibility = 'hidden';
 }
 
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+@function onMailContinueButtonENClick
+@desc event listener for mouse click on the ContinueEN button.
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
 function onMailContinueButtonENClick ( ) {
 	if ( N_8EXP2 + N_3M5 === Number.parseInt ( document.getElementById ( 'cyNumberEN' ).value ) ) {
 		let addr = document.querySelector ( '#cyMailContinueButtonEN' ).getAttribute ( 'name' ) +
@@ -85,4 +123,25 @@ function onMailContinueButtonENClick ( ) {
 	document.getElementById ( 'cyMailContinueButtonEN' ).style.visibility = 'hidden';
 }
 
-export { onMailContinueButtonFRClick, onMailContinueButtonENClick };
+export {
+
+	/**
+	@--------------------------------------------------------------------------------------------------------------------------
+
+	@desc event listener for mouse click on the ContinueFR button.
+
+	@--------------------------------------------------------------------------------------------------------------------------
+	*/
+
+	onMailContinueButtonFRClick,
+
+	/**
+	@--------------------------------------------------------------------------------------------------------------------------
+
+	@desc event listener for mouse click on the ContinueEN button.
+
+	@--------------------------------------------------------------------------------------------------------------------------
+	*/
+
+	onMailContinueButtonENClick
+};
