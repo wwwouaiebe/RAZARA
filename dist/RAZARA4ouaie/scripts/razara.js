@@ -128,6 +128,7 @@
 	let myTimerId = null;
 	let myClonedArticle = null;
 	let	myArticleClientRect = null;
+	let myHelpDiv = null;
 
 	let mySlideShow = {
 		active : false,
@@ -284,6 +285,15 @@
 		}
 	}
 
+	function myOnMouseEnterHelpButton ( mouseEnterEvent ) {
+		myHelpDiv.style.right = ( document.documentElement.clientWidth - mouseEnterEvent.clientX ) + 'px';
+		myHelpDiv.classList.remove ( 'cyHelpDivHidden' );
+	}
+
+	function myOnMouseLeaveHelpButton ( ) {
+		myHelpDiv.classList.add ( 'cyHelpDivHidden' );
+	}
+
 	function onStartSlideShow ( ) {
 		document.removeEventListener ( 'keydown', myOnKeyDown, true );
 		document.addEventListener ( 'keydown', myOnKeyDown, true );
@@ -293,20 +303,29 @@
 
 		let toolbarDiv = document.createElement ( 'div' );
 		myBackgroundDiv.appendChild ( toolbarDiv );
+
 		let helpButton = document.createElement ( 'span' );
 		helpButton.innerText = '❔ ';
-		helpButton.title =
+		helpButton.addEventListener ( 'mouseenter', myOnMouseEnterHelpButton, true );
+		helpButton.addEventListener ( 'mouseleave', myOnMouseLeaveHelpButton, true );
+		toolbarDiv.appendChild ( helpButton );
+
+		let closeButton = document.createElement ( 'span' );
+		closeButton.innerText = '❌';
+		closeButton.addEventListener ( 'click', myCloseSlideShow );
+		toolbarDiv.appendChild ( closeButton );
+
+		myHelpDiv = document.createElement ( 'div' );
+		myHelpDiv.innerText =
 			'Touche ⮞ : passer à la photo suivante' +
 			'\nTouche ⮜ : passer à la photo précédente' +
 			'\nTouche - : diminuer le temps de vision' +
 			'\nTouche + : augmenter le temps de vision' +
 			'\nTouches S ou s : arrêter ou relancer le diaporama' +
 			'\nTouche Esc : fermer le diaporama';
-		toolbarDiv.appendChild ( helpButton );
-		let closeButton = document.createElement ( 'span' );
-		closeButton.innerText = '❌';
-		closeButton.addEventListener ( 'click', myCloseSlideShow );
-		toolbarDiv.appendChild ( closeButton );
+		myHelpDiv.classList.add ( 'cyHelpDiv' );
+		myHelpDiv.classList.add ( 'cyHelpDivHidden' );
+		toolbarDiv.appendChild ( myHelpDiv );
 
 		myArticles = document.querySelectorAll ( 'section > article' );
 		myArticleIndex = mySlideShow.forward ? INVALID_INDEX : myArticles.length;
