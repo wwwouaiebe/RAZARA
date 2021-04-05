@@ -68,7 +68,7 @@ ul {
 	background: transparent;
 	box-sizing: border-box;
 	text-decoration: none;
-	color: var(--main-color);
+	color: black /* var(--main-color) */;
 }
 
 body {

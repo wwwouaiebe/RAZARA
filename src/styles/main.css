@@ -35,11 +35,13 @@ variables for color
 @------------------------------------------------------------------------------------------------------------------------------
 */
 
+/*
 :root {
 	--main-color: black;
 	--link-hover-color: #505050;
 	--link-color: darkred;
 }
+*/
 
 /**
 @------------------------------------------------------------------------------------------------------------------------------
@@ -57,11 +59,6 @@ fonts
 @font-face {
 	font-family: "Ubuntu SansNarrow";
 	src: url("Ubuntu-C.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "Ubuntu SansBold";
-	src: url("Ubuntu-B.ttf") format("truetype");
 }
 
 /**
@@ -108,11 +105,11 @@ h6 {
 }
 
 a {
-	color: var(--link-color);
+	color: darkred /* var(--link-color) */;
 }
 
 a:hover {
-	color: var(--link-hover-color);
+	color: #505050 /* var(--link-hover-color) */;
 }
 
 article {
@@ -152,28 +149,20 @@ color overload for h1
 */
 
 h1 > a {
-	color: var(--main-color);
+	color: black /* var(--main-color) */;
 }
 
 h1 > a:hover {
-	color: var(--main-color);
+	color: black /* var(--main-color) */;
 }
 
 h1 > a > span {
-	color: var(--link-color);
+	color: darkred /* var(--link-color) */;
 }
 
 h1 > a > span:hover {
-	color: var(--link-color);
+	color: darkred;
 }
-
-/**
-@------------------------------------------------------------------------------------------------------------------------------
-
-font overload for heading in nav element
-
-@------------------------------------------------------------------------------------------------------------------------------
-*/
 
 body > nav > h2 {
 	font-family: "Ubuntu SansNarrow";
@@ -194,11 +183,11 @@ color overload for links in nav element
 */
 
 body > nav > p > span > a {
-	color: var(--link-hover-color);
+	color: #505050 /* var(--link-hover-color) */;
 }
 
 body > nav > p > span > a:hover {
-	color: var(--link-color);
+	color: darkred /* var(--link-color) */;
 }
 
 /**
