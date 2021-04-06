@@ -255,7 +255,7 @@
 			// next article not found. Searching another page ( next or previous depending of the
 			// slide show direction
 			let paginationLink = document.querySelector (
-				mySlideShow.forward ? '#cyPaginationPrevious > a' : '#cyPaginationNext > a' );
+				mySlideShow.forward ? '#cyPaginationOldest > a' : '#cyPaginationNewest > a' );
 			if ( paginationLink ) {
 				sessionStorage.setItem ( 'slideShow', JSON.stringify ( mySlideShow ) );
 				paginationLink.click ( );

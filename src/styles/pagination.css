@@ -40,6 +40,7 @@ grid for the pagination div
 	grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;
 	grid-column-gap: 1rem;
 	grid-row-gap: 1rem;
+	text-align: center;
 }
 
 #cyPaginationTopArrow {
@@ -47,7 +48,6 @@ grid for the pagination div
 	grid-column-end: 4;
 	grid-row-start: 1;
 	grid-row-end: 2;
-	text-align: center;
 }
 
 #cyPaginationTop {
@@ -55,25 +55,22 @@ grid for the pagination div
 	grid-column-end: 4;
 	grid-row-start: 2;
 	grid-row-end: 3;
-	text-align: center;
 }
 
-#cyPaginationNextArrow {
+#cyPaginationNewestArrow {
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 3;
 	grid-row-end: 4;
-	text-align: right;
 	margin-top: auto;
 	margin-bottom: auto;
 }
 
-#cyPaginationNext {
+#cyPaginationNewest {
 	grid-column-start: 2;
 	grid-column-end: 3;
 	grid-row-start: 3;
 	grid-row-end: 4;
-	text-align: left;
 }
 
 #cyPaginationSlideShow {
@@ -81,23 +78,22 @@ grid for the pagination div
 	grid-column-end: 4;
 	grid-row-start: 3;
 	grid-row-end: 4;
-	text-align: center;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
-#cyPaginationPrevious {
+#cyPaginationOldest {
 	grid-column-start: 4;
 	grid-column-end: 5;
 	grid-row-start: 3;
 	grid-row-end: 4;
-	text-align: right;
 }
 
-#cyPaginationPreviousArrow {
+#cyPaginationOldestArrow {
 	grid-column-start: 5;
 	grid-column-end: 6;
 	grid-row-start: 3;
 	grid-row-end: 4;
-	text-align: left;
 	margin-top: auto;
 	margin-bottom: auto;
 }
@@ -107,5 +103,4 @@ grid for the pagination div
 	grid-column-end: 4;
 	grid-row-start: 4;
 	grid-row-end: 5;
-	text-align: center;
 }
