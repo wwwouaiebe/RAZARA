@@ -20,7 +20,7 @@ msgid "cyAllCategoriesMenuText"
 msgstr "Tous les villages"
 
 msgid "cyAllCategoriesMenuTooltip"
-msgstr "Tous les villages"
+msgstr "Visitez tous les villages"
 
 msgid "cyAllCategoriesPageTitle"
 msgstr "Les villages"
@@ -29,7 +29,7 @@ msgid "cyAllTagsMenuText"
 msgstr "Tous les chemins et les champs"
 
 msgid "cyAllTagsMenuTooltip"
-msgstr "Tous les chemins et les champs"
+msgstr "Parcourez tous les chemins et champs"
 
 msgid "cyAllTagsPageTitle"
 msgstr "Les chemins et les champs"
@@ -44,7 +44,7 @@ msgid "cyCategoriesMenuTitle"
 msgstr "Les villages"
 
 msgid "cyCategoriesMenuTooltip"
-msgstr "Les villages"
+msgstr "Les villages "
 
 msgid "cyPage"
 msgstr "page"
@@ -56,7 +56,7 @@ msgid "cyPaginationHomeText"
 msgstr "Retourner à l'accueil"
 
 msgid "cyPaginationHomeTooltip"
-msgstr "Début du blog"
+msgstr "Retourner à l'accueil"
 
 msgid "cyPaginationNewestText"
 msgstr "Photos plus récentes"
@@ -102,3 +102,11 @@ msgstr "aller à l'accueil"
 
 msgid "cyTagsMenuTitle"
 msgstr "Les chemins et les champs"
+
+msgid "cyTagMenuTooltip"
+msgstr "Parcourez les chemins et les champs: "
+
+msgid "cyTagTooltip"
+msgstr "Parcourez les chemins et les champs: "
+
+
