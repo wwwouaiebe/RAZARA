@@ -6,6 +6,7 @@
 		<meta name='dc.title' lang='{{tpl:BlogLanguage}}' content='{{tpl:BlogName encode_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang cyPage}} {{tpl:PaginationCurrent}}</tpl:PaginationIf>' />
 		<title>{{tpl:BlogName encode_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang cyPage}} {{tpl:PaginationCurrent}}</tpl:PaginationIf></title>
 		<meta name='description' lang='{{tpl:BlogLanguage}}' content='{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}} - {{tpl:lang cyPage}} {{tpl:PaginationCurrent}}' />
+		<tpl:PaginationIf end="0"><link rel='next' href='{{tpl:PaginationURL offset="+1"}}' /></tpl:PaginationIf>
 	</head>
 	<body>
 		{{tpl:include src="_header.html"}}
