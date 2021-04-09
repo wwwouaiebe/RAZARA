@@ -105,3 +105,7 @@ msgstr "aller à l'accueil"
 
 msgid "cyTagsMenuTitle"
 msgstr "Les séries"
+
+msgid "cyTagTooltip"
+msgstr "Parcourez la série: "
+

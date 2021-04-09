@@ -269,6 +269,7 @@
 
 		// always restarting in the forward direction
 		mySlideShow.forward = true;
+		sessionStorage.setItem ( 'slideShow', JSON.stringify ( mySlideShow ) );
 	}
 
 	/**
@@ -418,6 +419,7 @@
 	let slideShowElement = document.querySelector ( '#cyPaginationSlideShow > a' );
 	if ( slideShowElement ) {
 		slideShowElement.textContent = 'Diaporama slideshow';
+		slideShowElement.title = 'Lancer le diaporama';
 	}
 
 	// reading the session storage and loading the slide show if needed
