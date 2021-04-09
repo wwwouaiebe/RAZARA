@@ -35,6 +35,8 @@
 								{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
 							</p>
 						</tpl:EntryIf>
+
+						<!-- post avec categorie -->
 						<tpl:EntryIf has_category="1">
 							<p>
 								<!-- categorie avec fil d'Ariane -->
@@ -67,7 +69,7 @@
 								<tpl:EntryCategoriesBreadcrumb>
 								{{tpl:CategoryTitle encode_html="1"}},
 								</tpl:EntryCategoriesBreadcrumb>
-								<a href='{{tpl:EntryCategoryURL}}' title='{{tpl:EntryCategoryDescription remove_html="1"}}' >{{tpl:EntryCategory}}</a>,
+								<a href='{{tpl:EntryCategoryURL}}' title='<tpl:SysIf has_tpl="_ouaie.html">{{tpl:EntryCategory}}</tpl:SysIf><tpl:SysIf has_tpl="_anthisnes.html">{{tpl:EntryCategoryDescription remove_html="1"}}</tpl:SysIf>' >{{tpl:EntryCategory}}</a>,
 
 								<!-- tag si anthisnes.org -->
 								<tpl:SysIf has_tpl="_anthisnes.html">

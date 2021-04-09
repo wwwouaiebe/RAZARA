@@ -70,7 +70,7 @@ styles for html elements
 */
 
 body {
-	font-family: "Ubuntu Sans";
+	font-family: "Ubuntu Sans", Helvetica, Arial, sans-serif;
 	display: grid;
 	padding: 1rem;
 	margin-left: auto;
@@ -100,7 +100,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Ubuntu SansNarrow";
+	font-family: "Ubuntu SansNarrow", Helvetica, Arial, sans-serif;
 	padding-bottom: 1rem;
 }
 
@@ -165,7 +165,7 @@ h1 > a > span:hover {
 }
 
 body > nav > h2 {
-	font-family: "Ubuntu SansNarrow";
+	font-family: "Ubuntu SansNarrow", Helvetica, Arial, sans-serif;
 	font-size: 115%;
 }
 
@@ -188,6 +188,10 @@ body > nav > p > span > a {
 
 body > nav > p > span > a:hover {
 	color: darkred /* var(--link-color) */;
+}
+
+body > section > h2::first-letter {
+	text-transform: capitalize;
 }
 
 /**

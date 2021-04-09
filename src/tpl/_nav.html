@@ -26,20 +26,11 @@
 	</p>
 	<h2>{{tpl:lang cyTagsMenuTitle}}</h2>
 	<p>
-		<tpl:SysIf has_tpl="_ouaie.html">
-			<tpl:Tags>
-				<span>
-					<a href="{{tpl:TagURL}}" title ="{{tpl:TagID}}">{{tpl:TagID}}</a>
-				</span>
-			</tpl:Tags>
-		</tpl:SysIf>
-		<tpl:SysIf has_tpl="_anthisnes.html">
-			<tpl:Tags>
-				<span>
-					<a href="{{tpl:TagURL}}" title ="{{tpl:lang cyTagMenuTooltip}}{{tpl:TagID}}">{{tpl:TagID}}</a>
-				</span>
-			</tpl:Tags>
-		</tpl:SysIf>
+		<tpl:Tags>
+			<span>
+				<a href="{{tpl:TagURL}}" title ="{{tpl:lang cyTagMenuTooltip}}{{tpl:TagID}}">{{tpl:TagID}}</a>
+			</span>
+		</tpl:Tags>
 		<span> 
 			<a href="{{tpl:BlogURL}}tags" title="{{tpl:lang cyAllTagsMenuTooltip}}">{{tpl:lang cyAllTagsMenuText}}</a>
 		</span>

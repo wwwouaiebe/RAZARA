@@ -104,9 +104,9 @@ msgid "cyTagsMenuTitle"
 msgstr "Les chemins et les champs"
 
 msgid "cyTagMenuTooltip"
-msgstr "Parcourez les chemins et les champs: "
+msgstr "Parcourez les chemins et les champs : "
 
 msgid "cyTagTooltip"
-msgstr "Parcourez les chemins et les champs: "
+msgstr "Parcourez les chemins et les champs : "
 
 
