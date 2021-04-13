@@ -70,12 +70,12 @@ module.exports = function(grunt) {
 			},
 			RAZARA4ouaie: {
 				files: {
-					'dist/RAZARA4ouaie/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css','src/styles/SlideShow.css']
+					'dist/RAZARA4ouaie/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css','src/styles/mouse.css','src/styles/SlideShow.css']
 				}
 			},
 			RAZARA4anthisnes: {
 				files: {
-					'dist/RAZARA4anthisnes/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css','src/styles/SlideShow.css']
+					'dist/RAZARA4anthisnes/styles/razara.min.css': ['src/styles/reset.css', 'src/styles/main.css','src/styles/pagination.css','src/styles/bigScreen.css','src/styles/mouse.css','src/styles/SlideShow.css']
 				}
 			}
 		},
