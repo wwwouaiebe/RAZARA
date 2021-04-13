@@ -203,9 +203,10 @@ function myShowNextArticle ( ) {
 		}
 	}
 
+	sessionStorage.setItem ( 'slideShow', JSON.stringify ( mySlideShow ) );
+
 	// always restarting in the forward direction
 	mySlideShow.forward = true;
-	sessionStorage.setItem ( 'slideShow', JSON.stringify ( mySlideShow ) );
 }
 
 /**
