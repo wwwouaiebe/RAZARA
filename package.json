@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "dotclear theme",
   "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-htmlmin": "^3.1.0",
-    "grunt-eslint": "^23.0.0",
-    "grunt-rollup": "^11.2.0",
-    "grunt-stylelint": "^0.15.0",
-    "grunt-terser": "^1.0.0",
-    "stylelint": "^13.6.1",
-    "stylelint-config-standard": "^20.0.0"
+    "grunt": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-htmlmin": "latest",
+    "grunt-eslint": "latest",
+    "grunt-rollup": "latest",
+    "grunt-stylelint": "latest",
+    "grunt-terser": "latest",
+    "stylelint": "latest",
+    "stylelint-config-standard": "latest",
+    "terser": "latest"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
