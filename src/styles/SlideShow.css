@@ -120,11 +120,11 @@ Load right and left arrow cursors
 */
 
 .cyCursorLeft {
-	cursor: url(left.png) 16 16, w-resize;
+	cursor: url("left.png") 16 16, w-resize;
 }
 
 .cyCursorRight {
-	cursor: url(right.png) 16 16, e-resize;
+	cursor: url("right.png") 16 16, e-resize;
 }
 
 /**

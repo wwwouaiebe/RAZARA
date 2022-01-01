@@ -16,7 +16,8 @@
     "terser": "latest"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "debug" : "node node_modules/grunt/bin/grunt",
+    "release" : "node node_modules/grunt/bin/grunt"
   },
   "repository": {
     "type": "git",

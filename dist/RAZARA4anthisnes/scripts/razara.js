@@ -572,4 +572,4 @@
 	// modifying the nav tag
 	navModifier ( );
 
-}());
+})();
