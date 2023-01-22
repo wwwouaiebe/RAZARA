@@ -1,36 +1,26 @@
 <nav>
-	<h2>{{tpl:lang cyCategoriesMenuTitle}}</h2>
+	<h2><a href='{{tpl:BlogURL}}' title='{{tpl:lang cyCategoriesMenuTooltip}}' >{{tpl:lang cyCategoriesMenuTitle}}</a></h2>
 	<p>
+		<tpl:Categories level="1">
+			<span>
+				<a href='{{tpl:CategoryURL}}' title ='{{tpl:CategoryDescription encode_html="1" remove_html="1"}}'>{{tpl:CategoryTitle}}</a>
+			</span>
+		</tpl:Categories>
 		<tpl:SysIf has_tpl="_ouaie.html">
-			<tpl:Categories level="1">
-				<span>
-					{{tpl:CategoryTitle}}
-				</span>
-				<tpl:CategoryFirstChildren>
-				<span>
-					<a href="{{tpl:CategoryURL}}" title ="{{tpl:CategoryTitle}}">{{tpl:CategoryTitle}}</a>
-				</span>
-				</tpl:CategoryFirstChildren>
-			</tpl:Categories>
-		</tpl:SysIf>
-		<tpl:SysIf has_tpl="_anthisnes.html">
-			<tpl:Categories level="1">
-				<span>
-					<a href='{{tpl:CategoryURL}}' title ='{{tpl:CategoryDescription encode_html="1" remove_html="1"}}'>{{tpl:CategoryTitle}}</a>
-				</span>
-			</tpl:Categories>
 		</tpl:SysIf>
 	</p>
-	<tpl:SysIf has_tpl="_nav_menu.html">
-		<h2>{{tpl:lang cyPagesMenuTitle}}</h2>
+	<tpl:SysIf has_tpl="_ouaie.html">
+		<h2>{{tpl:lang cyTagsMenuTitle}}</h2>
 		<p>
+			<tpl:Tags>
+				<span>
+					<a href="{{tpl:TagURL}}" title ="{{tpl:lang cyTagMenuTooltip}}{{tpl:TagID}}">{{tpl:TagID}}</a>
+				</span>
+			</tpl:Tags>
 			<span> 
-				<a href="{{tpl:BlogURL}}categories" title="{{tpl:lang cyAllCategoriesMenuTooltip}}">{{tpl:lang cyAllCategoriesMenuText}}</a>
+				<a href="{{tpl:BlogURL}}tags" title="{{tpl:lang cyAllTagsMenuTooltip}}">{{tpl:lang cyAllTagsMenuText}}</a>
 			</span>
-			<span> 
-				<a href="{{tpl:BlogURL}}archive" title="{{tpl:lang cyAllArchivesMenuTooltip}}">{{tpl:lang cyAllArchivesMenuText}}</a>
-			</span>
-			{{tpl:include src="_nav_menu.html"}}
 		</p>
 	</tpl:SysIf>
+	{{tpl:include src="_nav_menu.html"}}
 </nav>

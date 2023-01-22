@@ -17,7 +17,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 // imports
-import { navModifier } from './Nav.js';
 import { onStartSlideShow } from './SlideShow.js';
 import { onMailContinueButtonFRClick, onMailContinueButtonENClick } from './Mail.js';
 
@@ -37,6 +36,3 @@ let paginationSlideShow = document.querySelector ( '#cyPaginationSlideShow' );
 if ( paginationSlideShow ) {
 	paginationSlideShow.addEventListener ( 'click', onStartSlideShow );
 }
-
-// modifying the nav tag
-navModifier ( );
