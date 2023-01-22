@@ -1,15 +1,15 @@
 <nav>
 	<h2>
-		<a href="{{tpl:BlogURL}}" >{{tpl:lang cyCategoriesMenuTitle}}</a> #
+		<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyCategoriesMenuTooltip}}' >{{tpl:lang cyCategoriesMenuTitle}}</a> #
 		<tpl:CategoryParents>
-			<a href="{{tpl:CategoryURL}}" >{{tpl:CategoryTitle}}</a> #
+			<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}' >{{tpl:CategoryTitle}}</a> #
 		</tpl:CategoryParents>
-		<a href="{{tpl:CategoryURL}}" >{{tpl:CategoryTitle}}</a>
+		<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}' >{{tpl:CategoryTitle}}</a>
 	</h2>
 	<p>
 		<tpl:CategoryFirstChildren>
 			<span>
-				<a href="{{tpl:CategoryURL}}" title ="{{tpl:CategoryTitle}}">{{tpl:CategoryTitle}}</a>
+				<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}'>{{tpl:CategoryTitle}}</a>
 			</span>
 		</tpl:CategoryFirstChildren>
 	</p>
@@ -17,10 +17,10 @@
 		<h2>{{tpl:lang cyPagesMenuTitle}}</h2>
 		<p>
 			<span> 
-				<a href="{{tpl:BlogURL}}categories" title="{{tpl:lang cyAllCategoriesMenuTooltip}}">{{tpl:lang cyAllCategoriesMenuText}}</a>
+				<a href='{{tpl:BlogURL}}categories' title='{{tpl:lang cyAllCategoriesMenuTooltip}}'>{{tpl:lang cyAllCategoriesMenuText}}</a>
 			</span>
 			<span> 
-				<a href="{{tpl:BlogURL}}archive" title="{{tpl:lang cyAllArchivesMenuTooltip}}">{{tpl:lang cyAllArchivesMenuText}}</a>
+				<a href='{{tpl:BlogURL}}archive' title='{{tpl:lang cyAllArchivesMenuTooltip}}'>{{tpl:lang cyAllArchivesMenuText}}</a>
 			</span>
 			{{tpl:include src="_nav_menu.html"}}
 		</p>
