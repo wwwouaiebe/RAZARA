@@ -33,6 +33,8 @@ const ZERO = 0;
 */
 
 function onMailContinueButtonFRClick ( ) {
+
+	// Vous ne comprenez rien? Normal, c'est fait pour...
 	if ( N_8EXP2 + N_3M5 === Number.parseInt ( document.getElementById ( 'cyNumberFR' ).value ) ) {
 		let addr = document.querySelector ( '#cyMailContinueButtonFR' ).getAttribute ( 'name' ) +
 			String.fromCharCode ( N_8EXP2 ) +
