@@ -41,19 +41,9 @@
 							<p>
 								<!-- categorie avec fil d'Ariane -->
 								<tpl:EntryCategoriesBreadcrumb>
-								{{tpl:CategoryTitle encode_html="1"}},
+									<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}'>{{tpl:CategoryTitle encode_html="1"}}</a>,
 								</tpl:EntryCategoriesBreadcrumb>
 								<a href='{{tpl:EntryCategoryURL}}' title='{{tpl:EntryCategoryDescription remove_html="1"}}' >{{tpl:EntryCategory}}</a>,
-
-								<!-- tag si anthisnes.org -->
-								<tpl:SysIf has_tpl="_anthisnes.html">
-									<tpl:EntryTags>
-										<tpl:TagsHeader></tpl:TagsHeader>
-											<a href='{{tpl:TagURL}}' title='{{tpl:lang cyTagTooltip}}{{tpl:TagID}}' >{{tpl:TagID}}</a>
-										<tpl:TagsFooter>, </tpl:TagsFooter>
-									</tpl:EntryTags>
-								</tpl:SysIf>						  
-
 								<!-- date et heure du post -->
 								{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
 							</p>
@@ -67,18 +57,9 @@
 							<!-- categorie avec fil d'Ariane -->
 							<tpl:EntryIf has_category="1">
 								<tpl:EntryCategoriesBreadcrumb>
-								{{tpl:CategoryTitle encode_html="1"}},
+									<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}'>{{tpl:CategoryTitle encode_html="1"}}</a>,
 								</tpl:EntryCategoriesBreadcrumb>
 								<a href='{{tpl:EntryCategoryURL}}' title='<tpl:SysIf has_tpl="_ouaie.html">{{tpl:EntryCategory}}</tpl:SysIf><tpl:SysIf has_tpl="_anthisnes.html">{{tpl:EntryCategoryDescription remove_html="1"}}</tpl:SysIf>' >{{tpl:EntryCategory}}</a>,
-
-								<!-- tag si anthisnes.org -->
-								<tpl:SysIf has_tpl="_anthisnes.html">
-									<tpl:EntryTags>
-										<tpl:TagsHeader></tpl:TagsHeader>
-											<a href='{{tpl:TagURL}}' title='{{tpl:lang cyTagTooltip}}{{tpl:TagID}}' >{{tpl:TagID}}</a>
-										<tpl:TagsFooter>, </tpl:TagsFooter>
-									</tpl:EntryTags>
-								</tpl:SysIf>						  
 							</tpl:EntryIf>
 
 							<!-- date et heure du media -->
