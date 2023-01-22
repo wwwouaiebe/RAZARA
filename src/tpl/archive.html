@@ -13,7 +13,9 @@
 			<tpl:Archives type="month">
 				<h2>{{tpl:ArchiveDate format="%B %Y"}}</h2>
 				<p>
-					{{tpl:include src="_thumbnails.html"}}
+					<tpl:Entries lastn="1000" ignore_pagination="1" type="post">
+						{{tpl:include src="_thumbnails.html"}}
+					</tpl:Entries>
 				</p>
 			</tpl:Archives>
 			<div id="cyPagination">

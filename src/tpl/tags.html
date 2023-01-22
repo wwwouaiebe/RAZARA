@@ -13,7 +13,9 @@
 			<tpl:Tags type="tag">
 				<h2>{{tpl:TagID}}</h2>
 				<p>
-					{{tpl:include src="_thumbnails.html"}}
+					<tpl:Entries lastn="1000" ignore_pagination="1" type="post">
+						{{tpl:include src="_thumbnails.html"}}
+					</tpl:Entries>
 				</p>
 			</tpl:Tags>
 			<div id="cyPagination">
