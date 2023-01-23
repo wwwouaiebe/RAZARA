@@ -1,18 +1,39 @@
 <nav>
-	<h2>
+	<!--h2>
 		<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyCategoriesMenuTooltip}}' >{{tpl:lang cyCategoriesMenuTitle}}</a> ⮞
 		<tpl:CategoryParents>
 			<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}' >{{tpl:CategoryTitle}}</a> ⮞
 		</tpl:CategoryParents>
 		<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}' >{{tpl:CategoryTitle}}</a>
-	</h2>
-	<p>
+	</h2-->
+	<!--p>
 		<tpl:CategoryFirstChildren>
 			<span>
 				<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}'>{{tpl:CategoryTitle}}</a>
 			</span>
 		</tpl:CategoryFirstChildren>
+	</p-->
+	<p>
+		Vous êtes à 
+		<tpl:CategoryParents>
+			<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}' >{{tpl:CategoryTitle}}</a>,
+		</tpl:CategoryParents>
+		<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}' >{{tpl:CategoryTitle}}</a>
 	</p>
+	<tpl:CategoryFirstChildren>
+		<tpl:CategoriesHeader>
+			<p>Les chemins et les champs :
+		</tpl:CategoriesHeader>
+		<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}' >{{tpl:CategoryTitle}}</a>
+		<tpl:CategoriesFooter>
+			</p>
+		</tpl:CategoriesFooter>
+	</tpl:CategoryFirstChildren>
+	<tpl:CategoryParents>
+		<p>Retourner à <a href='{{tpl:CategoryURL}}'>{{tpl:CategoryTitle}}</a></p>
+	</tpl:CategoryParents>
+	<p>Retourner <a href='{{tpl:BlogURL}}'>aux villages</a></p>
+
 	<tpl:SysIf has_tpl="_ouaie.html">
 		<h2>{{tpl:lang cyTagsMenuTitle}}</h2>
 		<p>
