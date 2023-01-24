@@ -114,6 +114,36 @@ module.exports = function ( grunt ) {
 				]
 			}
 		},
+		htmlcleancompress : {
+			anthisnes : {
+				options : {
+					clean : true,
+					src : 'src/tpl',
+					dest : 'dist/RAZARA4anthisnes/tpl'
+				}
+			},
+			ouaie : {
+				options : {
+					clean : true,
+					src : 'src/tpl',
+					dest : 'dist/RAZARA4ouaie/tpl'
+				}
+			},
+			anthisnesOnly : {
+				options : {
+					clean : false,
+					src : 'src/RAZARA4anthisnes/tpl',
+					dest : 'dist/RAZARA4anthisnes/tpl'
+				}
+			},
+			ouaieOnly : {
+				options : {
+					clean : false,
+					src : 'src/RAZARA4ouaie/tpl',
+					dest : 'dist/RAZARA4ouaie/tpl'
+				}
+			}
+		},
 		copy : {
 			main : {
 				files : [
@@ -190,9 +220,10 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks ( 'grunt-stylelint' );
 	grunt.loadNpmTasks ( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks ( 'grunt-contrib-htmlmin' );
+	grunt.loadNpmTasks ( 'grunt-htmlcleancompress' );
 	grunt.loadNpmTasks ( 'grunt-contrib-copy' );
-	grunt.registerTask ( 'default', [ 'eslint', 'rollup', 'terser', 'stylelint', 'cssmin:RAZARA4ouaie', 'cssmin:RAZARA4anthisnes', 'htmlmin:dist', 'copy' ] );
+	grunt.registerTask ( 'default', [ 'eslint', 'rollup', 'terser', 'stylelint', 'cssmin:RAZARA4ouaie', 'cssmin:RAZARA4anthisnes', 'htmlcleancompress', 'copy' ] );
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------' );
 	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version + ' - build: ' + grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today ( 'isoDateTime' ) + '\n' );
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------' );
-};
+}

@@ -10,6 +10,7 @@
     "grunt-eslint": "latest",
     "grunt-rollup": "latest",
     "grunt-stylelint": "latest",
+    "grunt-htmlcleancompress": "latest",
     "grunt-terser": "latest",
     "stylelint": "latest",
     "stylelint-config-standard": "latest",
