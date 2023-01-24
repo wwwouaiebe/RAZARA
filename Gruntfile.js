@@ -1,3 +1,5 @@
+/* eslint-disable no-magic-numbers */
+// eslint-disable-next-line no-undef
 module.exports = function ( grunt ) {
 	let banner =
 		'/**\n * ' +
@@ -69,49 +71,29 @@ module.exports = function ( grunt ) {
 			},
 			RAZARA4ouaie : {
 				files : {
-					'dist/RAZARA4ouaie/styles/razara.min.css' : [ 'src/styles/reset.css', 'src/styles/main.css', 'src/styles/pagination.css', 'src/styles/bigScreen.css', 'src/styles/mouse.css', 'src/styles/SlideShow.css' ]
+					'dist/RAZARA4ouaie/styles/razara.min.css' :
+					[
+						'src/styles/reset.css',
+						'src/styles/main.css',
+						'src/styles/pagination.css',
+						'src/styles/bigScreen.css',
+						'src/styles/mouse.css',
+						'src/styles/SlideShow.css'
+					]
 				}
 			},
 			RAZARA4anthisnes : {
 				files : {
-					'dist/RAZARA4anthisnes/styles/razara.min.css' : [ 'src/styles/reset.css', 'src/styles/main.css', 'src/styles/pagination.css', 'src/styles/bigScreen.css', 'src/styles/mouse.css', 'src/styles/SlideShow.css' ]
+					'dist/RAZARA4anthisnes/styles/razara.min.css' :
+					[
+						'src/styles/reset.css',
+						'src/styles/main.css',
+						'src/styles/pagination.css',
+						'src/styles/bigScreen.css',
+						'src/styles/mouse.css',
+						'src/styles/SlideShow.css'
+					]
 				}
-			}
-		},
-		htmlmin : {
-			dist : {
-				options : {
-					removeComments : true,
-					collapseWhitespace : true,
-					conservativeCollapse : true,
-					caseSensitive : true
-				},
-				files : [
-					{
-						expand : true,
-						cwd : 'src',
-						src : [ 'tpl/*.html' ],
-						dest : 'dist/RAZARA4ouaie'
-					},
-					{
-						expand : true,
-						cwd : 'src',
-						src : [ 'tpl/*.html' ],
-						dest : 'dist/RAZARA4anthisnes'
-					},
-					{
-						expand : true,
-						cwd : 'src/RAZARA4ouaie',
-						src : [ 'tpl/*.html' ],
-						dest : 'dist/RAZARA4ouaie'
-					},
-					{
-						expand : true,
-						cwd : 'src/RAZARA4anthisnes',
-						src : [ 'tpl/*.html' ],
-						dest : 'dist/RAZARA4anthisnes'
-					}
-				]
 			}
 		},
 		htmlcleancompress : {
@@ -212,18 +194,37 @@ module.exports = function ( grunt ) {
 		}
 	} );
 	grunt.config.data.pkg.buildNumber = grunt.file.readJSON ( 'buildNumber.json' ).buildNumber;
-	grunt.config.data.pkg.buildNumber = ( '00000' + ( Number.parseInt ( grunt.config.data.pkg.buildNumber ) + 1 ) ).substr ( -5, 5 );
+	grunt.config.data.pkg.buildNumber =
+		( '00000' + ( Number.parseInt ( grunt.config.data.pkg.buildNumber ) + 1 ) ).slice ( -5 );
 	grunt.file.write ( 'buildNumber.json', '{ "buildNumber" : "' + grunt.config.data.pkg.buildNumber + '"}' );
 	grunt.loadNpmTasks ( 'grunt-eslint' );
 	grunt.loadNpmTasks ( 'grunt-rollup' );
 	grunt.loadNpmTasks ( 'grunt-terser' );
 	grunt.loadNpmTasks ( 'grunt-stylelint' );
 	grunt.loadNpmTasks ( 'grunt-contrib-cssmin' );
-	grunt.loadNpmTasks ( 'grunt-contrib-htmlmin' );
 	grunt.loadNpmTasks ( 'grunt-htmlcleancompress' );
 	grunt.loadNpmTasks ( 'grunt-contrib-copy' );
-	grunt.registerTask ( 'default', [ 'eslint', 'rollup', 'terser', 'stylelint', 'cssmin:RAZARA4ouaie', 'cssmin:RAZARA4anthisnes', 'htmlcleancompress', 'copy' ] );
-	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------' );
-	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version + ' - build: ' + grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today ( 'isoDateTime' ) + '\n' );
-	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------' );
-}
+	grunt.registerTask (
+		'default',
+		[
+			'eslint',
+			'rollup',
+			'terser',
+			'stylelint',
+			'cssmin:RAZARA4ouaie',
+			'cssmin:RAZARA4anthisnes',
+			'htmlcleancompress',
+			'copy'
+		]
+	);
+	console.log ( '-------------------------------------------------------------------------------------------------------' );
+	console.log (
+		'\n                                     ' +
+		grunt.config.data.pkg.name +
+		' - ' +
+		grunt.config.data.pkg.version +
+		' - build: ' + grunt.config.data.pkg.buildNumber +
+		' - ' +
+		grunt.template.today ( 'isoDateTime' ) + '\n' );
+	console.log ( '-------------------------------------------------------------------------------------------------------' );
+};
