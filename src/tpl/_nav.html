@@ -1,9 +1,9 @@
 <nav>
-	<h2><a href='{{tpl:BlogURL}}' title='{{tpl:lang cyCategoriesMenuTooltip}}' >{{tpl:lang cyCategoriesMenuTitle}}</a></h2>
+	<h2>{{tpl:lang cyCategoriesMenuTitle}}</h2>
 	<p>
 		<tpl:Categories level="1">
 			<span>
-				<a href='{{tpl:CategoryURL}}' title ='{{tpl:CategoryDescription encode_html="1" remove_html="1"}}'>{{tpl:CategoryTitle}}</a>
+				<a href='{{tpl:CategoryURL}}' title ='{{tpl:lang cyCategoryTooltip1}}{{tpl:CategoryDescription encode_html="1" remove_html="1"}}'>{{tpl:CategoryTitle}}</a>
 			</span>
 		</tpl:Categories>
 	</p>

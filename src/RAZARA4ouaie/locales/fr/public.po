@@ -46,6 +46,24 @@ msgstr "Les pays"
 msgid "cyCategoriesMenuTooltip"
 msgstr "Les pays"
 
+msgid "cyCategoryMenu1"
+msgstr " "
+
+msgid "cyCategoryMenu2"
+msgstr "Les villes et les régions:"
+
+msgid "cyCategoryMenu3"
+msgstr "Retourner à la page "
+
+msgid "cyCategoryMenu4"
+msgstr "Retourner "
+
+msgid "cyCategoryMenu5"
+msgstr "aux régions"
+
+msgid "cyCategoryTooltip1"
+msgstr "Aller à "
+
 msgid "cyPage"
 msgstr "page"
 

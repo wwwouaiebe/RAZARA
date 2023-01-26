@@ -46,6 +46,24 @@ msgstr "Les villages"
 msgid "cyCategoriesMenuTooltip"
 msgstr "Les villages "
 
+msgid "cyCategoryMenu1"
+msgstr "Vous êtes "
+
+msgid "cyCategoryMenu2"
+msgstr "Les chemins et les champs :"
+
+msgid "cyCategoryMenu3"
+msgstr "Retourner "
+
+msgid "cyCategoryMenu4"
+msgstr "Retourner "
+
+msgid "cyCategoryMenu5"
+msgstr "aux villages"
+
+msgid "cyCategoryTooltip1"
+msgstr "Aller "
+
 msgid "cyPage"
 msgstr "page"
 
