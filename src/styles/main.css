@@ -35,13 +35,11 @@ variables for color
 @------------------------------------------------------------------------------------------------------------------------------
 */
 
-/*
 :root {
 	--main-color: black;
 	--link-hover-color: #505050;
 	--link-color: darkred;
 }
-*/
 
 /**
 @------------------------------------------------------------------------------------------------------------------------------
@@ -52,13 +50,8 @@ fonts
 */
 
 @font-face {
-	font-family: "Ubuntu Sans";
-	src: url("Ubuntu-L.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "Ubuntu SansNarrow";
-	src: url("Ubuntu-C.ttf") format("truetype");
+	font-family: RAZARA-regular;
+	src: url("opensans-regular.woff2") format("woff2");
 }
 
 /**
@@ -70,13 +63,56 @@ styles for html elements
 */
 
 body {
-	font-family: "Ubuntu Sans", Helvetica, Arial, sans-serif;
+	font-family: RAZARA-regular, Helvetica, Arial, sans-serif;
 	display: grid;
 	padding: 1rem;
 	margin-left: auto;
 	margin-right: auto;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
 	max-width: 972px;
 }
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+grid
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
+header {
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+}
+
+#cyNavCategory {
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+}
+
+#cyNavTop {
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+}
+
+section {
+	grid-column: 1 / 2;
+	grid-row: 4 / 5;
+}
+
+#cyNavBottom {
+	grid-column: 1 / 2;
+	grid-row: 5 / 6;
+}
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+h1 - h6 size
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 h1 {
 	font-size: 175%;
@@ -94,23 +130,39 @@ h4 {
 	font-size: 115%;
 }
 
+a {
+	color: var(--link-color);
+}
+
+a:hover {
+	color: var(--link-hover-color);
+	text-decoration: underline;
+}
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+link color
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-family: "Ubuntu SansNarrow", Helvetica, Arial, sans-serif;
 	padding-bottom: 1rem;
 }
 
-a {
-	color: darkred /* var(--link-color) */;
-}
+/**
+@------------------------------------------------------------------------------------------------------------------------------
 
-a:hover {
-	color: #505050 /* var(--link-hover-color) */;
-}
+padding for hml elements
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 article {
 	padding-bottom: 2rem;
@@ -148,23 +200,31 @@ color overload for h1
 */
 
 h1 > a {
-	color: black /* var(--main-color) */;
+	color: var(--main-color);
 }
 
 h1 > a:hover {
-	color: black /* var(--main-color) */;
+	color: var(--main-color);
+	text-decoration: none;
 }
 
 h1 > a > span {
-	color: darkred /* var(--link-color) */;
+	color: var(--link-color);
 }
 
 h1 > a > span:hover {
-	color: darkred;
+	color: var(--link-color);
 }
 
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+overload for html elements in nav element
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
+
 body > nav > h2 {
-	font-family: "Ubuntu SansNarrow", Helvetica, Arial, sans-serif;
 	font-size: 115%;
 }
 
@@ -173,21 +233,21 @@ body > nav > p > span {
 	white-space: nowrap;
 }
 
-/**
-@------------------------------------------------------------------------------------------------------------------------------
-
-color overload for links in nav element
-
-@------------------------------------------------------------------------------------------------------------------------------
-*/
-
 body > nav > p > span > a {
-	color: #505050 /* var(--link-hover-color) */;
+	color: var(--link-hover-color);
 }
 
 body > nav > p > span > a:hover {
-	color: darkred /* var(--link-color) */;
+	color: var(--link-color);
 }
+
+/**
+@------------------------------------------------------------------------------------------------------------------------------
+
+first letter capitalize for h2 (date)
+
+@------------------------------------------------------------------------------------------------------------------------------
+*/
 
 body > section > h2::first-letter {
 	text-transform: capitalize;
