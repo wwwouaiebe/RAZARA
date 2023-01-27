@@ -57,6 +57,7 @@ overload for large screens
 		grid-template-rows: 4rem auto;
 		grid-column-gap: 3rem;
 		max-width: 1600px;
+		padding-bottom: 2rem;
 	}
 
 	header {
@@ -82,5 +83,29 @@ overload for large screens
 	section {
 		grid-column: 2 / 3;
 		grid-row: 1;
+	}
+
+	#cyPagination {
+		padding-bottom: 2rem;
+	}
+
+	/**
+	@--------------------------------------------------------------------------------------------------------------------------
+
+	overload for links
+
+	@--------------------------------------------------------------------------------------------------------------------------
+	*/
+
+	body > nav > p {
+		line-height: normal;
+	}
+
+	body > nav > p > span > a {
+		color: var(--link-hover-color);
+	}
+
+	body > nav > p > span > a:hover {
+		color: var(--link-color);
 	}
 }

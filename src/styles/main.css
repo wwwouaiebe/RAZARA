@@ -132,6 +132,7 @@ h4 {
 
 a {
 	color: var(--link-color);
+	text-decoration: underline;
 }
 
 a:hover {
@@ -201,6 +202,7 @@ color overload for h1
 
 h1 > a {
 	color: var(--main-color);
+	text-decoration: none;
 }
 
 h1 > a:hover {
@@ -228,17 +230,13 @@ body > nav > h2 {
 	font-size: 115%;
 }
 
+body > nav > p {
+	line-height: 2rem;
+}
+
 body > nav > p > span {
 	padding-right: 1rem;
 	white-space: nowrap;
-}
-
-body > nav > p > span > a {
-	color: var(--link-hover-color);
-}
-
-body > nav > p > span > a:hover {
-	color: var(--link-color);
 }
 
 /**
