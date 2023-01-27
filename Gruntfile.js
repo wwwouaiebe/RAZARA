@@ -168,7 +168,7 @@ module.exports = function ( grunt ) {
 					{
 						expand : true,
 						cwd : 'src/styles',
-						src : [ '*.ttf', '*.png' ],
+						src : [ '*.ttf', '*.woff2', '*.png' ],
 						dest : 'dist/RAZARA4ouaie/styles'
 					},
 					{
@@ -198,7 +198,7 @@ module.exports = function ( grunt ) {
 					{
 						expand : true,
 						cwd : 'src/styles',
-						src : [ '*.ttf', '*.png' ],
+						src : [ '*.ttf', '*.woff2', '*.png' ],
 						dest : 'dist/RAZARA4anthisnes/styles'
 					},
 					{

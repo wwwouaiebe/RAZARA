@@ -16,7 +16,6 @@
     "terser": "latest"
   },
   "scripts": {
-    "debug" : "node node_modules/grunt/bin/grunt",
     "release" : "node node_modules/grunt/bin/grunt"
   },
   "repository": {
