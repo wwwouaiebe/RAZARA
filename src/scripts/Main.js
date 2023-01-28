@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 // imports
-import { onStartSlideShow } from './SlideShow.js';
+import theSlideShow from './SlideShow.js';
 import { onMailContinueButtonFRClick, onMailContinueButtonENClick } from './Mail.js';
 
 // loding event handlers for mail if needed
@@ -34,5 +34,7 @@ if ( mailContinueButtonEN && onMailContinueButtonENClick ) {
 // loading event handler for slide show
 let paginationSlideShow = document.querySelector ( '#cyPaginationSlideShow' );
 if ( paginationSlideShow ) {
-	paginationSlideShow.addEventListener ( 'click', onStartSlideShow );
+	paginationSlideShow.addEventListener (
+		'click',
+		( ) => { theSlideShow.start ( ); } );
 }
