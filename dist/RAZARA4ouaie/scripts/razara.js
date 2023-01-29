@@ -969,10 +969,18 @@
 
 	const theSlideShow = new SlideShow ( );
 
+	// loading event handler for slide show
+	let paginationSlideShow = document.querySelector ( '#cyPaginationSlideShow' );
+	if ( paginationSlideShow ) {
+		paginationSlideShow.addEventListener (
+			'click',
+			( ) => { theSlideShow.start ( ); } );
+	}
+
 	/* --- End of file --------------------------------------------------------------------------------------------------------- */
 
 	/*
-	Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
+	Copyright - 2021 2023 - wwwouaiebe - Contact: https://www.ouaie.be/
 
 	This  program is free software;
 	you can redistribute it and/or modify it under the terms of the
@@ -996,123 +1004,138 @@
 	const ONE = 1;
 	const ZERO = 0;
 
+	/* ------------------------------------------------------------------------------------------------------------------------- */
 	/**
-	@------------------------------------------------------------------------------------------------------------------------------
-
-	@function onMailContinueButtonFRClick
-	@desc event listener for mouse click on the ContinueFR button.
-
-	@------------------------------------------------------------------------------------------------------------------------------
+	Mail buttons event handlers
 	*/
+	/* ------------------------------------------------------------------------------------------------------------------------- */
 
-	function onMailContinueButtonFRClick ( ) {
+	class MailOpener {
 
-		// Vous ne comprenez rien? Normal, c'est fait pour...
-		if ( N_8EXP2 + N_3M5 === Number.parseInt ( document.getElementById ( 'cyNumberFR' ).value ) ) {
-			let addr = document.querySelector ( '#cyMailContinueButtonFR' ).getAttribute ( 'name' ) +
-				String.fromCharCode ( N_8EXP2 ) +
+		/**
+		The constructor
+		*/
+
+		constructor ( ) {
+			Object.freeze ( this );
+		}
+
+		/**
+		FR Mail button event handler
+		*/
+
+		onMailContinueButtonFRClick ( ) {
+
+			// Vous ne comprenez rien? Normal, c'est fait pour...
+			if (
+				// eslint-disable-next-line no-self-compare, space-infix-ops
+				N_8EXP2 + N_3M5 === Number.parseInt ( document.getElementById ( 'cyNumberFR' ).value )
+			) {
+				let addr = document.querySelector ( '#cyMailContinueButtonFR' ).getAttribute ( 'name' ) +
+				String.fromCharCode (
+					Number.parseInt ( document.getElementById ( 'cyNumberFR' ).value ) - N_3M5
+				) +
 				window.location.hostname.split ( '.' ).reverse ( ) [ ONE ] +
-				'.' +
-				window.location.hostname.split ( '.' ).reverse ( ) [ ZERO ];
-			{
-				let mailLink = document.createElement ( 'a' );
-				mailLink.href = 'mailto:' + addr;
-				mailLink.click ( );
+					'.' +
+					window.location.hostname.split ( '.' ).reverse ( ) [ ZERO ];
+				{
+					let mailLink = document.createElement ( 'a' );
+					mailLink.href = 'mailto:' + addr + '?subject=Message depuis ' + window.location.hostname;
+					mailLink.click ( );
+				}
+				if ( navigator.clipboard ) {
+					navigator.clipboard.writeText ( addr )
+						.then (
+							( ) => {
+								document.getElementById ( 'cyClipboardFR' ).innerHTML =
+									'L\'adresse mail a également été passée dans le presse-papier de votre ordinateur.';
+							}
+						)
+						.catch ( ( ) => console.error ( 'failed to copy to the clipboard' ) );
+				}
+				document.getElementById ( 'cyMailFR' ).innerHTML =
+					'Bravo! Vous êtes doué. Patientez un instant, votre mail va s\'ouvrir... ' +
+					'si tout est bien configuré sur votre appareil.';
 			}
-			navigator.clipboard.writeText ( addr )
-				.then (
-					( ) => {
-						document.getElementById ( 'cyClipboardFR' ).innerHTML =
-							'L\'adresse mail a également été passée dans le presse-papier de votre ordinateur.';
-					}
-				)
-				.catch ( ( ) => console.error ( 'failed to copy to the clipboard' ) );
-			document.getElementById ( 'cyMailFR' ).innerHTML =
-				'Bravo! Vous êtes doué. Patientez un instant, votre mail va s\'ouvrir... ' +
-				'si tout est bien configuré sur votre appareil.';
+			else {
+				document.getElementById ( 'cyMailFR' ).innerHTML = 'Oufti biesse. Null en math.';
+			}
+			document.getElementById ( 'cyMailContinueButtonFR' ).style.visibility = 'hidden';
+			document.getElementById ( 'cyMailContinueButtonEN' ).style.visibility = 'hidden';
 		}
-		else {
-			document.getElementById ( 'cyMailFR' ).innerHTML = 'Oufti biesse. Null en math.';
+
+		/**
+		EN Mail button event handler
+		*/
+
+		onMailContinueButtonENClick ( ) {
+
+			// You do not understand anything? Normal, it's made for...
+			if (
+				// eslint-disable-next-line no-self-compare, space-infix-ops
+				N_8EXP2 + N_3M5 === Number.parseInt ( document.getElementById ( 'cyNumberEN' ).value )
+			) {
+				let addr = document.querySelector ( '#cyMailContinueButtonEN' ).getAttribute ( 'name' ) +
+					String.fromCharCode (
+						Number.parseInt ( document.getElementById ( 'cyNumberEN' ).value ) - N_3M5
+					) +
+					window.location.hostname.split ( '.' ).reverse ( ) [ ONE ] +
+					'.' +
+					window.location.hostname.split ( '.' ).reverse ( ) [ ZERO ];
+				{
+					let mailLink = document.createElement ( 'a' );
+					mailLink.href = 'mailto:' + addr + '?subject=Message from ' + window.location.hostname;
+					mailLink.click ( );
+				}
+				if ( navigator.clipboard ) {
+					navigator.clipboard.writeText ( addr )
+						.then (
+							( ) => {
+								document.getElementById ( 'cyClipboardEN' ).innerHTML =
+									'The email address has also been passed to your computer\'s clipboard.';
+							}
+						)
+						.catch ( ( ) => console.error ( 'failed to copy to the clipboard' ) );
+				}
+				document.getElementById ( 'cyMailEN' ).innerHTML =
+					'Excellent! You are very good. Wait a moment, your email will open...' +
+					' if everything is configured correctly on your device.';
+			}
+			else {
+				document.getElementById ( 'cyMailEN' ).innerHTML = 'You are stupid.';
+			}
+			document.getElementById ( 'cyMailContinueButtonFR' ).style.visibility = 'hidden';
+			document.getElementById ( 'cyMailContinueButtonEN' ).style.visibility = 'hidden';
 		}
-		document.getElementById ( 'cyMailContinueButtonFR' ).style.visibility = 'hidden';
-		document.getElementById ( 'cyMailContinueButtonEN' ).style.visibility = 'hidden';
 	}
 
+	/* ------------------------------------------------------------------------------------------------------------------------- */
 	/**
-	@------------------------------------------------------------------------------------------------------------------------------
-
-	@function onMailContinueButtonENClick
-	@desc event listener for mouse click on the ContinueEN button.
-
-	@------------------------------------------------------------------------------------------------------------------------------
+	The one and only one instance of MailOpener  class
+	@type {MailOpener }
 	*/
+	/* ------------------------------------------------------------------------------------------------------------------------- */
 
-	function onMailContinueButtonENClick ( ) {
-		if ( N_8EXP2 + N_3M5 === Number.parseInt ( document.getElementById ( 'cyNumberEN' ).value ) ) {
-			let addr = document.querySelector ( '#cyMailContinueButtonEN' ).getAttribute ( 'name' ) +
-				String.fromCharCode ( N_8EXP2 ) +
-				window.location.hostname.split ( '.' ).reverse ( ) [ ONE ] +
-				'.' +
-				window.location.hostname.split ( '.' ).reverse ( ) [ ZERO ];
-			{
-				let mailLink = document.createElement ( 'a' );
-				mailLink.href = 'mailto:' + addr;
-				mailLink.click ( );
-			}
-			navigator.clipboard.writeText ( addr )
-				.then (
-					( ) => {
-						document.getElementById ( 'cyClipboardEN' ).innerHTML =
-							'The email address has also been passed to your computer\'s clipboard.';
-					}
-				)
-				.catch ( ( ) => console.error ( 'failed to copy to the clipboard' ) );
-			document.getElementById ( 'cyMailEN' ).innerHTML =
-				'Excellent! You are very good. Wait a moment, your email will open...' +
-				' if everything is configured correctly on your device.';
-		}
-		else {
-			document.getElementById ( 'cyMailEN' ).innerHTML = 'You are stupid.';
-		}
-		document.getElementById ( 'cyMailContinueButtonFR' ).style.visibility = 'hidden';
-		document.getElementById ( 'cyMailContinueButtonEN' ).style.visibility = 'hidden';
-	}
+	const theMailOpener = new MailOpener ( );
 
-	/*
-	Copyright - 2021 - wwwouaiebe - Contact: https://www.ouaie.be/
-
-	This  program is free software;
-	you can redistribute it and/or modify it under the terms of the
-	GNU General Public License as published by the Free Software Foundation;
-	either version 3 of the License, or any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-	*/
-
-	// loding event handlers for mail if needed
-	let mailContinueButtonFR = document.querySelector ( '#cyMailContinueButtonFR' );
-	if ( mailContinueButtonFR && onMailContinueButtonFRClick ) {
-		mailContinueButtonFR.addEventListener ( 'click', onMailContinueButtonFRClick );
-	}
-
-	let mailContinueButtonEN = document.querySelector ( '#cyMailContinueButtonEN' );
-	if ( mailContinueButtonEN && onMailContinueButtonENClick ) {
-		mailContinueButtonEN.addEventListener ( 'click', onMailContinueButtonENClick );
-	}
-
-	// loading event handler for slide show
-	let paginationSlideShow = document.querySelector ( '#cyPaginationSlideShow' );
-	if ( paginationSlideShow ) {
-		paginationSlideShow.addEventListener (
+	// loading event handler for mail FR if needed
+	const mailContinueButtonFR = document.querySelector ( '#cyMailContinueButtonFR' );
+	if ( mailContinueButtonFR ) {
+		mailContinueButtonFR.addEventListener (
 			'click',
-			( ) => { theSlideShow.start ( ); } );
+			( ) => theMailOpener.onMailContinueButtonFRClick ( )
+		);
 	}
+
+	// loading event handler for mail FR if needed
+	let mailContinueButtonEN = document.querySelector ( '#cyMailContinueButtonEN' );
+	if ( mailContinueButtonEN ) {
+		mailContinueButtonEN.addEventListener (
+			'click',
+			( ) => theMailOpener.onMailContinueButtonENClick ( )
+		);
+	}
+
+	/* --- End of file --------------------------------------------------------------------------------------------------------- */
 
 })();

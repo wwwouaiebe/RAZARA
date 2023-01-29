@@ -968,6 +968,13 @@ The one and only one instance of SlideShow  class
 
 const theSlideShow = new SlideShow ( );
 
+// loading event handler for slide show
+let paginationSlideShow = document.querySelector ( '#cyPaginationSlideShow' );
+if ( paginationSlideShow ) {
+	paginationSlideShow.addEventListener (
+		'click',
+		( ) => { theSlideShow.start ( ); } );
+}
 export default theSlideShow;
 
 /* --- End of file --------------------------------------------------------------------------------------------------------- */
