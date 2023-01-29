@@ -35,10 +35,26 @@ variables for color
 @------------------------------------------------------------------------------------------------------------------------------
 */
 
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-background-color: black;
+		--main-color: white;
+		--link-hover-color: lightgray;
+		--link-color: orange;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--main-background-color: white;
+		--main-color: black;
+		--link-hover-color: #505050;
+		--link-color: #8b0000;
+	}
+}
+
 :root {
-	--main-color: black;
-	--link-hover-color: #505050;
-	--link-color: darkred;
+	color-scheme: dark;
 }
 
 /**
@@ -71,6 +87,22 @@ body {
 	grid-template-columns: auto;
 	grid-template-rows: auto;
 	max-width: 972px;
+	color: var(--main-color);
+	background-color: var(--main-background-color);
+}
+
+body.cyDark {
+	--main-background-color: black;
+	--main-color: white;
+	--link-hover-color: lightgray;
+	--link-color: orange;
+}
+
+body.cyLight {
+	--main-background-color: white;
+	--main-color: black;
+	--link-hover-color: #505050;
+	--link-color: #8b0000;
 }
 
 /**
