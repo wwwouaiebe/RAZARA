@@ -120,6 +120,7 @@ help div
 	padding: 0.5rem;
 	border-style: solid;
 	border-width: 0.1em;
+	background-color: var(--main-background-color);
 }
 
 /**
