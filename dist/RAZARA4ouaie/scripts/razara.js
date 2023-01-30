@@ -55,6 +55,13 @@
 
 	const TWO = 2;
 
+	/**
+	A simple constant...
+	@type {Number}
+	*/
+
+	const THOUSAND = 1000;
+
 	/* eslint-enable no-magic-numbers */
 
 	/* ------------------------------------------------------------------------------------------------------------------------- */
@@ -518,6 +525,27 @@
 		#slideShowData;
 
 		/**
+		The increase button
+		@type {HTMLElement}
+		*/
+
+		#increaseButton;
+
+		/**
+		The decrease button
+		@type {HTMLElement}
+		*/
+
+		#decreaseButton;
+
+		/**
+		The pause button
+		@type {HTMLElement}
+		*/
+
+		#pauseButton;
+
+		/**
 		The background HTMLElement
 		@type {HTMLElement}
 		*/
@@ -641,6 +669,13 @@
 		static get #INVALID_INDEX ( ) { return MINUS_ONE; }
 
 		/**
+		The duration of the display of an image in seconds and in string format
+		@type {String}
+		*/
+
+		get #durationSec ( ) { return String ( this.#duration / THOUSAND ) + ' sec.'; }
+
+		/**
 		Create the toolbar and buttons on the toolbar
 		*/
 
@@ -649,20 +684,22 @@
 
 			this.#backgroundHTMLElement.appendChild ( toolbarHTMLElement );
 
-			const decreaseButton = document.createElement ( 'span' );
-			decreaseButton.innerText = '➖';
-			decreaseButton.addEventListener ( 'click', new DecreaseButtonClickEL ( this ) );
-			toolbarHTMLElement.appendChild ( decreaseButton );
+			this.#decreaseButton = document.createElement ( 'span' );
+			this.#decreaseButton.innerText = '➖';
+			this.#decreaseButton.title = this.#durationSec;
+			this.#decreaseButton.addEventListener ( 'click', new DecreaseButtonClickEL ( this ) );
+			toolbarHTMLElement.appendChild ( this.#decreaseButton );
 
-			const increaseButton = document.createElement ( 'span' );
-			increaseButton.innerText = '➕';
-			increaseButton.addEventListener ( 'click', new IncreaseButtonClickEL ( this ) );
-			toolbarHTMLElement.appendChild ( increaseButton );
+			this.#increaseButton = document.createElement ( 'span' );
+			this.#increaseButton.innerText = '➕';
+			this.#increaseButton.title = this.#durationSec;
+			this.#increaseButton.addEventListener ( 'click', new IncreaseButtonClickEL ( this ) );
+			toolbarHTMLElement.appendChild ( this.#increaseButton );
 
-			const pauseButton = document.createElement ( 'span' );
-			pauseButton.innerText = '⏯️';
-			pauseButton.addEventListener ( 'click', new PauseButtonClickEL ( this ) );
-			toolbarHTMLElement.appendChild ( pauseButton );
+			this.#pauseButton = document.createElement ( 'span' );
+			this.#pauseButton.innerText = '⏸️';
+			this.#pauseButton.addEventListener ( 'click', new PauseButtonClickEL ( this ) );
+			toolbarHTMLElement.appendChild ( this.#pauseButton );
 
 			const helpButton = document.createElement ( 'span' );
 			helpButton.innerText = '❔ ';
@@ -682,7 +719,7 @@
 	            '\n\nTouche clavier ⮜ ou clic sur photo à gauche :\n passer à la photo précédente' +
 	            '\n\nTouche clavier - ou bouton ➖ :\n diminuer le temps de vision' +
 	            '\n\nTouche clavier + ou bonton ➕:\n augmenter le temps de vision' +
-	            '\n\nTouches clavier P ou p ou bouton ⏯️ :\n arrêter ou relancer le diaporama' +
+	            '\n\nTouches clavier P ou p ou boutons ⏸️ ▶️ :\n arrêter ou relancer le diaporama' +
 	            '\n\nTouches clavier S ou s ou bouton ❌ :\n fermer le diaporama';
 			this.#helpHTMLElement.classList.add ( 'cyHelpDiv' );
 			this.#helpHTMLElement.classList.add ( 'cyHelpDivHidden' );
@@ -780,6 +817,9 @@
 					SlideShow.#MAX_SLIDE_SHOW_DURATION
 					:
 					this.#duration + SlideShow.#SLIDE_SHOW_INTERVAL;
+			this.#increaseButton.title = this.#durationSec;
+			this.#decreaseButton.title = this.#durationSec;
+
 		}
 
 		/**
@@ -793,6 +833,8 @@
 					SlideShow.#MIN_SLIDE_SHOW_DURATION
 					:
 					this.#duration - SlideShow.#SLIDE_SHOW_INTERVAL;
+			this.#increaseButton.title = this.#durationSec;
+			this.#decreaseButton.title = this.#durationSec;
 		}
 
 		/**
@@ -954,12 +996,14 @@
 				window.clearTimeout ( this.#timerId );
 				this.#timerId = null;
 				this.#paused = true;
+				this.#pauseButton.innerText = '▶️';
 			}
 			else {
 
 				// Restarting the timer if disabled previously
 				this.#paused = false;
 				this.showNextArticle ( SlideShowDirection.noChange );
+				this.#pauseButton.innerText = '⏸️';
 			}
 		}
 
