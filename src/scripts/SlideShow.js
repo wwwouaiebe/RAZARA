@@ -23,10 +23,35 @@ Changes:
  */
 
 /* eslint-disable no-magic-numbers */
+
+/**
+A simple constant...
+@type {Number}
+*/
+
 const MINUS_ONE = -1;
+
+/**
+A simple constant...
+@type {Number}
+*/
+
 const ZERO = 0;
+
+/**
+A simple constant...
+@type {Number}
+*/
+
 const ONE = 1;
+
+/**
+A simple constant...
+@type {Number}
+*/
+
 const TWO = 2;
+
 /* eslint-enable no-magic-numbers */
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
@@ -57,6 +82,10 @@ class SlideShowDirection {
 	*/
 
 	static get forward ( ) { return ONE; }
+
+	/**
+	The constructor
+	*/
 
 	constructor ( ) {
 		Object.freeze ( this );
@@ -653,7 +682,7 @@ class SlideShow {
             '\n\nTouche clavier - ou bouton ➖ :\n diminuer le temps de vision' +
             '\n\nTouche clavier + ou bonton ➕:\n augmenter le temps de vision' +
             '\n\nTouches clavier P ou p ou bouton ⏯️ :\n arrêter ou relancer le diaporama' +
-            '\n\nTouche clavier S ou s ou bouton ❌ :\n fermer le diaporama';
+            '\n\nTouches clavier S ou s ou bouton ❌ :\n fermer le diaporama';
 		this.#helpHTMLElement.classList.add ( 'cyHelpDiv' );
 		this.#helpHTMLElement.classList.add ( 'cyHelpDivHidden' );
 		toolbarHTMLElement.appendChild ( this.#helpHTMLElement );
@@ -767,6 +796,7 @@ class SlideShow {
 
 	/**
 	mouseenter on the help button event handler
+	@param {Event} mouseEnterEvent The event to handle
 	*/
 
 	onMouseEnterHelpButton ( mouseEnterEvent ) {
@@ -793,6 +823,7 @@ class SlideShow {
 	/**
 	mouseenter and mousemove on the article event handler. Change the cursor image (left or right arrow),
 	depending of the cursor position
+	@param {Event} mouseEvent The event to handle
 	*/
 
 	onMouseEnterOrMoveArticle ( mouseEvent ) {
@@ -818,12 +849,13 @@ class SlideShow {
 
 	/**
 	click on the article event handler. Show the next or previous article depending of the click position
+	@param {Event} clickEvent The event to handle
 	*/
 
-	onMouseClickArticle ( mouseClickEvent ) {
+	onMouseClickArticle ( clickEvent ) {
 		let articleClientRect = this.#articleHTMLElement.getBoundingClientRect ( );
 		this.showNextArticle (
-			( articleClientRect.width / TWO > mouseClickEvent.clientX - articleClientRect.x )
+			( articleClientRect.width / TWO > clickEvent.clientX - articleClientRect.x )
 				?
 				SlideShowDirection.backward
 				: SlideShowDirection.forward
@@ -969,6 +1001,12 @@ The one and only one instance of SlideShow  class
 const theSlideShow = new SlideShow ( );
 
 // loading event handler for slide show
+
+/**
+The link for the slide show in the pagination part
+@type {HTMLElement}
+*/
+
 let paginationSlideShow = document.querySelector ( '#cyPaginationSlideShow' );
 if ( paginationSlideShow ) {
 	paginationSlideShow.addEventListener (

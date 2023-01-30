@@ -18,8 +18,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 /* eslint-disable no-unused-vars */
 
-// imports
-
 import theSlideShow from './SlideShow.js';
 import theMailOpener from './MailOpener.js';
 import theThemeChanger from './ThemeChanger.js';
+
+/* --- End of file --------------------------------------------------------------------------------------------------------- */

@@ -16,12 +16,37 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-/* eslint-disable-next-line no-magic-numbers */
+/* eslint-disable no-magic-numbers */
+
+/**
+A simple constant...
+@type {Number}
+*/
+
 const N_3M5 = 3 * 5;
-/* eslint-disable-next-line no-magic-numbers */
+
+/**
+A simple constant...
+@type {Number}
+*/
+
 const N_8EXP2 = 8 ** 2;
+
+/**
+A simple constant...
+@type {Number}
+*/
+
 const ONE = 1;
+
+/**
+A simple constant...
+@type {Number}
+*/
+
 const ZERO = 0;
+
+/* eslint-enable no-magic-numbers */
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
 /**
@@ -142,7 +167,14 @@ The one and only one instance of MailOpener  class
 const theMailOpener = new MailOpener ( );
 
 // loading event handler for mail FR if needed
+
+/**
+The FR mail button
+@type {HTMLElement}
+*/
+
 const mailContinueButtonFR = document.querySelector ( '#cyMailContinueButtonFR' );
+
 if ( mailContinueButtonFR ) {
 	mailContinueButtonFR.addEventListener (
 		'click',
@@ -150,8 +182,14 @@ if ( mailContinueButtonFR ) {
 	);
 }
 
-// loading event handler for mail FR if needed
+// loading event handler for mail EN if needed
+/**
+The EN mail button
+@type {HTMLElement}
+*/
+
 let mailContinueButtonEN = document.querySelector ( '#cyMailContinueButtonEN' );
+
 if ( mailContinueButtonEN ) {
 	mailContinueButtonEN.addEventListener (
 		'click',

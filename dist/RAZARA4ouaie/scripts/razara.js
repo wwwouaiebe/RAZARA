@@ -26,10 +26,35 @@
 	 */
 
 	/* eslint-disable no-magic-numbers */
+
+	/**
+	A simple constant...
+	@type {Number}
+	*/
+
 	const MINUS_ONE = -1;
+
+	/**
+	A simple constant...
+	@type {Number}
+	*/
+
 	const ZERO$1 = 0;
+
+	/**
+	A simple constant...
+	@type {Number}
+	*/
+
 	const ONE$1 = 1;
+
+	/**
+	A simple constant...
+	@type {Number}
+	*/
+
 	const TWO = 2;
+
 	/* eslint-enable no-magic-numbers */
 
 	/* ------------------------------------------------------------------------------------------------------------------------- */
@@ -60,6 +85,10 @@
 		*/
 
 		static get forward ( ) { return ONE$1; }
+
+		/**
+		The constructor
+		*/
 
 		constructor ( ) {
 			Object.freeze ( this );
@@ -654,7 +683,7 @@
 	            '\n\nTouche clavier - ou bouton ➖ :\n diminuer le temps de vision' +
 	            '\n\nTouche clavier + ou bonton ➕:\n augmenter le temps de vision' +
 	            '\n\nTouches clavier P ou p ou bouton ⏯️ :\n arrêter ou relancer le diaporama' +
-	            '\n\nTouche clavier S ou s ou bouton ❌ :\n fermer le diaporama';
+	            '\n\nTouches clavier S ou s ou bouton ❌ :\n fermer le diaporama';
 			this.#helpHTMLElement.classList.add ( 'cyHelpDiv' );
 			this.#helpHTMLElement.classList.add ( 'cyHelpDivHidden' );
 			toolbarHTMLElement.appendChild ( this.#helpHTMLElement );
@@ -768,6 +797,7 @@
 
 		/**
 		mouseenter on the help button event handler
+		@param {Event} mouseEnterEvent The event to handle
 		*/
 
 		onMouseEnterHelpButton ( mouseEnterEvent ) {
@@ -794,6 +824,7 @@
 		/**
 		mouseenter and mousemove on the article event handler. Change the cursor image (left or right arrow),
 		depending of the cursor position
+		@param {Event} mouseEvent The event to handle
 		*/
 
 		onMouseEnterOrMoveArticle ( mouseEvent ) {
@@ -819,12 +850,13 @@
 
 		/**
 		click on the article event handler. Show the next or previous article depending of the click position
+		@param {Event} clickEvent The event to handle
 		*/
 
-		onMouseClickArticle ( mouseClickEvent ) {
+		onMouseClickArticle ( clickEvent ) {
 			let articleClientRect = this.#articleHTMLElement.getBoundingClientRect ( );
 			this.showNextArticle (
-				( articleClientRect.width / TWO > mouseClickEvent.clientX - articleClientRect.x )
+				( articleClientRect.width / TWO > clickEvent.clientX - articleClientRect.x )
 					?
 					SlideShowDirection.backward
 					: SlideShowDirection.forward
@@ -970,6 +1002,12 @@
 	const theSlideShow = new SlideShow ( );
 
 	// loading event handler for slide show
+
+	/**
+	The link for the slide show in the pagination part
+	@type {HTMLElement}
+	*/
+
 	let paginationSlideShow = document.querySelector ( '#cyPaginationSlideShow' );
 	if ( paginationSlideShow ) {
 		paginationSlideShow.addEventListener (
@@ -997,12 +1035,37 @@
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	*/
 
-	/* eslint-disable-next-line no-magic-numbers */
+	/* eslint-disable no-magic-numbers */
+
+	/**
+	A simple constant...
+	@type {Number}
+	*/
+
 	const N_3M5 = 3 * 5;
-	/* eslint-disable-next-line no-magic-numbers */
+
+	/**
+	A simple constant...
+	@type {Number}
+	*/
+
 	const N_8EXP2 = 8 ** 2;
+
+	/**
+	A simple constant...
+	@type {Number}
+	*/
+
 	const ONE = 1;
+
+	/**
+	A simple constant...
+	@type {Number}
+	*/
+
 	const ZERO = 0;
+
+	/* eslint-enable no-magic-numbers */
 
 	/* ------------------------------------------------------------------------------------------------------------------------- */
 	/**
@@ -1119,7 +1182,14 @@
 	const theMailOpener = new MailOpener ( );
 
 	// loading event handler for mail FR if needed
+
+	/**
+	The FR mail button
+	@type {HTMLElement}
+	*/
+
 	const mailContinueButtonFR = document.querySelector ( '#cyMailContinueButtonFR' );
+
 	if ( mailContinueButtonFR ) {
 		mailContinueButtonFR.addEventListener (
 			'click',
@@ -1127,8 +1197,14 @@
 		);
 	}
 
-	// loading event handler for mail FR if needed
+	// loading event handler for mail EN if needed
+	/**
+	The EN mail button
+	@type {HTMLElement}
+	*/
+
 	let mailContinueButtonEN = document.querySelector ( '#cyMailContinueButtonEN' );
+
 	if ( mailContinueButtonEN ) {
 		mailContinueButtonEN.addEventListener (
 			'click',
@@ -1232,6 +1308,12 @@
 
 	}
 
+	/* ------------------------------------------------------------------------------------------------------------------------- */
+	/**
+	storage event listener
+	*/
+	/* ------------------------------------------------------------------------------------------------------------------------- */
+
 	class StorageEL {
 
 		/**
@@ -1258,7 +1340,6 @@
 		handleEvent ( ) {
 			this.#themeChanger.onStorageChange ( );
 		}
-
 	}
 
 	/* ------------------------------------------------------------------------------------------------------------------------- */
@@ -1284,7 +1365,7 @@
 		#themeLink;
 
 		/**
-	    A flag set to true when storage is available ( can be dactived by the user preferences )
+	    A flag set to true when storage is available ( can be deactived by the user preferences )
 	    @type {boolean}
 	    */
 
@@ -1309,7 +1390,7 @@
 			}
 		}
 
-		/*
+		/**
 	    Change the theme to the prefered theme
 	    */
 
@@ -1331,9 +1412,33 @@
 			document.body.classList.add ( 'dark' === this.#theme ? 'cyDark' : 'cyLight' );
 
 			// updating the theme link
-			if ( this.#themeLink ) {
-				this.#themeLink.innerText = 'dark' === this.#theme ? '☼' : '☽';
+
+			if ( 'dark' === this.#theme ) {
+				this.#setThemeLinkForDark ( );
 			}
+			else {
+				this.#setThemeLinkForLight ( );
+			}
+		}
+
+		/**
+	    Change the theme link for dark
+	    */
+
+		#setThemeLinkForDark ( ) {
+			this.#themeLink.innerText = '☼';
+			this.#themeLink.title = 'Apparence: clair';
+			this.#themeLink.alt = 'Apparence: clair';
+		}
+
+		/**
+	    Change the theme link for light
+	    */
+
+		#setThemeLinkForLight ( ) {
+			this.#themeLink.innerText = '☽';
+			this.#themeLink.title = 'Apparence: sombre';
+			this.#themeLink.alt = 'Apparence: sombre';
 		}
 
 		/**
@@ -1396,6 +1501,7 @@
 
 		/**
 	    Event handler for the theme link. Toggle the theme
+		@param {Boolean} updateStorage A flag indicating that the storage must be updated or not
 	    */
 
 		toggle ( updateStorage ) {
@@ -1405,17 +1511,13 @@
 				this.#theme = 'light';
 				document.body.classList.remove ( 'cyDark' );
 				document.body.classList.add ( 'cyLight' );
-				if ( this.#themeLink ) {
-					this.#themeLink.innerText = '☽';
-				}
+				this.#setThemeLinkForLight ( );
 			}
 			else {
 				this.#theme = 'dark';
 				document.body.classList.remove ( 'cyLight' );
 				document.body.classList.add ( 'cyDark' );
-				if ( this.#themeLink ) {
-					this.#themeLink.innerText = '☼';
-				}
+				this.#setThemeLinkForDark ( );
 			}
 
 			// saving the theme to the storage
@@ -1425,6 +1527,15 @@
 		}
 	}
 
+	/* ------------------------------------------------------------------------------------------------------------------------- */
+	/**
+	The one and only one instance of ThemeChanger class
+	@type {ThemeChanger}
+	*/
+	/* ------------------------------------------------------------------------------------------------------------------------- */
+
 	new ThemeChanger;
+
+	/* --- End of file --------------------------------------------------------------------------------------------------------- */
 
 })();

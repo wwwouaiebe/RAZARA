@@ -92,6 +92,12 @@ class PreferedThemeChangeEL {
 
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------- */
+/**
+storage event listener
+*/
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
 class StorageEL {
 
 	/**
@@ -118,7 +124,6 @@ class StorageEL {
 	handleEvent ( ) {
 		this.#themeChanger.onStorageChange ( );
 	}
-
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
@@ -144,7 +149,7 @@ class ThemeChanger {
 	#themeLink;
 
 	/**
-    A flag set to true when storage is available ( can be dactived by the user preferences )
+    A flag set to true when storage is available ( can be deactived by the user preferences )
     @type {boolean}
     */
 
@@ -169,7 +174,7 @@ class ThemeChanger {
 		}
 	}
 
-	/*
+	/**
     Change the theme to the prefered theme
     */
 
@@ -191,9 +196,33 @@ class ThemeChanger {
 		document.body.classList.add ( 'dark' === this.#theme ? 'cyDark' : 'cyLight' );
 
 		// updating the theme link
-		if ( this.#themeLink ) {
-			this.#themeLink.innerText = 'dark' === this.#theme ? '☼' : '☽';
+
+		if ( 'dark' === this.#theme ) {
+			this.#setThemeLinkForDark ( );
 		}
+		else {
+			this.#setThemeLinkForLight ( );
+		}
+	}
+
+	/**
+    Change the theme link for dark
+    */
+
+	#setThemeLinkForDark ( ) {
+		this.#themeLink.innerText = '☼';
+		this.#themeLink.title = 'Apparence: clair';
+		this.#themeLink.alt = 'Apparence: clair';
+	}
+
+	/**
+    Change the theme link for light
+    */
+
+	#setThemeLinkForLight ( ) {
+		this.#themeLink.innerText = '☽';
+		this.#themeLink.title = 'Apparence: sombre';
+		this.#themeLink.alt = 'Apparence: sombre';
 	}
 
 	/**
@@ -256,6 +285,7 @@ class ThemeChanger {
 
 	/**
     Event handler for the theme link. Toggle the theme
+	@param {Boolean} updateStorage A flag indicating that the storage must be updated or not
     */
 
 	toggle ( updateStorage ) {
@@ -265,17 +295,13 @@ class ThemeChanger {
 			this.#theme = 'light';
 			document.body.classList.remove ( 'cyDark' );
 			document.body.classList.add ( 'cyLight' );
-			if ( this.#themeLink ) {
-				this.#themeLink.innerText = '☽';
-			}
+			this.#setThemeLinkForLight ( );
 		}
 		else {
 			this.#theme = 'dark';
 			document.body.classList.remove ( 'cyLight' );
 			document.body.classList.add ( 'cyDark' );
-			if ( this.#themeLink ) {
-				this.#themeLink.innerText = '☼';
-			}
+			this.#setThemeLinkForDark ( );
 		}
 
 		// saving the theme to the storage
@@ -285,6 +311,15 @@ class ThemeChanger {
 	}
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------- */
+/**
+The one and only one instance of ThemeChanger class
+@type {ThemeChanger}
+*/
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
 const theThemeChanger = new ThemeChanger;
 
 export default theThemeChanger;
+
+/* --- End of file --------------------------------------------------------------------------------------------------------- */

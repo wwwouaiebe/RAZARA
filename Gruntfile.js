@@ -144,6 +144,15 @@ module.exports = function ( grunt ) {
 				}
 			}
 		},
+		essimpledoc : {
+			release : {
+				options : {
+					src : './src/scripts',
+					dest : './docs/techDoc',
+					validate : true
+				}
+			}
+		},
 		copy : {
 			main : {
 				files : [
@@ -222,8 +231,9 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks ( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks ( 'grunt-htmlcleancompress' );
 	grunt.loadNpmTasks ( 'grunt-contrib-copy' );
+	grunt.loadNpmTasks ( 'grunt-essimpledoc' );
 	grunt.registerTask (
-		'default',
+		'debug',
 		[
 			'eslint',
 			'rollup',
@@ -233,6 +243,20 @@ module.exports = function ( grunt ) {
 			'cssmin:RAZARA4anthisnes',
 			'htmlcleancompress',
 			'copy'
+		]
+	);
+	grunt.registerTask (
+		'release',
+		[
+			'eslint',
+			'rollup',
+			'terser',
+			'stylelint',
+			'cssmin:RAZARA4ouaie',
+			'cssmin:RAZARA4anthisnes',
+			'htmlcleancompress',
+			'copy',
+			'essimpledoc'
 		]
 	);
 	/* eslint-disable no-console */

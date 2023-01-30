@@ -7,6 +7,7 @@
     "grunt-contrib-copy": "latest",
     "grunt-contrib-cssmin": "latest",
     "grunt-eslint": "latest",
+    "grunt-essimpledoc": "latest",
     "grunt-rollup": "latest",
     "grunt-stylelint": "latest",
     "grunt-htmlcleancompress": "latest",
@@ -16,7 +17,8 @@
     "terser": "latest"
   },
   "scripts": {
-    "release" : "node node_modules/grunt/bin/grunt"
+    "release" : "node node_modules/grunt/bin/grunt release",
+    "debug" : "node node_modules/grunt/bin/grunt debug"
   },
   "repository": {
     "type": "git",
