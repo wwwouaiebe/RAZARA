@@ -5,7 +5,7 @@ msgid "cy403Text"
 msgstr "Ènocint catwaze moussî a sot, fåte http"
 
 msgid "cy404Text"
-msgstr "Oufti bièsse, t'es pierdou!"
+msgstr "Oufti bièsse, t´es pierdou!"
 
 msgid "cyAllArchivesMenuText"
 msgstr "Le temps passé"
@@ -38,7 +38,7 @@ msgid "cyArchivesMenuTitle"
 msgstr "Le temps passé"
 
 msgid "cyArchivesMenuTooltip"
-msgstr "Voyagez dans le temps jusqu'en "
+msgstr "Voyagez dans le temps jusqu´en "
 
 msgid "cyCategoriesMenuTitle"
 msgstr "Les pays"
@@ -62,7 +62,7 @@ msgid "cyCategoryMenu5"
 msgstr "aux régions"
 
 msgid "cyCategoryTooltip1"
-msgstr "Aller à "
+msgstr " "
 
 msgid "cyDescription1"
 msgstr " "
@@ -104,10 +104,10 @@ msgid "cyPagesMenuTitle"
 msgstr "Et aussi"
 
 msgid "cyPaginationHomeText"
-msgstr "Retourner à l'accueil"
+msgstr "Retourner à l´accueil"
 
 msgid "cyPaginationHomeTooltip"
-msgstr "Retourner à l'accueil"
+msgstr "Retourner à l´accueil"
 
 msgid "cyPaginationNewestText"
 msgstr "Photos plus récentes"
@@ -152,7 +152,7 @@ msgid "cySiteTitlePart3"
 msgstr "be"
 
 msgid "cySiteTitleTooltip"
-msgstr "aller à l'accueil"
+msgstr "aller à l´accueil"
 
 msgid "cyTagsMenuTitle"
 msgstr "Les séries"
