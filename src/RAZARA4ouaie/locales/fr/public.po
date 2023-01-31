@@ -64,6 +64,39 @@ msgstr "aux régions"
 msgid "cyCategoryTooltip1"
 msgstr "Aller à "
 
+msgid "cyDescription1"
+msgstr " "
+
+msgid "cyDescription2"
+msgstr "Toutes les photos en petit format classées par date"
+
+msgid "cyDescription3"
+msgstr "Toutes les photos en petit format classées par pays"
+
+msgid "cyDescription4"
+msgstr "Les photos en grand format"
+
+msgid "cyDescription5"
+msgstr "Série"
+
+msgid "cyKeyword1"
+msgstr "www.ouaie.be"
+
+msgid "cyKeyword2"
+msgstr "Blog"
+
+msgid "cyKeyword3"
+msgstr "Photos"
+
+msgid "cyKeyword4"
+msgstr "Voyages"
+
+msgid "cyKeyword5"
+msgstr "Archives"
+
+msgid "cyKeyword6"
+msgstr "Pays"
+
 msgid "cyPage"
 msgstr "page"
 

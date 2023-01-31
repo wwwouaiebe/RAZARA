@@ -3,7 +3,17 @@
 	<head>
 		{{tpl:include src="_head.html"}}
 		<title>{{tpl:BlogName encode_html="1"}} - {{tpl:lang cyAllArchivesPageTitle}} </title>
-		<meta name='description' lang='{{tpl:BlogLanguage}}' content='{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}} - {{tpl:lang cyAllArchivesPageTitle}}' />
+		<meta 
+			name='description' 
+			lang='{{tpl:BlogLanguage}}' 
+			content='{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}} - {{tpl:lang cyDescription2}}' 
+		>
+		<meta
+			name="keywords" 
+			lang='{{tpl:BlogLanguage}}' 
+			content='{{tpl:lang cyKeyword1}}, {{tpl:lang cyKeyword2}}, {{tpl:lang cyKeyword3}}, {{tpl:lang cyKeyword4}}, {{tpl:lang cyKeyword5}}'
+		>
+	</head>
 	</head>
 	<body>
 		{{tpl:include src="_header.html"}}

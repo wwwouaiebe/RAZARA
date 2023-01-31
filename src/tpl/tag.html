@@ -3,7 +3,16 @@
 	<head>
 		{{tpl:include src="_head.html"}}
 		<title>{{tpl:BlogName encode_html="1"}} - {{tpl:TagID}}<tpl:PaginationIf start="0"> - {{tpl:lang cyPage}} {{tpl:PaginationCurrent}}</tpl:PaginationIf></title>
-		<meta name='description' lang='{{tpl:BlogLanguage}}' content='{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}} - {{tpl:TagID}} - {{tpl:lang cyPage}} {{tpl:PaginationCurrent}}' />
+		<meta 
+			name='description' 
+			lang='{{tpl:BlogLanguage}}' 
+			content='{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}} - {{tpl:lang cyDescription5}} : {{tpl:TagID}} - {{tpl:lang cyPage}} {{tpl:PaginationCurrent}}'
+		>
+		<meta
+			name="keywords" 
+			lang='{{tpl:BlogLanguage}}' 
+			content='{{tpl:lang cyKeyword1}}, {{tpl:lang cyKeyword2}}, {{tpl:lang cyKeyword3}}, {{tpl:TagID}}'
+		>
 	</head>
 	<body>
 		<ss>
