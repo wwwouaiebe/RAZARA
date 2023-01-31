@@ -18,13 +18,18 @@
 			lang='{{tpl:BlogLanguage}}' 
 			content='{{tpl:lang cyKeyword1}}, {{tpl:lang cyKeyword2}}, {{tpl:lang cyKeyword3}}, {{tpl:lang cyKeyword4}}, <tpl:CategoryParents> {{tpl:CategoryTitle encode_html="1"}},</tpl:CategoryParents> {{tpl:CategoryTitle encode_html="1"}}'
 		>
-	</head>
-	<body>
-		<ss>
+		<script id="cySlideShowData" type="application/json">
+			[
 			<tpl:Entries category="#self ?sub" lastn="1000" ignore_pagination="1" type="post">
 				{{tpl:include src="_slideShow.html"}}
 			</tpl:Entries>
-		</ss>
+				{
+					"eod":true
+				}
+			]
+		</script>
+	</head>
+	<body>
 		{{tpl:include src="_header.html"}}
 		{{tpl:include src="_sectionCategory.html"}}
 		{{tpl:include src="_navCategory.html"}}

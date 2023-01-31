@@ -256,7 +256,7 @@ module.exports = function ( grunt ) {
 			'cssmin:RAZARA4anthisnes',
 			'htmlcleancompress',
 			'copy',
-			/*'essimpledoc'*/
+			'essimpledoc'
 		]
 	);
 	/* eslint-disable no-console */

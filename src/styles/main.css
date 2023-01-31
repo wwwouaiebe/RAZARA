@@ -315,19 +315,4 @@ http errors overload
 	padding-bottom: 5rem;
 }
 
-/**
-xml data for slide show
-*/
-
-/* stylelint-disable selector-type-no-unknown */
-ss,
-ssimg {
-	width: 0;
-	height: 0;
-	transform: scale(0);
-	visibility: hidden;
-	padding: 0;
-	border-width: 0;
-}
-
 /* --- End of file --------------------------------------------------------------------------------------------------------- */

@@ -787,7 +787,20 @@ class SlideShow {
 		this.#slideShowIndex = SlideShow.#INVALID_INDEX;
 
 		// Loading of the slide show data
-		this.#slideShowData = document.getElementsByTagName ( 'ssimg' );
+		if ( ! document.getElementById ( 'cySlideShowData' ) ) {
+			return;
+		}
+		try {
+			this.#slideShowData = JSON.parse ( document.getElementById ( 'cySlideShowData' ).text );
+		}
+		catch ( err ) {
+			console.error ( err );
+			return;
+		}
+
+		// Removing the dummy data at the end
+		this.#slideShowData.pop ( );
+
 		if ( ZERO === this.#slideShowData.length ) {
 
 			// No slide show...
@@ -940,21 +953,21 @@ class SlideShow {
 
 		// Computing the image legend
 		let legend =
-			currentSlideShowData.getAttribute ( 'cat' ) +
+			currentSlideShowData.cat +
 			', ' +
-			currentSlideShowData.getAttribute ( 'date' );
+			currentSlideShowData.date;
 
 		// Adapting the image
-		this.#slideShowImgHTMLElement.src = currentSlideShowData.getAttribute ( 'src' );
+		this.#slideShowImgHTMLElement.src = currentSlideShowData.src;
 		this.#slideShowImgHTMLElement.title = legend;
 		this.#slideShowImgHTMLElement.alt = legend;
-		this.#slideShowImgHTMLElement.className = currentSlideShowData.getAttribute ( 'class' );
+		this.#slideShowImgHTMLElement.className = currentSlideShowData.class;
 
 		// Adapting the legend HTMLElement
 		this.#slideShowLegendHTMLElement.innerText = legend;
 
 		// Adapting exif data
-		let exifData = currentSlideShowData.getAttribute ( 'exif' );
+		let exifData = currentSlideShowData.exif;
 		this.#slideShowExifHTMLElement.innerText = exifData ? exifData : '';
 
 		// Restarting the timer if the slide show is not paused by the user
