@@ -140,48 +140,66 @@ h1 - h6 size
 
 h1 {
 	font-size: 175%;
+	padding-bottom: 1rem;
 }
 
 h2 {
 	font-size: 152%;
+	padding-bottom: 1rem;
 }
 
 h3 {
 	font-size: 132%;
+	padding-left: 2rem;
 }
 
 h4 {
 	font-size: 115%;
+	padding-left: 4rem;
 }
 
-h1,
+h5 {
+	padding-left: 6rem;
+}
+
+h6 {
+	padding-left: 8rem;
+}
+
+section.cyPage > h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
+	padding-top: 2rem;
 	padding-bottom: 1rem;
+	margin-bottom: 2rem;
+	border-bottom: 0.1rem solid var(--main-color);
 }
 
 /**
-Color overload for h1
+Color overload for site name
 */
 
-h1 > a {
+div.cySiteName {
+	font-size: 175%;
+}
+
+div.cySiteName > a {
 	color: var(--main-color);
 	text-decoration: none;
 }
 
-h1 > a:hover {
+div.cySiteName > a:hover {
 	color: var(--main-color);
 	text-decoration: none;
 }
 
-h1 > a > span {
+div.cySiteName > a > span {
 	color: var(--link-color);
 }
 
-h1 > a > span:hover {
+div.cySiteName > a > span:hover {
 	color: var(--link-color);
 }
 
@@ -250,7 +268,7 @@ figcaption {
 overload for html elements in nav element
 */
 
-body > nav > h2 {
+body > nav > h1 {
 	font-size: 115%;
 }
 
@@ -264,10 +282,10 @@ body > nav > p > span {
 }
 
 /**
-first letter capitalize for h2 (date)
+first letter capitalize for h1 (date)
 */
 
-body > section > h2::first-letter {
+body > section > h1::first-letter {
 	text-transform: capitalize;
 }
 

@@ -2,7 +2,12 @@
 <html lang='{{tpl:BlogLanguage}}'>
 	<head>
 		{{tpl:include src="_head.html"}}
-		<title>{{tpl:BlogName encode_html="1"}} - {{tpl:CategoryTitle encode_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang cyPage}} {{tpl:PaginationCurrent}}</tpl:PaginationIf></title>
+		<title>
+			{{tpl:BlogName encode_html="1"}}
+			<tpl:CategoryParents> - {{tpl:CategoryTitle encode_html="1"}}</tpl:CategoryParents>
+			- {{tpl:CategoryTitle encode_html="1"}}
+			 <tpl:PaginationIf start="0"> - {{tpl:lang cyPage}} {{tpl:PaginationCurrent}}</tpl:PaginationIf>
+			</title>
 		<meta name='description' lang='{{tpl:BlogLanguage}}' content='{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}} - {{tpl:CategoryTitle encode_html="1"}} - {{tpl:lang cyPage}} {{tpl:PaginationCurrent}}' />
 	</head>
 	<body>
