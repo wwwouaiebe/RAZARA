@@ -134,7 +134,7 @@ msgid "cyPostDateText2"
 msgstr ", "
 
 msgid "cyPostDateText3"
-msgstr "&nbsp;heures&nbsp;"
+msgstr " heures "
 
 msgid "cyPostDateText4"
 msgstr "Publié le "

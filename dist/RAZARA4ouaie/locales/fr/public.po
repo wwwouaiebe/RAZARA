@@ -134,13 +134,13 @@ msgid "cyPostDateText2"
 msgstr ", "
 
 msgid "cyPostDateText3"
-msgstr "&nbsp;heures&nbsp;"
+msgstr " heures "
 
 msgid "cyPostDateText4"
 msgstr "Publié le "
 
 msgid "cyPostTagsText"
-msgstr "Série&nbsp;:&nbsp;"
+msgstr "Série : "
 
 msgid "cySiteTitlePart1"
 msgstr "www"
