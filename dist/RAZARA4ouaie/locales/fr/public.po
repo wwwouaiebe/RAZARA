@@ -1,9 +1,3 @@
-msgid "cy401Text"
-msgstr "Vin nin chal, hin, vî drole!"
-
-msgid "cy403Text"
-msgstr "Ènocint catwaze moussî a sot, fåte http"
-
 msgid "cy404Text"
 msgstr "Oufti bièsse, t´es pierdou!"
 
@@ -34,16 +28,8 @@ msgstr "Voir toutes les séries"
 msgid "cyAllTagsPageTitle"
 msgstr "Les séries"
 
-msgid "cyArchivesMenuTitle"
-msgstr "Le temps passé"
-
-msgid "cyArchivesMenuTooltip"
-msgstr "Voyagez dans le temps jusqu´en "
 
 msgid "cyCategoriesMenuTitle"
-msgstr "Les pays"
-
-msgid "cyCategoriesMenuTooltip"
 msgstr "Les pays"
 
 msgid "cyCategoryMenu1"
@@ -127,9 +113,6 @@ msgstr "Photos plus anciennes"
 msgid "cyPaginationOldestTooltip"
 msgstr "Photos plus anciennes"
 
-msgid "cyPostDateText1"
-msgstr "Photo réalisée le "
-
 msgid "cyPostDateText2"
 msgstr ", "
 
@@ -162,4 +145,3 @@ msgstr "Parcourez la série : "
 
 msgid "cyTagTooltip"
 msgstr "Parcourez la série : "
-
