@@ -1,23 +1,24 @@
 {
   "name": "RAZARA",
-  "version": "1.0.0",
+  "version": "1.1.0-dev",
   "description": "dotclear theme",
   "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-copy": "latest",
     "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-htmlmin": "latest",
     "grunt-eslint": "latest",
+    "grunt-essimpledoc": "latest",
     "grunt-rollup": "latest",
     "grunt-stylelint": "latest",
+    "grunt-htmlcleancompress": "latest",
     "grunt-terser": "latest",
     "stylelint": "latest",
     "stylelint-config-standard": "latest",
     "terser": "latest"
   },
   "scripts": {
-    "debug" : "node node_modules/grunt/bin/grunt",
-    "release" : "node node_modules/grunt/bin/grunt"
+    "release" : "node node_modules/grunt/bin/grunt release",
+    "debug" : "node node_modules/grunt/bin/grunt debug"
   },
   "repository": {
     "type": "git",

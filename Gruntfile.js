@@ -1,3 +1,23 @@
+/*
+Copyright - 2017 2023 - wwwouaiebe - Contact: https://www.ouaie.be/
+
+This  program is free software;
+you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation;
+either version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
+/* eslint-disable no-magic-numbers */
+// eslint-disable-next-line no-undef
 module.exports = function ( grunt ) {
 	let banner =
 		'/**\n * ' +
@@ -51,8 +71,8 @@ module.exports = function ( grunt ) {
 					}
 				},
 				files : {
-					'dist/RAZARA4ouaie/scripts/razara.min.js' : [ 'dist/RAZARA4ouaie/scripts/razara.js' ],
-					'dist/RAZARA4anthisnes/scripts/razara.min.js' : [ 'dist/RAZARA4anthisnes/scripts/razara.js' ]
+					'dist/RAZARA4ouaie/scripts/razara-1-1-0.min.js' : [ 'dist/RAZARA4ouaie/scripts/razara.js' ],
+					'dist/RAZARA4anthisnes/scripts/razara-1-1-0.min.js' : [ 'dist/RAZARA4anthisnes/scripts/razara.js' ]
 				}
 			}
 		},
@@ -69,49 +89,68 @@ module.exports = function ( grunt ) {
 			},
 			RAZARA4ouaie : {
 				files : {
-					'dist/RAZARA4ouaie/styles/razara.min.css' : [ 'src/styles/reset.css', 'src/styles/main.css', 'src/styles/pagination.css', 'src/styles/bigScreen.css', 'src/styles/mouse.css', 'src/styles/SlideShow.css' ]
+					'dist/RAZARA4ouaie/styles/razara-1-1-0.min.css' :
+					[
+						'src/styles/reset.css',
+						'src/styles/main.css',
+						'src/styles/pagination.css',
+						'src/styles/bigScreen.css',
+						'src/styles/mouse.css',
+						'src/styles/SlideShow.css'
+					]
 				}
 			},
 			RAZARA4anthisnes : {
 				files : {
-					'dist/RAZARA4anthisnes/styles/razara.min.css' : [ 'src/styles/reset.css', 'src/styles/main.css', 'src/styles/pagination.css', 'src/styles/bigScreen.css', 'src/styles/mouse.css', 'src/styles/SlideShow.css' ]
+					'dist/RAZARA4anthisnes/styles/razara-1-1-0.min.css' :
+					[
+						'src/styles/reset.css',
+						'src/styles/main.css',
+						'src/styles/pagination.css',
+						'src/styles/bigScreen.css',
+						'src/styles/mouse.css',
+						'src/styles/SlideShow.css'
+					]
 				}
 			}
 		},
-		htmlmin : {
-			dist : {
+		htmlcleancompress : {
+			anthisnes : {
 				options : {
-					removeComments : true,
-					collapseWhitespace : true,
-					conservativeCollapse : true,
-					caseSensitive : true
-				},
-				files : [
-					{
-						expand : true,
-						cwd : 'src',
-						src : [ 'tpl/*.html' ],
-						dest : 'dist/RAZARA4ouaie'
-					},
-					{
-						expand : true,
-						cwd : 'src',
-						src : [ 'tpl/*.html' ],
-						dest : 'dist/RAZARA4anthisnes'
-					},
-					{
-						expand : true,
-						cwd : 'src/RAZARA4ouaie',
-						src : [ 'tpl/*.html' ],
-						dest : 'dist/RAZARA4ouaie'
-					},
-					{
-						expand : true,
-						cwd : 'src/RAZARA4anthisnes',
-						src : [ 'tpl/*.html' ],
-						dest : 'dist/RAZARA4anthisnes'
-					}
-				]
+					clean : true,
+					src : 'src/tpl',
+					dest : 'dist/RAZARA4anthisnes/tpl'
+				}
+			},
+			ouaie : {
+				options : {
+					clean : true,
+					src : 'src/tpl',
+					dest : 'dist/RAZARA4ouaie/tpl'
+				}
+			},
+			anthisnesOnly : {
+				options : {
+					clean : false,
+					src : 'src/RAZARA4anthisnes/tpl',
+					dest : 'dist/RAZARA4anthisnes/tpl'
+				}
+			},
+			ouaieOnly : {
+				options : {
+					clean : false,
+					src : 'src/RAZARA4ouaie/tpl',
+					dest : 'dist/RAZARA4ouaie/tpl'
+				}
+			}
+		},
+		essimpledoc : {
+			release : {
+				options : {
+					src : './src/scripts',
+					dest : './docs/techDoc',
+					validate : true
+				}
 			}
 		},
 		copy : {
@@ -138,7 +177,7 @@ module.exports = function ( grunt ) {
 					{
 						expand : true,
 						cwd : 'src/styles',
-						src : [ '*.ttf', '*.png' ],
+						src : [ '*.ttf', '*.woff2', '*.png' ],
 						dest : 'dist/RAZARA4ouaie/styles'
 					},
 					{
@@ -168,7 +207,7 @@ module.exports = function ( grunt ) {
 					{
 						expand : true,
 						cwd : 'src/styles',
-						src : [ '*.ttf', '*.png' ],
+						src : [ '*.ttf', '*.woff2', '*.png' ],
 						dest : 'dist/RAZARA4anthisnes/styles'
 					},
 					{
@@ -182,17 +221,53 @@ module.exports = function ( grunt ) {
 		}
 	} );
 	grunt.config.data.pkg.buildNumber = grunt.file.readJSON ( 'buildNumber.json' ).buildNumber;
-	grunt.config.data.pkg.buildNumber = ( '00000' + ( Number.parseInt ( grunt.config.data.pkg.buildNumber ) + 1 ) ).substr ( -5, 5 );
+	grunt.config.data.pkg.buildNumber =
+		( '00000' + ( Number.parseInt ( grunt.config.data.pkg.buildNumber ) + 1 ) ).slice ( -5 );
 	grunt.file.write ( 'buildNumber.json', '{ "buildNumber" : "' + grunt.config.data.pkg.buildNumber + '"}' );
 	grunt.loadNpmTasks ( 'grunt-eslint' );
 	grunt.loadNpmTasks ( 'grunt-rollup' );
 	grunt.loadNpmTasks ( 'grunt-terser' );
 	grunt.loadNpmTasks ( 'grunt-stylelint' );
 	grunt.loadNpmTasks ( 'grunt-contrib-cssmin' );
-	grunt.loadNpmTasks ( 'grunt-contrib-htmlmin' );
+	grunt.loadNpmTasks ( 'grunt-htmlcleancompress' );
 	grunt.loadNpmTasks ( 'grunt-contrib-copy' );
-	grunt.registerTask ( 'default', [ 'eslint', 'rollup', 'terser', 'stylelint', 'cssmin:RAZARA4ouaie', 'cssmin:RAZARA4anthisnes', 'htmlmin:dist', 'copy' ] );
-	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------' );
-	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version + ' - build: ' + grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today ( 'isoDateTime' ) + '\n' );
-	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------' );
+	grunt.loadNpmTasks ( 'grunt-essimpledoc' );
+	grunt.registerTask (
+		'debug',
+		[
+			'eslint',
+			'rollup',
+			'terser',
+			'stylelint',
+			'cssmin:RAZARA4ouaie',
+			'cssmin:RAZARA4anthisnes',
+			'htmlcleancompress',
+			'copy'
+		]
+	);
+	grunt.registerTask (
+		'release',
+		[
+			'eslint',
+			'rollup',
+			'terser',
+			'stylelint',
+			'cssmin:RAZARA4ouaie',
+			'cssmin:RAZARA4anthisnes',
+			'htmlcleancompress',
+			'copy',
+			'essimpledoc'
+		]
+	);
+	/* eslint-disable no-console */
+	console.log ( '-------------------------------------------------------------------------------------------------------' );
+	console.log (
+		'\n                                     ' +
+		grunt.config.data.pkg.name +
+		' - ' +
+		grunt.config.data.pkg.version +
+		' - build: ' + grunt.config.data.pkg.buildNumber +
+		' - ' +
+		grunt.template.today ( 'isoDateTime' ) + '\n' );
+	console.log ( '-------------------------------------------------------------------------------------------------------' );
 };

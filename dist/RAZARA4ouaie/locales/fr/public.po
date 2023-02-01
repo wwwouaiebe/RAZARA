@@ -1,11 +1,5 @@
-msgid "cy401Text"
-msgstr "Vin nin chal, hin, vî drole!"
-
-msgid "cy403Text"
-msgstr "Ènocint catwaze moussî a sot, fåte http"
-
 msgid "cy404Text"
-msgstr "Oufti bièsse, t'es pierdou!"
+msgstr "Oufti bièsse, t´es pierdou!"
 
 msgid "cyAllArchivesMenuText"
 msgstr "Le temps passé"
@@ -34,17 +28,60 @@ msgstr "Voir toutes les séries"
 msgid "cyAllTagsPageTitle"
 msgstr "Les séries"
 
-msgid "cyArchivesMenuTitle"
-msgstr "Le temps passé"
-
-msgid "cyArchivesMenuTooltip"
-msgstr "Voyagez dans le temps jusqu'en "
 
 msgid "cyCategoriesMenuTitle"
 msgstr "Les pays"
 
-msgid "cyCategoriesMenuTooltip"
-msgstr "Les pays"
+msgid "cyCategoryMenu1"
+msgstr " "
+
+msgid "cyCategoryMenu2"
+msgstr "Les villes et les régions:"
+
+msgid "cyCategoryMenu3"
+msgstr "Retourner à la page "
+
+msgid "cyCategoryMenu4"
+msgstr "Retourner "
+
+msgid "cyCategoryMenu5"
+msgstr "aux régions"
+
+msgid "cyCategoryTooltip1"
+msgstr " "
+
+msgid "cyDescription1"
+msgstr " "
+
+msgid "cyDescription2"
+msgstr "Toutes les photos en petit format classées par date"
+
+msgid "cyDescription3"
+msgstr "Toutes les photos en petit format classées par pays"
+
+msgid "cyDescription4"
+msgstr "Les photos en grand format"
+
+msgid "cyDescription5"
+msgstr "Série"
+
+msgid "cyKeyword1"
+msgstr "www.ouaie.be"
+
+msgid "cyKeyword2"
+msgstr "Blog"
+
+msgid "cyKeyword3"
+msgstr "Photos"
+
+msgid "cyKeyword4"
+msgstr "Voyages"
+
+msgid "cyKeyword5"
+msgstr "Archives"
+
+msgid "cyKeyword6"
+msgstr "Pays"
 
 msgid "cyPage"
 msgstr "page"
@@ -53,10 +90,10 @@ msgid "cyPagesMenuTitle"
 msgstr "Et aussi"
 
 msgid "cyPaginationHomeText"
-msgstr "Retourner à l'accueil"
+msgstr "Retourner à l´accueil"
 
 msgid "cyPaginationHomeTooltip"
-msgstr "Retourner à l'accueil"
+msgstr "Retourner à l´accueil"
 
 msgid "cyPaginationNewestText"
 msgstr "Photos plus récentes"
@@ -76,20 +113,17 @@ msgstr "Photos plus anciennes"
 msgid "cyPaginationOldestTooltip"
 msgstr "Photos plus anciennes"
 
-msgid "cyPostDateText1"
-msgstr "Photo réalisée le "
-
 msgid "cyPostDateText2"
 msgstr ", "
 
 msgid "cyPostDateText3"
-msgstr "&nbsp;heures&nbsp;"
+msgstr " heures "
 
 msgid "cyPostDateText4"
 msgstr "Publié le "
 
 msgid "cyPostTagsText"
-msgstr "Série&nbsp;:&nbsp;"
+msgstr "Série : "
 
 msgid "cySiteTitlePart1"
 msgstr "www"
@@ -101,7 +135,7 @@ msgid "cySiteTitlePart3"
 msgstr "be"
 
 msgid "cySiteTitleTooltip"
-msgstr "aller à l'accueil"
+msgstr "aller à l´accueil"
 
 msgid "cyTagsMenuTitle"
 msgstr "Les séries"
@@ -111,4 +145,3 @@ msgstr "Parcourez la série : "
 
 msgid "cyTagTooltip"
 msgstr "Parcourez la série : "
-

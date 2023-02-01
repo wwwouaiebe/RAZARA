@@ -1,7 +1,7 @@
-﻿<article>
+﻿<article id='entry{{tpl:EntryID}}'>
 	{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
 
-		<h3><!--{{tpl:EntryTitle}}-->&nbsp;</h3>
+		<!-- h2><{{tpl:EntryTitle}} >&nbsp;</h2 -->
 
 		<!-- En tête du post si presente -->
 		<tpl:EntryIf extended="1">
@@ -21,7 +21,7 @@
 					src='{{tpl:BlogURL}}{{tpl:MediaExifInfoRelUrl}}'
 					title='<tpl:EntryIf has_category="1"><tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}, </tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}}, </tpl:EntryIf><tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader></tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter>, </tpl:TagsFooter></tpl:EntryTags></tpl:SysIf><tpl:MediaExifInfoIf has_exif="1">{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaExifInfoIf><tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>'
 					alt='<tpl:EntryIf has_category="1"><tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}, </tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}}, </tpl:EntryIf><tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader></tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter>, </tpl:TagsFooter></tpl:EntryTags></tpl:SysIf><tpl:MediaExifInfoIf has_exif="1">{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaExifInfoIf><tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>'
-				/>
+				>
 				<figcaption>
 				
 					<!-- pas d'info exif dans le media -->
@@ -41,19 +41,9 @@
 							<p>
 								<!-- categorie avec fil d'Ariane -->
 								<tpl:EntryCategoriesBreadcrumb>
-								{{tpl:CategoryTitle encode_html="1"}},
+									<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}'>{{tpl:CategoryTitle encode_html="1"}}</a>,
 								</tpl:EntryCategoriesBreadcrumb>
 								<a href='{{tpl:EntryCategoryURL}}' title='{{tpl:EntryCategoryDescription remove_html="1"}}' >{{tpl:EntryCategory}}</a>,
-
-								<!-- tag si anthisnes.org -->
-								<tpl:SysIf has_tpl="_anthisnes.html">
-									<tpl:EntryTags>
-										<tpl:TagsHeader></tpl:TagsHeader>
-											<a href='{{tpl:TagURL}}' title='{{tpl:lang cyTagTooltip}}{{tpl:TagID}}' >{{tpl:TagID}}</a>
-										<tpl:TagsFooter>, </tpl:TagsFooter>
-									</tpl:EntryTags>
-								</tpl:SysIf>						  
-
 								<!-- date et heure du post -->
 								{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
 							</p>
@@ -67,18 +57,9 @@
 							<!-- categorie avec fil d'Ariane -->
 							<tpl:EntryIf has_category="1">
 								<tpl:EntryCategoriesBreadcrumb>
-								{{tpl:CategoryTitle encode_html="1"}},
+									<a href='{{tpl:CategoryURL}}' title='{{tpl:CategoryDescription remove_html="1"}}'>{{tpl:CategoryTitle encode_html="1"}}</a>,
 								</tpl:EntryCategoriesBreadcrumb>
 								<a href='{{tpl:EntryCategoryURL}}' title='<tpl:SysIf has_tpl="_ouaie.html">{{tpl:EntryCategory}}</tpl:SysIf><tpl:SysIf has_tpl="_anthisnes.html">{{tpl:EntryCategoryDescription remove_html="1"}}</tpl:SysIf>' >{{tpl:EntryCategory}}</a>,
-
-								<!-- tag si anthisnes.org -->
-								<tpl:SysIf has_tpl="_anthisnes.html">
-									<tpl:EntryTags>
-										<tpl:TagsHeader></tpl:TagsHeader>
-											<a href='{{tpl:TagURL}}' title='{{tpl:lang cyTagTooltip}}{{tpl:TagID}}' >{{tpl:TagID}}</a>
-										<tpl:TagsFooter>, </tpl:TagsFooter>
-									</tpl:EntryTags>
-								</tpl:SysIf>						  
 							</tpl:EntryIf>
 
 							<!-- date et heure du media -->

@@ -1,34 +1,5 @@
 <section>
 	<tpl:Entries>
-		<tpl:DateHeader><h2>{{tpl:EntryDate}}</h2></tpl:DateHeader>
-			{{tpl:include src="_article.html"}}
-		<tpl:EntriesFooter>
-			<div id="cyPagination">
-				<div id="cyPaginationTopArrow">⮝</div>
-				<div id="cyPaginationTop">
-					<a href='{{tpl:BlogURL}}' title='{{tpl:lang cyPaginationHomeTooltip}}'>{{tpl:lang cyPaginationHomeText}}</a>
-				</div>
-				<tpl:Pagination>
-					<tpl:PaginationIf start="0">
-						<div id="cyPaginationNewestArrow">⮜</div>
-						<div id="cyPaginationNewest">
-							<a href='{{tpl:PaginationURL offset="-1"}}' title='{{tpl:lang cyPaginationNewestTooltip}}'>{{tpl:lang cyPaginationNewestText}}</a>
-						</div>
-					</tpl:PaginationIf>
-					<tpl:PaginationIf end="0">
-						<div id="cyPaginationOldestArrow">⮞</div>
-						<div id="cyPaginationOldest">
-								<a href='{{tpl:PaginationURL offset="+1"}}' title='{{tpl:lang cyPaginationOldestTooltip}}'>{{tpl:lang cyPaginationOldestText}}</a>
-						</div>
-					</tpl:PaginationIf>
-					<div id="cyPaginationCounter">
-						{{tpl:lang cyPaginationPage}} {{tpl:PaginationCurrent}} {{tpl:lang cyPaginationOf}} {{tpl:PaginationCounter}}
-					</div>
-				</tpl:Pagination>
-				<div id="cyPaginationSlideShow">
-					<a><!--Diaporama slideshow--></a>
-				</div>
-			</div>
-		</tpl:EntriesFooter>
+		{{tpl:include src="_subsection.html"}}
 	</tpl:Entries>
 </section>
