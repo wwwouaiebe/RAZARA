@@ -1,3 +1,5 @@
+<!-- First part of the nav top of the page with the categories -->
+
 <nav id="cyNavTop" >
 	<h1>{{tpl:lang cyCategoriesMenuTitle}}</h1>
 	<p>
@@ -8,6 +10,9 @@
 		</tpl:Categories>
 	</p>
 </nav>
+
+<!-- Bottom part of the nav with tags -->
+
 <nav id="cyNavBottom" >
 	<tpl:SysIf has_tpl="_ouaie.html">
 		<h1>{{tpl:lang cyTagsMenuTitle}}</h1>
@@ -22,5 +27,8 @@
 			</span>
 		</p>
 	</tpl:SysIf>
+
+	<!-- _nav_menu.html is different for each site. See specific templates
+	 -->
 	{{tpl:include src="_nav_menu.html"}}
 </nav>

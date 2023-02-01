@@ -1,22 +1,32 @@
+<!-- nav tag for the category page -->
+
 <nav id="cyNavCategory" >
 	<h1>
+
+		<!-- Adding first level category (country) -->
+
 		<tpl:SysIf has_tpl="_ouaie.html">
-			<!-- le pays -->
 			<tpl:CategoryParents>
 				{{tpl:CategoryDescription remove_html="1"}}
 			</tpl:CategoryParents>
 		</tpl:SysIf>
+
+		<!-- Adding second level category (street or région) -->
+
 		{{tpl:lang cyCategoryMenu1}}
-		<!-- ... la rue ou la région-->
 		{{tpl:CategoryDescription  remove_html="1"}}
+
+		<!-- Adding first level category (village) -->
+
 		<tpl:SysIf has_tpl="_anthisnes.html">
-			<!-- le village -->
 			<tpl:CategoryParents>
 				{{tpl:CategoryDescription remove_html="1"}}
 			</tpl:CategoryParents>
 		</tpl:SysIf>
 	</h1>
-	<!-- Liste des rues ou des régions -->
+
+	<!-- streets or regions -->
+
 	<tpl:CategoryFirstChildren>
 		<tpl:CategoriesHeader>
 			<p>{{tpl:lang cyCategoryMenu2}}
@@ -26,10 +36,10 @@
 			</p>
 		</tpl:CategoriesFooter>
 	</tpl:CategoryFirstChildren>
-	<!-- Retouner au village ou au pays -->
+
+	<!-- Return to the village or country -->
+
 	<tpl:CategoryParents>
 		<p>{{tpl:lang cyCategoryMenu3}}<a href='{{tpl:CategoryURL}}'>{{tpl:CategoryDescription remove_html="1"}}</a></p>
 	</tpl:CategoryParents>
-	<!-- Retourner à la liste des villages ou des pays-->
-	<!-- p>{{tpl:lang cyCategoryMenu4}}<a href='{{tpl:BlogURL}}'>{{tpl:lang cyCategoryMenu5}}</a></p -->
 </nav>

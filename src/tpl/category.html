@@ -1,3 +1,5 @@
+<!-- Category page -->
+
 <!DOCTYPE html>
 <html lang='{{tpl:BlogLanguage}}'>
 	<head>
@@ -18,6 +20,9 @@
 			lang='{{tpl:BlogLanguage}}' 
 			content='{{tpl:lang cyKeyword1}}, {{tpl:lang cyKeyword2}}, {{tpl:lang cyKeyword3}}, {{tpl:lang cyKeyword4}}, <tpl:CategoryParents> {{tpl:CategoryTitle encode_html="1"}},</tpl:CategoryParents> {{tpl:CategoryTitle encode_html="1"}}'
 		>
+
+		<!-- Slide show. We add a dummy eod entry to avoid problems with the json parser -->
+
 		<script id="cySlideShowData" type="application/json">
 			[
 			<tpl:Entries category="#self ?sub" lastn="1000" ignore_pagination="1" type="post">
