@@ -918,11 +918,27 @@ class SlideShow {
 	}
 
 	/**
+	Load the image. Returns a promise that resolve when the image is completely loaded. Avoid flickering
+	when the className of the image changes.
+	@param{string} src The url of the image
+	*/
+
+	#loadImage ( src ) {
+		return new Promise (
+			( onOk, onError ) => {
+				this.#slideShowImgHTMLElement.onload = () => onOk ( );
+				this.#slideShowImgHTMLElement.onerror = onError;
+				this.#slideShowImgHTMLElement.src = src;
+			}
+		);
+	}
+
+	/**
 	Show the next article
 	@param{Number} direction The direction to follow for the next article. See the SlideShowDirection enum for possible values
 	*/
 
-	showNextArticle ( direction ) {
+	async showNextArticle ( direction ) {
 
 		// Clearing the timer
 		if ( this.#timerId ) {
@@ -957,11 +973,15 @@ class SlideShow {
 			', ' +
 			currentSlideShowData.date;
 
+		this.#articleHTMLElement.classList.add ( 'cyHelpDivHidden' );
+		await this.#loadImage ( currentSlideShowData.src );
+
 		// Adapting the image
-		this.#slideShowImgHTMLElement.src = currentSlideShowData.src;
+		// this.#slideShowImgHTMLElement.src = currentSlideShowData.src;
 		this.#slideShowImgHTMLElement.title = legend;
 		this.#slideShowImgHTMLElement.alt = legend;
 		this.#slideShowImgHTMLElement.className = currentSlideShowData.class;
+		this.#articleHTMLElement.classList.remove ( 'cyHelpDivHidden' );
 
 		// Adapting the legend HTMLElement
 		this.#slideShowLegendHTMLElement.innerText = legend;
