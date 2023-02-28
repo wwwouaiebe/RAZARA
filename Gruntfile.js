@@ -71,8 +71,8 @@ module.exports = function ( grunt ) {
 					}
 				},
 				files : {
-					'dist/RAZARA4ouaie/scripts/razara-1-1-1.min.js' : [ 'dist/RAZARA4ouaie/scripts/razara.js' ],
-					'dist/RAZARA4anthisnes/scripts/razara-1-1-1.min.js' : [ 'dist/RAZARA4anthisnes/scripts/razara.js' ]
+					'dist/RAZARA4ouaie/scripts/razara-1-1-2.min.js' : [ 'dist/RAZARA4ouaie/scripts/razara.js' ],
+					'dist/RAZARA4anthisnes/scripts/razara-1-1-2.min.js' : [ 'dist/RAZARA4anthisnes/scripts/razara.js' ]
 				}
 			}
 		},
@@ -89,7 +89,7 @@ module.exports = function ( grunt ) {
 			},
 			RAZARA4ouaie : {
 				files : {
-					'dist/RAZARA4ouaie/styles/razara-1-1-1.min.css' :
+					'dist/RAZARA4ouaie/styles/razara-1-1-2.min.css' :
 					[
 						'src/styles/reset.css',
 						'src/styles/main.css',
@@ -102,7 +102,7 @@ module.exports = function ( grunt ) {
 			},
 			RAZARA4anthisnes : {
 				files : {
-					'dist/RAZARA4anthisnes/styles/razara-1-1-1.min.css' :
+					'dist/RAZARA4anthisnes/styles/razara-1-1-2.min.css' :
 					[
 						'src/styles/reset.css',
 						'src/styles/main.css',
