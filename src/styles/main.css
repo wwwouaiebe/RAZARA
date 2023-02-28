@@ -242,12 +242,13 @@ ul {
 }
 
 /**
-objects
+iframe
 */
 
-object {
+iframe {
 	width: 100%;
 	height: 800px;
+	border-style: none;
 }
 
 /**

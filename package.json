@@ -1,6 +1,6 @@
 {
   "name": "RAZARA",
-  "version": "1.1.1",
+  "version": "1.1.2-dev",
   "description": "dotclear theme",
   "devDependencies": {
     "grunt": "latest",
