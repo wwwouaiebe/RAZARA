@@ -24,7 +24,7 @@ overload for large screens
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
 
-@media screen and (min-width: 1281px) {
+@media screen and (width >= 1281px) {
 	/**
 	grid definition
 	*/
