@@ -71,8 +71,8 @@ module.exports = function ( grunt ) {
 					}
 				},
 				files : {
-					'dist/RAZARA4ouaie/scripts/razara-1-1-2.min.js' : [ 'dist/RAZARA4ouaie/scripts/razara.js' ],
-					'dist/RAZARA4anthisnes/scripts/razara-1-1-2.min.js' : [ 'dist/RAZARA4anthisnes/scripts/razara.js' ]
+					'dist/RAZARA4ouaie/scripts/razara-1-1-3.min.js' : [ 'dist/RAZARA4ouaie/scripts/razara.js' ],
+					'dist/RAZARA4anthisnes/scripts/razara-1-1-3.min.js' : [ 'dist/RAZARA4anthisnes/scripts/razara.js' ]
 				}
 			}
 		},
@@ -89,7 +89,7 @@ module.exports = function ( grunt ) {
 			},
 			RAZARA4ouaie : {
 				files : {
-					'dist/RAZARA4ouaie/styles/razara-1-1-2.min.css' :
+					'dist/RAZARA4ouaie/styles/razara-1-1-3.min.css' :
 					[
 						'src/styles/reset.css',
 						'src/styles/main.css',
@@ -102,7 +102,7 @@ module.exports = function ( grunt ) {
 			},
 			RAZARA4anthisnes : {
 				files : {
-					'dist/RAZARA4anthisnes/styles/razara-1-1-2.min.css' :
+					'dist/RAZARA4anthisnes/styles/razara-1-1-3.min.css' :
 					[
 						'src/styles/reset.css',
 						'src/styles/main.css',
@@ -227,7 +227,7 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks ( 'grunt-eslint' );
 	grunt.loadNpmTasks ( 'grunt-rollup' );
 	grunt.loadNpmTasks ( 'grunt-terser' );
-	grunt.loadNpmTasks ( 'grunt-stylelint' );
+	grunt.loadNpmTasks ( 'grunt-wwwouaiebe-stylelint' );
 	grunt.loadNpmTasks ( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks ( 'grunt-htmlcleancompress' );
 	grunt.loadNpmTasks ( 'grunt-contrib-copy' );

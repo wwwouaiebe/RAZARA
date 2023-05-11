@@ -1,6 +1,6 @@
 {
   "name": "RAZARA",
-  "version": "1.1.2-dev",
+  "version": "1.1.3",
   "description": "dotclear theme",
   "devDependencies": {
     "grunt": "latest",
@@ -9,9 +9,9 @@
     "grunt-eslint": "latest",
     "grunt-essimpledoc": "latest",
     "grunt-rollup": "latest",
-    "grunt-stylelint": "latest",
     "grunt-htmlcleancompress": "latest",
     "grunt-terser": "latest",
+    "grunt-wwwouaiebe-stylelint" : "latest",
     "stylelint": "latest",
     "stylelint-config-standard": "latest",
     "terser": "latest"
