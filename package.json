@@ -16,6 +16,9 @@
     "stylelint-config-standard": "latest",
     "terser": "latest"
   },
+  "engines": {
+    "node": ">=18.18.2"
+  },
   "scripts": {
     "release" : "node node_modules/grunt/bin/grunt release",
     "debug" : "node node_modules/grunt/bin/grunt debug"
