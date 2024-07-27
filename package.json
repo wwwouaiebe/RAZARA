@@ -12,7 +12,7 @@
     "grunt-rollup": "latest",
     "grunt-htmlcleancompress": "latest",
     "grunt-terser": "latest",
-    "grunt-wwwouaiebe-stylelint" : "latest",
+    "grunt-stylelint" : "latest",
     "stylelint": "latest",
     "stylelint-config-standard": "latest",
     "terser": "latest"

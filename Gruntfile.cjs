@@ -226,7 +226,7 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks ( 'grunt-eslint' );
 	grunt.loadNpmTasks ( 'grunt-rollup' );
 	grunt.loadNpmTasks ( 'grunt-terser' );
-	grunt.loadNpmTasks ( 'grunt-wwwouaiebe-stylelint' );
+	grunt.loadNpmTasks ( 'grunt-stylelint' );
 	grunt.loadNpmTasks ( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks ( 'grunt-htmlcleancompress' );
 	grunt.loadNpmTasks ( 'grunt-contrib-copy' );
