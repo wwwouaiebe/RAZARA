@@ -25,8 +25,6 @@
 			- created from v1.0.0
 	 */
 
-	/* eslint-disable no-magic-numbers */
-
 	/**
 	A simple constant...
 	@type {Number}
@@ -61,8 +59,6 @@
 	*/
 
 	const THOUSAND = 1000;
-
-	/* eslint-enable no-magic-numbers */
 
 	/* ------------------------------------------------------------------------------------------------------------------------- */
 	/**
