@@ -88,7 +88,7 @@ module.exports = function ( grunt ) {
 			},
 			RAZARA4ouaie : {
 				files : {
-					'dist/RAZARA4ouaie/styles/razara-1-1-3.min.css' :
+					'dist/RAZARA4ouaie/styles/razara-1-1-4.min.css' :
 					[
 						'src/styles/reset.css',
 						'src/styles/main.css',
@@ -101,7 +101,7 @@ module.exports = function ( grunt ) {
 			},
 			RAZARA4anthisnes : {
 				files : {
-					'dist/RAZARA4anthisnes/styles/razara-1-1-3.min.css' :
+					'dist/RAZARA4anthisnes/styles/razara-1-1-4.min.css' :
 					[
 						'src/styles/reset.css',
 						'src/styles/main.css',

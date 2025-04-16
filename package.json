@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "RAZARA",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "dotclear theme",
   "devDependencies": {
     "grunt": "latest",
@@ -18,7 +18,7 @@
     "terser": "latest"
   },
   "engines": {
-    "node": ">=18.18.2"
+    "node": ">=22.14.0"
   },
   "scripts": {
     "release" : "node node_modules/grunt/bin/grunt release",
