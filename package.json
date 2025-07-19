@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "RAZARA",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "dotclear theme",
   "devDependencies": {
     "grunt": "latest",
